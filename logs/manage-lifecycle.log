@@ -1,0 +1,635 @@
+Script started on 2021-01-19 12:08:59-05:00
+]0;root@workstation:~[root@workstation ~]# sudo podman run --name mysql-db rhscl/mysql-57-rhel7
+Trying to pull registry.access.redhat.com/rhscl/mysql-57-rhel7...
+Getting image source signatures
+Copying blob 9f1840c3b3bd [--------------------------------------] 160.0KiB / 62.3MiB
+[1A[2KCopying blob 9f1840c3b3bd [>-------------------------------------] 2.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 [======================================] 1.5KiB / 1.5KiB
+Copying blob f1e961fe4c51 [--------------------------------------] 32.0KiB / 6.9MiB
+[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=>------------------------------------] 3.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [======>-------------------------------] 1.3MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [--------------------------------------] 928.0KiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=>------------------------------------] 3.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [==========>---------------------------] 2.0MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [>-------------------------------------] 2.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===>----------------------------------] 5.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [========================>-------------] 4.5MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [===>----------------------------------] 7.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===>----------------------------------] 7.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [=================================>----] 6.2MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=====>--------------------------------] 11.3MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [====>---------------------------------] 7.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [===================================>--] 6.4MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=====>--------------------------------] 11.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=====>--------------------------------] 9.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [======================================] 6.9MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=======>------------------------------] 15.1MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=======>------------------------------] 12.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [========>-----------------------------] 18.1MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [========>-----------------------------] 14.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=========>----------------------------] 19.4MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==========>---------------------------] 18.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========>--------------------------] 23.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===========>--------------------------] 19.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [============>-------------------------] 25.2MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [============>-------------------------] 21.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=============>------------------------] 27.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=============>------------------------] 23.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==============>-----------------------] 29.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==============>-----------------------] 25.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===============>----------------------] 31.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===============>----------------------] 26.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=================>--------------------] 33.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=================>--------------------] 28.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==================>-------------------] 35.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==================>-------------------] 30.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===================>------------------] 37.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===================>------------------] 32.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [====================>-----------------] 39.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [====================>-----------------] 34.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=====================>----------------] 42.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=====================>----------------] 35.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================>---------------] 44.2MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [======================>---------------] 37.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=======================>--------------] 46.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=======================>--------------] 40.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [========================>-------------] 48.1MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=========================>------------] 41.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=========================>------------] 50.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=========================>------------] 43.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========================>----------] 52.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==========================>-----------] 44.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========================>----------] 54.3MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [============================>---------] 47.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=============================>--------] 56.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=============================>--------] 49.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==============================>-------] 58.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==============================>-------] 51.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===============================>------] 60.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===============================>------] 53.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [================================>-----] 62.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=================================>----] 55.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=================================>----] 65.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==================================>---] 57.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==================================>---] 67.4MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===================================>--] 59.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===================================>--] 69.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [======================================] 62.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================================] 72.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [======================================] 62.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+Copying config 60726b33a0 [======================================] 6.9KiB / 6.9KiB
+[1A[2KCopying config 60726b33a0 done
+[1A[2KCopying config 60726b33a0 done
+[1A[2KCopying config 60726b33a0 done
+Writing manifest to image destination
+Storing signatures
+=> sourcing 20-validate-variables.sh ...
+You must either specify the following environment variables:
+  MYSQL_USER (regex: '^[a-zA-Z0-9_]+$')
+  MYSQL_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+  MYSQL_DATABASE (regex: '^[a-zA-Z0-9_]+$')
+Or the following environment variable:
+  MYSQL_ROOT_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+Or both.
+Optional Settings:
+  MYSQL_LOWER_CASE_TABLE_NAMES (default: 0)
+  MYSQL_LOG_QUERIES_ENABLED (default: 0)
+  MYSQL_MAX_CONNECTIONS (default: 151)
+  MYSQL_FT_MIN_WORD_LEN (default: 4)
+  MYSQL_FT_MAX_WORD_LEN (default: 20)
+  MYSQL_AIO (default: 1)
+  MYSQL_KEY_BUFFER_SIZE (default: 32M or 10% of available memory)
+  MYSQL_MAX_ALLOWED_PACKET (default: 200M)
+  MYSQL_TABLE_OPEN_CACHE (default: 400)
+  MYSQL_SORT_BUFFER_SIZE (default: 256K)
+  MYSQL_READ_BUFFER_SIZE (default: 8M or 5% of available memory)
+  MYSQL_INNODB_BUFFER_POOL_SIZE (default: 32M or 50% of available memory)
+  MYSQL_INNODB_LOG_FILE_SIZE (default: 8M or 15% of available memory)
+  MYSQL_INNODB_LOG_BUFFER_SIZE (default: 8M or 15% of available memory)
+
+For more information, see https://github.com/sclorg/mysql-container
+]0;root@workstation:~[root@workstation ~]# sudo pst[Kdman[K[K[K[K[K[Ksu -
+Last login: Tue Jan 19 10:52:30 EST 2021 on pts/0
+]0;root@workstation:~[root@workstation ~]# podman logs my-[Ksql-db
+=> sourcing 20-validate-variables.sh ...
+You must either specify the following environment variables:
+  MYSQL_USER (regex: '^[a-zA-Z0-9_]+$')
+  MYSQL_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+  MYSQL_DATABASE (regex: '^[a-zA-Z0-9_]+$')
+Or the following environment variable:
+  MYSQL_ROOT_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+Or both.
+Optional Settings:
+  MYSQL_LOWER_CASE_TABLE_NAMES (default: 0)
+  MYSQL_LOG_QUERIES_ENABLED (default: 0)
+  MYSQL_MAX_CONNECTIONS (default: 151)
+  MYSQL_FT_MIN_WORD_LEN (default: 4)
+  MYSQL_FT_MAX_WORD_LEN (default: 20)
+  MYSQL_AIO (default: 1)
+  MYSQL_KEY_BUFFER_SIZE (default: 32M or 10% of available memory)
+  MYSQL_MAX_ALLOWED_PACKET (default: 200M)
+  MYSQL_TABLE_OPEN_CACHE (default: 400)
+  MYSQL_SORT_BUFFER_SIZE (default: 256K)
+  MYSQL_READ_BUFFER_SIZE (default: 8M or 5% of available memory)
+  MYSQL_INNODB_BUFFER_POOL_SIZE (default: 32M or 50% of available memory)
+  MYSQL_INNODB_LOG_FILE_SIZE (default: 8M or 15% of available memory)
+  MYSQL_INNODB_LOG_BUFFER_SIZE (default: 8M or 15% of available memory)
+
+For more information, see https://github.com/sclorg/mysql-container
+]0;root@workstation:~[root@workstation ~]# cat /home/student/DO
+cat: /home/student/DO: No such file or directory
+]0;root@workstation:~[root@workstation ~]# cat /home/student/DO180/manage-lifecycle.log 
+Script started on 2021-01-19 12:08:59-05:00
+]0;root@workstation:~[root@workstation ~]# sudo podman run --name mysql-db rhscl/mysql-57-rhel7
+Trying to pull registry.access.redhat.com/rhscl/mysql-57-rhel7...
+Getting image source signatures
+Copying blob 9f1840c3b3bd [--------------------------------------] 160.0KiB / 62.3MiB
+[1A[2KCopying blob 9f1840c3b3bd [>-------------------------------------] 2.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 [======================================] 1.5KiB / 1.5KiB
+Copying blob f1e961fe4c51 [--------------------------------------] 32.0KiB / 6.9MiB
+[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=>------------------------------------] 3.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [======>-------------------------------] 1.3MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [--------------------------------------] 928.0KiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=>------------------------------------] 3.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [==========>---------------------------] 2.0MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [>-------------------------------------] 2.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===>----------------------------------] 5.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [========================>-------------] 4.5MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [===>----------------------------------] 7.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===>----------------------------------] 7.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [=================================>----] 6.2MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=====>--------------------------------] 11.3MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [====>---------------------------------] 7.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [===================================>--] 6.4MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=====>--------------------------------] 11.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=====>--------------------------------] 9.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [======================================] 6.9MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=======>------------------------------] 15.1MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=======>------------------------------] 12.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [========>-----------------------------] 18.1MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [========>-----------------------------] 14.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=========>----------------------------] 19.4MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==========>---------------------------] 18.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========>--------------------------] 23.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===========>--------------------------] 19.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [============>-------------------------] 25.2MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [============>-------------------------] 21.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=============>------------------------] 27.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=============>------------------------] 23.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==============>-----------------------] 29.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==============>-----------------------] 25.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===============>----------------------] 31.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===============>----------------------] 26.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=================>--------------------] 33.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=================>--------------------] 28.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==================>-------------------] 35.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==================>-------------------] 30.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===================>------------------] 37.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===================>------------------] 32.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [====================>-----------------] 39.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [====================>-----------------] 34.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=====================>----------------] 42.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=====================>----------------] 35.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================>---------------] 44.2MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [======================>---------------] 37.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=======================>--------------] 46.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=======================>--------------] 40.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [========================>-------------] 48.1MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=========================>------------] 41.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=========================>------------] 50.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=========================>------------] 43.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========================>----------] 52.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==========================>-----------] 44.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========================>----------] 54.3MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [============================>---------] 47.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=============================>--------] 56.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=============================>--------] 49.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==============================>-------] 58.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==============================>-------] 51.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===============================>------] 60.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===============================>------] 53.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [================================>-----] 62.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=================================>----] 55.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=================================>----] 65.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==================================>---] 57.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==================================>---] 67.4MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===================================>--] 59.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===================================>--] 69.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [======================================] 62.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================================] 72.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [======================================] 62.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+Copying config 60726b33a0 [======================================] 6.9KiB / 6.9KiB
+[1A[2KCopying config 60726b33a0 done
+[1A[2KCopying config 60726b33a0 done
+[1A[2KCopying config 60726b33a0 done
+Writing manifest to image destination
+Storing signatures
+=> sourcing 20-validate-variables.sh ...
+You must either specify the following environment variables:
+  MYSQL_USER (regex: '^[a-zA-Z0-9_]+$')
+  MYSQL_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+  MYSQL_DATABASE (regex: '^[a-zA-Z0-9_]+$')
+Or the following environment variable:
+  MYSQL_ROOT_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+Or both.
+Optional Settings:
+  MYSQL_LOWER_CASE_TABLE_NAMES (default: 0)
+  MYSQL_LOG_QUERIES_ENABLED (default: 0)
+  MYSQL_MAX_CONNECTIONS (default: 151)
+  MYSQL_FT_MIN_WORD_LEN (default: 4)
+  MYSQL_FT_MAX_WORD_LEN (default: 20)
+  MYSQL_AIO (default: 1)
+  MYSQL_KEY_BUFFER_SIZE (default: 32M or 10% of available memory)
+  MYSQL_MAX_ALLOWED_PACKET (default: 200M)
+  MYSQL_TABLE_OPEN_CACHE (default: 400)
+  MYSQL_SORT_BUFFER_SIZE (default: 256K)
+  MYSQL_READ_BUFFER_SIZE (default: 8M or 5% of available memory)
+  MYSQL_INNODB_BUFFER_POOL_SIZE (default: 32M or 50% of available memory)
+  MYSQL_INNODB_LOG_FILE_SIZE (default: 8M or 15% of available memory)
+  MYSQL_INNODB_LOG_BUFFER_SIZE (default: 8M or 15% of available memory)
+
+For more information, see https://github.com/sclorg/mysql-container
+]0;root@workstation:~[root@workstation ~]# sudo pst[Kdman[K[K[K[K[K[Ksu -
+Last login: Tue Jan 19 10:52:30 EST 2021 on pts/0
+]0;root@workstation:~[root@workstation ~]# podman logs my-[Ksql-db
+=> sourcing 20-validate-variables.sh ...
+You must either specify the following environment variables:
+  MYSQL_USER (regex: '^[a-zA-Z0-9_]+$')
+  MYSQL_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+  MYSQL_DATABASE (regex: '^[a-zA-Z0-9_]+$')
+Or the following environment variable:
+  MYSQL_ROOT_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+Or both.
+Optional Settings:
+  MYSQL_LOWER_CASE_TABLE_NAMES (default: 0)
+  MYSQL_LOG_QUERIES_ENABLED (default: 0)
+  MYSQL_MAX_CONNECTIONS (default: 151)
+  MYSQL_FT_MIN_WORD_LEN (default: 4)
+  MYSQL_FT_MAX_WORD_LEN (default: 20)
+  MYSQL_AIO (default: 1)
+  MYSQL_KEY_BUFFER_SIZE (default: 32M or 10% of available memory)
+  MYSQL_MAX_ALLOWED_PACKET (default: 200M)
+  MYSQL_TABLE_OPEN_CACHE (default: 400)
+  MYSQL_SORT_BUFFER_SIZE (default: 256K)
+  MYSQL_READ_BUFFER_SIZE (default: 8M or 5% of available memory)
+  MYSQL_INNODB_BUFFER_POOL_SIZE (default: 32M or 50% of available memory)
+  MYSQL_INNODB_LOG_FILE_SIZE (default: 8M or 15% of available memory)
+  MYSQL_INNODB_LOG_BUFFER_SIZE (default: 8M or 15% of available memory)
+
+For more information, see https://github.com/sclorg/mysql-container
+]0;root@workstation:~[root@workstation ~]# cat /home/student/DO
+cat: /home/student/DO: No such file or directory
+]0;root@workstation:~[root@workstation ~]# cat /home/student/DO180/manage-lifecycle.log 
+Script started on 2021-01-19 12:08:59-05:00
+]0;root@workstation:~[root@workstation ~]# sudo podman run --name mysql-db rhscl/mysql-57-rhel7
+Trying to pull registry.access.redhat.com/rhscl/mysql-57-rhel7...
+Getting image source signatures
+Copying blob 9f1840c3b3bd [--------------------------------------] 160.0KiB / 62.3MiB
+[1A[2KCopying blob 9f1840c3b3bd [>-------------------------------------] 2.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 [======================================] 1.5KiB / 1.5KiB
+Copying blob f1e961fe4c51 [--------------------------------------] 32.0KiB / 6.9MiB
+[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=>------------------------------------] 3.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [======>-------------------------------] 1.3MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [--------------------------------------] 928.0KiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=>------------------------------------] 3.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [==========>---------------------------] 2.0MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [>-------------------------------------] 2.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===>----------------------------------] 5.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [========================>-------------] 4.5MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [===>----------------------------------] 7.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===>----------------------------------] 7.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [=================================>----] 6.2MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=====>--------------------------------] 11.3MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [====>---------------------------------] 7.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [===================================>--] 6.4MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=====>--------------------------------] 11.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=====>--------------------------------] 9.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 [======================================] 6.9MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=======>------------------------------] 15.1MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=======>------------------------------] 12.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [========>-----------------------------] 18.1MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [========>-----------------------------] 14.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=========>----------------------------] 19.4MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==========>---------------------------] 18.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========>--------------------------] 23.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===========>--------------------------] 19.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [============>-------------------------] 25.2MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [============>-------------------------] 21.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=============>------------------------] 27.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=============>------------------------] 23.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==============>-----------------------] 29.5MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==============>-----------------------] 25.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===============>----------------------] 31.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===============>----------------------] 26.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=================>--------------------] 33.7MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=================>--------------------] 28.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==================>-------------------] 35.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [==================>-------------------] 30.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===================>------------------] 37.6MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [===================>------------------] 32.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [====================>-----------------] 39.8MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [====================>-----------------] 34.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=====================>----------------] 42.0MiB / 72.7MiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 9f1840c3b3bd [=====================>----------------] 35.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+Copying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================>---------------] 44.2MiB / 72.7MiB
+[1A[2K]0;root@workstation:~[root@workstation ~]# cat /home/student/DO180/manage-lifecycle.log [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K80/
+container-review.log  labs/                 manage-lifecycle.log  solutions/            
+[root@workstation ~]# cat /home/student/DO180/container-review.log 
+Script started on 2021-01-19 11:02:29-05:00
+]0;root@workstation:~[root@workstation ~]# lab container-review grade
+
+Grading the student's work for the Lab: Creating Containerized Services
+
+ · The httpd container image was pulled........................  [1;31mFAIL[0;39m
+ · The container was started with the correct name.............  [1;31mFAIL[0;39m
+ · The container was started with the correct image............  [1;31mFAIL[0;39m
+ · Check the content of index.html.............................  [1;31mFAIL[0;39m
+
+]0;root@workstation:~[root@workstation ~]# cd /stu[K[K[Khome/student/DO180
+]0;root@workstation:/home/student/DO180[root@workstation DO180]# cat container-review.log 
+]0;root@workstation:/home/student/DO180[root@workstation DO180]# exit
+exit
+
+Script done on 2021-01-19 11:03:18-05:00
+]0;root@workstation:~[root@workstation ~]# sudo podman run --name mysql \
+> -d -e MYSQL_user[K[K[K[KUSER_[K[K [KR=user1 -e MYSQL_PASSWROD[K[K[KR[KORD=mypa55 \
+> -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 \
+> rhscl/mysql-57-rhel7
+6e47154e9dcfe5365ba7fe9c250f0fb6f76d6a6324eba0babe1a28a3b1a5db0c
+]0;root@workstation:~[root@workstation ~]# sudo podman -[Kps
+CONTAINER ID  IMAGE                                                   COMMAND     CREATED         STATUS             PORTS  NAMES
+6e47154e9dcf  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  run-mysqld  25 seconds ago  Up 25 seconds ago         mysql
+]0;root@workstation:~[root@workstation ~]# sudo psd[K[Kodman inspect -f '{{ .NetworkSte[K[Kettings.IPAddress }}' mysql
+10.88.0.6
+]0;root@workstation:~[root@workstation ~]# mysql --[Kuuser1 -h 10.88.0.6 \
+> -pmypa55 items < /hos[Kme/student/DO180/labs/manage-li^C
+]0;root@workstation:~[root@workstation ~]# lab manage-lifecycle start
+
+Setting up workstation for the Guided Excercise: Managing a MySQL Container
+
+ · Checking podman configuration...............................  [1;36mSUCCESS[0;39m
+ · Downloading starter project.................................  [1;36mSUCCESS[0;39m
+ · Downloading solution project................................  [1;36mSUCCESS[0;39m
+
+Setup successful. Please proceed with the exercise.
+
+]0;root@workstation:~[root@workstation ~]# mysql -uuser -h 10.88.0.6 \
+> -pmypa55 items >[K< /home/student/DO180/labs/manage-lifecycle/db.sql 
+ERROR 1045 (28000): Access denied for user 'user'@'10.88.0.1' (using password: YES)
+]0;root@workstation:~[root@workstation ~]# mysql -uuser -h 10.88.0.6 -pmypa55 items < /home/student/DO180/labs/manage-lifecycle/db.sql [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@1
+]0;root@workstation:~[root@workstation ~]# sudo podman [1P[1P[1P[1P[1P[C[C[C[C[C[C[Crun --name mysql-2 -ir [K[Kt rhscl/mysql-57-rhel7 /bin/bash
+[?1034hbash-4.2$ mysql -uroot
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)
+bash-4.2$ exit
+exit
+]0;root@workstation:~[root@workstation ~]# sudo pdman -[K[K[K[K[K[Kodman ps -a 
+CONTAINER ID  IMAGE                                                   COMMAND     CREATED             STATUS                     PORTS  NAMES
+8d541f60a21d  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  /bin/bash   About a minute ago  Exited (1) 20 seconds ago         mysql-2
+6e47154e9dcf  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  run-mysqld  10 minutes ago      Up 10 minutes ago                 mysql
+2067762a5d7b  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  run-mysqld  15 minutes ago      Exited (1) 15 minutes ago         mysql-db
+]0;root@workstation:~[root@workstation ~]# sudo podman exce[K[Kec [1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[Cmysql /bin [K/bash -c mysql[K[K[K[K[K'mysql -uuser1 -pmypa55 -e "select from [K[K[K[K[K*fr[K [K[K from item.[Ks.Projects;"'
+mysql: [Warning] Using a password on the command line interface can be insecure.
+id	name	code
+1	DevOps	DO180
+]0;root@workstation:~[root@workstation ~]# lab manage-lifecycle finish
+
+Completing the Guided Excercise: Managing a MySQL Container
+
+ · Stopping 'mysql' container..................................  [1;36mSUCCESS[0;39m
+ · Stopping 'mysql-2' container................................  [1;36mSUCCESS[0;39m
+ · Removing 'mysql' container..................................  [1;36mSUCCESS[0;39m
+ · Removing 'mysql-2' container................................  [1;36mSUCCESS[0;39m
+ · Removing 'mysql-db' container...............................  [1;36mSUCCESS[0;39m
+ · Removing 'rhscl/mysql-57-rhel7' image.......................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# exit
+logout
+]0;root@workstation:~[root@workstation ~]# exit[K[K[K[Kexit[K[K[K[Kexit
+exit
+
+Script done on 2021-01-19 12:30:44-05:00

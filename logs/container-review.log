@@ -1,0 +1,16 @@
+Script started on 2021-01-19 11:02:29-05:00
+]0;root@workstation:~[root@workstation ~]# lab container-review grade
+
+Grading the student's work for the Lab: Creating Containerized Services
+
+ · The httpd container image was pulled........................  [1;31mFAIL[0;39m
+ · The container was started with the correct name.............  [1;31mFAIL[0;39m
+ · The container was started with the correct image............  [1;31mFAIL[0;39m
+ · Check the content of index.html.............................  [1;31mFAIL[0;39m
+
+]0;root@workstation:~[root@workstation ~]# cd /stu[K[K[Khome/student/DO180
+]0;root@workstation:/home/student/DO180[root@workstation DO180]# cat container-review.log 
+]0;root@workstation:/home/student/DO180[root@workstation DO180]# exit
+exit
+
+Script done on 2021-01-19 11:03:18-05:00
