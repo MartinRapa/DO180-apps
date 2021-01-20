@@ -1,0 +1,401 @@
+Script started on 2021-01-20 12:46:48-05:00
+]0;root@workstation:~[root@workstation ~]# lab image-operations start
+
+Setting up workstation for the GE: Creating a Custom Apache Container Image
+
+ · Checking podman configuration...............................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# sudo podman login quay.io
+Username: MartinRapa
+Password: 
+Login Succeeded!
+]0;root@workstation:~[root@workstation ~]# sudo podman run -d --name official-https[Kd -p 8180:80 quay.io/redhatttrainning[K[K[K[K[K[K[K[K[K[Ktraining/httpd-parent
+Trying to pull quay.io/redhattraining/httpd-parent...
+Getting image source signatures
+Copying blob a3ed95caeb02 .                                        
+Copying blob 6a5240d60dc4 .                                        
+Copying blob a3ed95caeb02 .                                        
+[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 ..                                       
+Copying blob 6a5240d60dc4 ..                                       
+Copying blob a3ed95caeb02 ..                                       
+Copying blob a3ed95caeb02 .                                        
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 .                                        
+Copying blob a3ed95caeb02 .                                        
+Copying blob a3ed95caeb02 .                                        
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 ..                                       
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 ..                                       
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 ...                                      
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 .                                        
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 ....                                     
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac                                          
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a .                                        
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac                                          
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac                                          
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac                                          
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac done
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+Writing manifest to image destination
+Storing signatures
+3a0588dd7e49631222ca1933de91f1c001e1f069b413e1415d985a2efb4ba59c
+]0;root@workstation:~[root@workstation ~]# podman exec official-httpd[K[K-official-htttofficial-httiofficial-htt official-htt[C[C[C[C[C[C[C[C[C[C[C[Cd [K[K[Ktpd bash
+bash-4.4# echo "DO180 Page" > /var/www/html/do180.html
+bash-4.4# exit
+exit
+]0;root@workstation:~[root@workstation ~]# curl 127.0.0.1:8180/do180.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# sudo podman diff official-httpd 
+C /root
+A /root/.bash_history
+C /run/httpd
+A /run/httpd/cgisock.1
+A /run/httpd/httpd.pid
+C /tmp
+C /var
+C /var/log
+C /var/log/httpd
+A /var/log/httpd/access_log
+A /var/log/httpd/error_log
+C /var/www
+C /var/www/html
+A /var/www/html/do180.html
+]0;root@workstation:~[root@workstation ~]# podman stop offi|[Kcial-httpd 
+3a0588dd7e49631222ca1933de91f1c001e1f069b413e1415d985a2efb4ba59c
+]0;root@workstation:~[root@workstation ~]# sud[K[K[Kpodman commit -a 'Martin' official-httpd do180-custom-httpd
+Getting image source signatures
+Copying blob 24d85c895b6b [--------------------------------------] 0b / 0b
+Copying blob c613b100be16 [--------------------------------------] 0b / 0b
+Copying blob 574bcc187eda [--------------------------------------] 0b / 0b
+Copying blob 7f9108fde4a1 [--------------------------------------] 0b / 0b
+Copying blob 0b8274880a1d [======================================] 10.5KiB / 10.5KiB
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 574bcc187eda skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 0b8274880a1d done
+Copying config e6233caf13 [======================================] 4.1KiB / 4.1KiB
+[1A[2KCopying config e6233caf13 done
+Writing manifest to image destination
+Storing signatures
+e6233caf1362f22492e98a872e012565645f678db7a86ba089e4130023a898d1
+]0;root@workstation:~[root@workstation ~]# su[K[Kpodman images
+REPOSITORY                            TAG      IMAGE ID       CREATED          SIZE
+localhost/do180-custom-httpd          latest   e6233caf1362   12 seconds ago   236 MB
+quay.io/redhattraining/httpd-parent   latest   4346d3cace25   19 months ago    236 MB
+]0;root@workstation:~[root@workstation ~]# source /usr/local/etc/ocp4.config 
+]0;root@workstation:~[root@workstation ~]# cat &[K/usr/local/etc/ocp4.config 
+RHT_OCP4_MASTER_API=https://api.na45.prod.nextcle.com:6443
+RHT_OCP4_WILDCARD_DOMAIN=apps.na45.prod.nextcle.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.na45.prod.nextcle.com
+RHT_OCP4_DEV_USER=martinrapa
+RHT_OCP4_DEV_PASSWORD=77edd950144948b5a09e
+RHT_OCP4_GITHUB_USER=MartinRapa
+RHT_OCP4_QUAY_USER=martinrapa
+]0;root@workstation:~[root@workstation ~]# du[K[Kpodman tag do180-custom-htptd[K[K[K[Kttpd quay.io/${RHT_OSCP4_QUAY_USER}/do180-custom-httpd:v1.0
+Error: error adding 'quay.io//do180-custom-httpd:v1.0' to image "do180-custom-httpd": invalid reference format
+]0;root@workstation:~[root@workstation ~]# podman tag do180-custom-httpd quay.io/${RHT_OSCP4_QUAY_USER}/do180-custom-httpd:v1.0
+Error: error adding 'quay.io//do180-custom-httpd:v1.0' to image "do180-custom-httpd": invalid reference format
+]0;root@workstation:~[root@workstation ~]# podman tag -?
+Error: unknown shorthand flag: '?' in -?
+]0;root@workstation:~[root@workstation ~]# podman tag --?
+Error: unknown flag: --?
+]0;root@workstation:~[root@workstation ~]# ${RHT_OSCP4_QUAY_USER}
+]0;root@workstation:~[root@workstation ~]# echo ${RHT_OSCP4_QUAY_USER}
+
+]0;root@workstation:~[root@workstation ~]# echo ${RHT_OSCP4_QUAY_USER}[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P${RHT_OSCP4_QUAY_USER}[8Ppodman tag --?[1P?do180-custom-httpd quay.io/${RHT_OSCP4_QUAY_USER}/do180-custom-httpd:v1.0[1PCP4_QUAY_USER}/do180-custom-httpd:v1.0
+]0;root@workstation:~[root@workstation ~]# sudo [K[K[K[K[Kpodman images
+REPOSITORY                              TAG      IMAGE ID       CREATED         SIZE
+quay.io/martinrapa/do180-custom-httpd   v1.0     e6233caf1362   9 minutes ago   236 MB
+localhost/do180-custom-httpd            latest   e6233caf1362   9 minutes ago   236 MB
+quay.io/redhattraining/httpd-parent     latest   4346d3cace25   19 months ago   236 MB
+]0;root@workstation:~[root@workstation ~]# podman push quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+Getting image source signatures
+Copying blob 0b8274880a1d [--------------------------------------] 8b / 10.5KiB
+[1A[2KCopying blob 0b8274880a1d [--------------------------------------] 8b / 10.5KiB
+[1A[2KCopying blob 0b8274880a1d [--------------------------------------] 8b / 10.5KiB
+[1A[2KCopying blob 0b8274880a1d [======================================] 10.5KiB / 10.5KiB
+[1A[2KCopying blob 0b8274880a1d done
+[1A[2KCopying blob 0b8274880a1d done
+[1A[2KCopying blob 0b8274880a1d done
+[1A[2KCopying blob 0b8274880a1d done
+Copying blob 24d85c895b6b [--------------------------------------] 0b / 0b
+Copying blob c613b100be16 [--------------------------------------] 0b / 0b
+Copying blob 7f9108fde4a1 [--------------------------------------] 0b / 0b
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 0b8274880a1d done
+Copying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 574bcc187eda [--------------------------------------] 0b / 0b
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 0b8274880a1d done
+Copying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 574bcc187eda skipped: already exists
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 0b8274880a1d done
+Copying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 574bcc187eda skipped: already exists
+Copying config e6233caf13 [--------------------------------------] 0b / 4.1KiB
+[1A[2KCopying config e6233caf13 [--------------------------------------] 0b / 4.1KiB
+[1A[2KCopying config e6233caf13 [--------------------------------------] 0b / 4.1KiB
+[1A[2KCopying config e6233caf13 [======================================] 4.1KiB / 4.1KiB
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+Writing manifest to image destination
+Copying config e6233caf13 [--------------------------------------] 0b / 4.1KiB
+[1A[2KCopying config e6233caf13 [======================================] 4.1KiB / 4.1KiB
+[1A[2KCopying config e6233caf13 done
+Writing manifest to image destination
+Writing manifest to image destination
+Storing signatures
+]0;root@workstation:~[root@workstation ~]# podan pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+bash: podan: command not found...
+]0;root@workstation:~[root@workstation ~]# podan pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@m
+3339f79ac13d02888cd60b1f8b6ff7aae4d00c085be5bc0390eca8212503a711
+]0;root@workstation:~[root@workstation ~]# podman run -d --name test-hhtpd [K[K[K[K[K[Khttpd -p 8280:9[K80 quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+cc012d609ec131d5915ecfbdd9b8d10e89468e54b600e0252131c38ae17c8cde
+]0;root@workstation:~[root@workstation ~]# curl httpd:[K[K://localhost:8280/do180.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# lab image-operations finish
+
+Completing the GE: Creating a Custom Apache Container Image
+
+ · Stopping official-httpd container...........................  [1;36mSUCCESS[0;39m
+ · Removing official-httpd container...........................  [1;36mSUCCESS[0;39m
+ · Stopping test-httpd container...............................  [1;36mSUCCESS[0;39m
+ · Removing test-httpd container...............................  [1;36mSUCCESS[0;39m
+ · Removing redhattraining/httpd-parent image..................  [1;36mSUCCESS[0;39m
+ · Removing quay.io/martinrapa/do180-custom-httpd image........  [1;36mSUCCESS[0;39m
+ · Removing localhost/do180-custom-httpd image.................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# exit
+exit
+
+Script done on 2021-01-20 13:06:34-05:00

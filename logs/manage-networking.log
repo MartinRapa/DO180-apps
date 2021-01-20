@@ -1,0 +1,2216 @@
+Script started on 2021-01-20 10:04:31-05:00
+]0;root@workstation:~[root@workstation ~]# lab manage-networking start
+
+Setting up workstation for the Guided Exercise: Loading the Database
+
+ · Checking podman configuration...............................  [1;36mSUCCESS[0;39m
+ · Creating a host directory for the database container:
+   · Adding fcontext policy for /var/local/mysql...............  [1;36mSUCCESS[0;39m
+   · Creating the /var/local/mysql directory...................  [1;36mSUCCESS[0;39m
+   · Apply fcontext policy to /var/local/mysql.................  [1;36mSUCCESS[0;39m
+ · Downloading starter project.................................  [1;36mSUCCESS[0;39m
+ · Downloading solution project................................  [1;36mSUCCESS[0;39m
+
+Setup successful. Please proceed with the exercise.
+
+
+]0;root@workstation:~[root@workstation ~]# porman run --name mysqldb-port \[K-d -v /var/local/mysql:/var/lib/mysql([K/data -p 13306:3306 \[K-e MYSQL_USER=user1 -E my[K[K[K[KE[KE[Ke MYSQL_PASSWORD [K=mypa55 \
+> porman run --name mysqldb-port -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 \[C[C[K^C
+]0;root@workstation:~[root@workstation ~]# porman run --name mysqldb-port -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 \[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@d[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+> -e MYSQL_DATABES[K[KASE=items-e [K[K[K -e MYSQL_ROOT_PASSWORD=rr[K00tpa55 rhscl/mysql-57-rhel7
+Trying to pull registry.access.redhat.com/rhscl/mysql-57-rhel7...
+Getting image source signatures
+Copying blob 1c9f515fc6ab [--------------------------------------] 960.0KiB / 72.7MiB
+Copying blob f1e961fe4c51 [==>-----------------------------------] 640.0KiB / 6.9MiB
+[1A[2K[1A[2KCopying blob 1c9f515fc6ab [>-------------------------------------] 1.3MiB / 72.7MiB
+Copying blob f1e961fe4c51 [=====>--------------------------------] 1.1MiB / 6.9MiB
+Copying blob 9f1840c3b3bd [--------------------------------------] 288.0KiB / 62.3MiB
+[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [>-------------------------------------] 1.6MiB / 72.7MiB
+Copying blob f1e961fe4c51 [====================>-----------------] 3.8MiB / 6.9MiB
+Copying blob 9f1840c3b3bd [==>-----------------------------------] 4.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 [======================================] 1.5KiB / 1.5KiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [>-------------------------------------] 2.5MiB / 72.7MiB
+Copying blob f1e961fe4c51 [===============================>------] 5.8MiB / 6.9MiB
+Copying blob 9f1840c3b3bd [==>-----------------------------------] 4.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [=>------------------------------------] 4.8MiB / 72.7MiB
+Copying blob f1e961fe4c51 [======================================] 6.9MiB / 6.9MiB
+Copying blob 9f1840c3b3bd [===>----------------------------------] 6.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [==>-----------------------------------] 6.6MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [====>---------------------------------] 7.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [===>----------------------------------] 8.6MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [====>---------------------------------] 9.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [====>---------------------------------] 10.3MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [=====>--------------------------------] 10.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [=======>------------------------------] 14.4MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [=======>------------------------------] 13.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [=======>------------------------------] 16.1MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [========>-----------------------------] 14.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [========>-----------------------------] 17.7MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [========>-----------------------------] 15.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [=========>----------------------------] 20.0MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [=========>----------------------------] 16.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [============>-------------------------] 24.1MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [==========>---------------------------] 18.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [=============>------------------------] 26.6MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [===========>--------------------------] 19.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [==============>-----------------------] 28.8MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [============>-------------------------] 21.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [===============>----------------------] 30.6MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [============>-------------------------] 22.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [================>---------------------] 32.6MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [==============>-----------------------] 23.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [==================>-------------------] 35.8MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [===============>----------------------] 26.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [====================>-----------------] 39.5MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [=================>--------------------] 30.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [======================>---------------] 44.0MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [====================>-----------------] 33.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [=======================>--------------] 45.8MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [=====================>----------------] 35.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [========================>-------------] 47.3MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [======================>---------------] 37.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [=========================>------------] 50.3MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [========================>-------------] 40.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [==========================>-----------] 51.5MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [=========================>------------] 42.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [==========================>-----------] 52.6MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [==========================>-----------] 43.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [===========================>----------] 54.2MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [===========================>----------] 46.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [=============================>--------] 57.6MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [=============================>--------] 49.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [==============================>-------] 59.8MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [==============================>-------] 51.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [===============================>------] 60.8MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [===============================>------] 52.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [================================>-----] 62.7MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [================================>-----] 54.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [================================>-----] 63.8MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [=================================>----] 56.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [==================================>---] 66.4MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [==================================>---] 58.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [===================================>--] 68.0MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [===================================>--] 59.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [====================================>-] 71.7MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd [======================================] 62.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab [======================================] 72.7MiB / 72.7MiB
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 1c9f515fc6ab done
+Copying blob f1e961fe4c51 done
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying config 60726b33a0 [======================================] 6.9KiB / 6.9KiB
+[1A[2KCopying config 60726b33a0 done
+Writing manifest to image destination
+Storing signatures
+820b3f1ee1bf439beb1a470dd8b301e64132400f9a42a05abe616540785a8318
+]0;root@workstation:~[root@workstation ~]# sudo podman ps
+CONTAINER ID  IMAGE                                                   COMMAND     CREATED        STATUS            PORTS                    NAMES
+820b3f1ee1bf  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  run-mysqld  5 minutes ago  Up 5 minutes ago  0.0.0.0:13306->3306/tcp  mysqldb-port
+]0;root@workstation:~[root@workstation ~]# ps[Kodman -s[K[K[K[K[K[K[K[K[Kmysql -uuser1 -h 17[K27.0.0.0[K1 -pmpypa55 -P13306 items >[K< /home/student/DO180/labs/manage-networking/db.sql 
+ERROR 1045 (28000): Access denied for user 'user1'@'10.88.0.1' (using password: YES)
+]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -h 127.0.0.1 -pmpypa55 -P13306 items < /home/student/DO180/labs/manage-networking/db.sql [1P
+]0;root@workstation:~[root@workstation ~]# podan [K[K[Kman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * from[K[K[K[KFROM Items"
+ERROR 1146 (42S02) at line 1: Table 'items.Items' doesn't exist
+Error: non zero exit code: 1: OCI runtime error
+]0;root@workstation:~[root@workstation ~]# podman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM Items"[1Ptems"items"
+ERROR 1146 (42S02) at line 1: Table 'items.items' doesn't exist
+Error: non zero exit code: 1: OCI runtime error
+]0;root@workstation:~[root@workstation ~]# podman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM items"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kcat /home/sut[K[Ktudent/DO180/labs/manage--ne[K[K[Knetworking/db.sql 
+CREATE TABLE `Item` (`id` BIGINT not null auto_increment primary key, `description` VARCHAR(100), `done` INT);
+INSERT INTO `Item` (`id`,`description`,`done`) VALUES (1,'Pick up newspaper', 0);
+INSERT INTO `Item` (`id`,`description`,`done`) VALUES (2,'Buy groceries', 1);
+]0;root@workstation:~[root@workstation ~]# cat /home/student/DO180/labs/manage-networking/db.sql [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpodman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM items"[1P"[1Ptem"Item"
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+]0;root@workstation:~[root@workstation ~]# mysql -upodman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM Item"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[49Pcat /home/student/DO180/labs/manage-networking/db.sql [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpodman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM items"Items"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pmysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items < /home/student/DO180/labs/manage-networking/db.sql [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kitems -e "SELECT * FROM Items[K"
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+]0;root@workstation:~[root@workstation ~]# sudo podman exec -ti[K[Kit mysqldb-port /bin/bash
+[?1034hbash-4.2$ mysque -urootu[1P[1P[1@l -uroot items -e "SELECT * FROM Items"  "
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+bash-4.2$ exit
+exit
+]0;root@workstation:~[root@workstation ~]# lab manage--[Knetworking finish
+
+Completing the Guided Exercise: Loading the Database
+
+ · Stopping[root@workstation ~]# sudo podman exec -ti[K[Kit mysqldb-port /bin/bash
+[?1034hbash-4.2$ mysque -urootu[1P[1P[1@l -uroot items -e "SELECT * FROM Items"  "
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+bash-4.2$ exit
+exit
+]0;root@workstation:~[root@workstation ~]# lab manage--[Knetworking finish
+
+Completing the Guided Exercise: Loading the Database
+
+ · Stopping the 'mysqldb-port' container.......................  [1;36mSUCCESS[0;39m
+ · Removing the 'mysqldb-port' container.......................  [1;36mSUCCESS[0;39m
+ · Removing the 'rhscl/mysql-57-rhel7' image...................  [1;36mSUCCESS[0;39m
+ · Removing the /var/local/mysql directory.....................  [1;36mSUCCESS[0;39m
+ · Removing the fcontext for /var/local/mysql..................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# exit
+exit
+Script done, file is /home/student/DO180-apps/logs/manage-networking
+]0;root@workstation:~[root@workstation ~]# script /home/student/DO180-apps/logs/manage-review.log^C
+]0;root@workstation:~[root@workstation ~]# cd /home/[K[K[K[K[K[K[K[K[Kpwd
+/root
+]0;root@workstation:~[root@workstation ~]# cd /home/student/DO180-apps/logs/
+]0;root@workstation:/home/student/DO180-apps/logs[root@workstation logs]# mv manage-networking manage-networking .[K[K[Kg.log
+]0;root@workstation:/home/student/DO180-apps/logs[root@workstation logs]# ls
+container-review.log  manage-lifecycle.log  manage-networking.log
+]0;root@workstation:/home/student/DO180-apps/logs[root@workstation logs]# cd /root/
+]0;root@workstation:~[root@workstation ~]# podman pull mysq[K[K[K[K[K[K[K[K[K[K p[Kiamges [K[K[K[K[K[Kmages https
+REPOSITORY   TAG   IMAGE ID   CREATED   SIZE
+]0;root@workstation:~[root@workstation ~]# podan [K[K[K[K[K[Kscript /home/student/DO180-apps/logs/manage-review.log
+Script started, file is /home/student/DO180-apps/logs/manage-review.log
+]0;root@workstation:~[root@workstation ~]# lab manage-review start
+
+Setting up workstation for the Lab: Managing Containers
+
+ · Checking podman configuration...............................  [1;36mSUCCESS[0;39m
+ · Check that /var/local/mysql does not exist..................  [1;36mSUCCESS[0;39m
+ · Downloading starter project.................................  [1;36mSUCCESS[0;39m
+ · Downloading solution project................................  [1;36mSUCCESS[0;39m
+
+Setup successful. Please proceed with the exercise.
+
+]0;root@workstation:~[root@workstation ~]# md [K[Kkdir /var/log[Kcal/mysql
+]0;root@workstation:~[root@workstation ~]# semanage fcontext -a -t container_fiel[K[Kle ' [K/var/local/mysqu[Kl(/.*)?'
+ValueError: Type container_file is invalid, must be a file or device type
+]0;root@workstation:~[root@workstation ~]# semanage fcontext -a -t container_file '/var/local/mysql(/.*)?'[C_ '/var/local/mysql(/.*)?'t '/var/local/mysql(/.*)?'^C
+]0;root@workstation:~[root@workstation ~]# man sud[K[K[Kmkdir
+[?1049h[22;0;0t[?1h=MKDIR(1)                                                                       User Commands                                                                       MKDIR(1)[m
+[m
+[1mNAME[0m[m
+       mkdir - make directories[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mmkdir [22m[[4mOPTION[24m]... [4mDIRECTORY[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       Create the DIRECTORY(ies), if they do not already exist.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-m[22m, [1m--mode[22m=[4mMODE[0m[m
+              set file mode (as in chmod), not a=rwx - umask[m
+[m
+       [1m-p[22m, [1m--parents[0m[m
+              no error if existing, make parent directories as needed[m
+[m
+       [1m-v[22m, [1m--verbose[0m[m
+              print a message for each created directory[m
+[m
+       [1m-Z     [22mset SELinux security context of each created directory to the default type[m
+[m
+       [1m--context[22m[=[4mCTX[24m][m
+              like [1m-Z[22m, or if CTX is specified then set the SELinux or SMACK security context to CTX[m
+[m
+       [1m--help [22mdisplay this help and exit[m
+[m
+       [1m--version[0m[m
+              output version information and exit[m
+[m
+[1mAUTHOR[0m[m
+       Written by David MacKenzie.[m
+[m
+[1mREPORTING BUGS[0m[m
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>[m
+       Report mkdir translation bugs to <https://translationproject.org/team/>[m
+[m
+[1mCOPYRIGHT[0m[m
+       Copyright © 2018 Free Software Foundation, Inc.  License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.[m
+[7m Manual page mkdir(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;root@workstation:~[root@workstation ~]# man mkdirsemanage fcontext -a -t container_file '/var/local/mysql(/.*)?'_ '/var/local/mysql(/.*)?'t '/var/local/mysql(/.*)?'
+]0;root@workstation:~[root@workstation ~]# sudo restore [Kcon[1P[1P[1P[1P restorecon[1Prestorecon[C[C[C[C[C[C[C[C[C[C -Rv /var/db/[Kfiles
+restorecon: lstat(/var/dbfiles) failed: No such file or directory
+]0;root@workstation:~[root@workstation ~]# restorecon -Rv /var/dbfiles[K[K[K[K[K[K[Klocal/mysql/
+Relabeled /var/local/mysql from unconfined_u:object_r:var_t:s0 to unconfined_u:object_r:container_file_t:s0
+]0;root@workstation:~[root@workstation ~]# restorecon -Rv /var/local/mysql/[K
+/var/local/mysql not reset as customized by admin to unconfined_u:object_r:container_file_t:s0
+]0;root@workstation:~[root@workstation ~]# ls -ldZ /var/locmy[K[Kal/mysql/
+drwxr-xr-x. 2 root root unconfined_u:object_r:container_file_t:s0 6 Jan 20 11:31 [0m[38;5;33m/var/local/mysql/[0m
+]0;root@workstation:~[root@workstation ~]# ls -ldZ /var/local/mysql/[K
+drwxr-xr-x. 2 root root unconfined_u:object_r:container_file_t:s0 6 Jan 20 11:31 [0m[38;5;33m/var/local/mysql[0m
+]0;root@workstation:~[root@workstation ~]# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+polkitd:x:998:996:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+unbound:x:997:995:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+sssd:x:996:993:User for sssd:/:/sbin/nologin
+setroubleshoot:x:995:992::/var/lib/setroubleshoot:/sbin/nologin
+cockpit-ws:x:994:991:User for cockpit web service:/nonexisting:/sbin/nologin
+cockpit-wsinstance:x:993:990:User for cockpit-ws instances:/nonexisting:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+chrony:x:992:989::/var/lib/chrony:/sbin/nologin
+rngd:x:991:988:Random Number Generator Daemon:/var/lib/rngd:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+student:x:1000:1000:Student User:/home/student:/bin/bash
+devops:x:1001:1001:Devops User:/home/devops:/bin/bash
+geoclue:x:990:987:User for geoclue:/var/lib/geoclue:/sbin/nologin
+rtkit:x:172:172:RealtimeKit:/proc:/sbin/nologin
+pulse:x:171:171:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
+qemu:x:107:107:qemu user:/:/sbin/nologin
+gluster:x:989:982:GlusterFS daemons:/run/gluster:/sbin/nologin
+usbmuxd:x:113:113:usbmuxd user:/:/sbin/nologin
+dnsmasq:x:981:981:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/sbin/nologin
+radvd:x:75:75:radvd user:/:/sbin/nologin
+colord:x:980:980:User for colord:/var/lib/colord:/sbin/nologin
+pipewire:x:979:979:PipeWire System Daemon:/var/run/pipewire:/sbin/nologin
+flatpak:x:978:978:User for flatpak system helper:/:/sbin/nologin
+saslauth:x:977:76:Saslauthd user:/run/saslauthd:/sbin/nologin
+libstoragemgmt:x:976:976:daemon account for libstoragemgmt:/var/run/lsm:/sbin/nologin
+clevis:x:975:975:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/sbin/nologin
+gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+gnome-initial-setup:x:974:974::/run/gnome-initial-setup/:/sbin/nologin
+avahi:x:70:70:Avahi mDNS/DNS-SD Stack:/var/run/avahi-daemon:/sbin/nologin
+]0;root@workstation:~[root@workstation ~]# cat /etc/passwd | grep mysql
+]0;root@workstation:~[root@workstation ~]# chown -Rv 27:27 /var/local/mysql
+changed ownership of '/var/local/mysql' from root:root to 27:27
+]0;root@workstation:~[root@workstation ~]# podman run --name mysql-1 -d -v /var/local/mysql [K:/var/lib/mysql/data -e MYSQL_USER:user1 -E[Ke MYSQL_PASSWORD:mypa55 -e MYSQL_da[K[KDATABASE:items \
+> - e mysql[K[K[K[K[K[K[K[KE [K[Ke MYSQL_ROOT_PASSWORD:m[Kr00tpa55 rhscl[C[C[C[C/mysql-57-rhel7
+Trying to pull registry.access.redhat.com/rhscl/mysql-57-rhel7...
+Getting image source signatures
+Copying blob f1e961fe4c51 [===>----------------------------------] 768.0KiB / 6.9MiB
+Copying blob 1c9f515fc6ab [--------------------------------------] 512.0KiB / 72.7MiB
+[1A[2K[1A[2KCopying blob f1e961fe4c51 [==============>-----------------------] 2.7MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [>-------------------------------------] 1.6MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [--------------------------------------] 32.0KiB / 62.3MiB
+[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 [===================>------------------] 3.6MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [>-------------------------------------] 2.8MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [>-------------------------------------] 1.3MiB / 62.3MiB
+[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 [=======================>--------------] 4.3MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=>------------------------------------] 3.5MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=>------------------------------------] 3.2MiB / 62.3MiB
+[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 [=========================>------------] 4.6MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [=>------------------------------------] 4.8MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [==>-----------------------------------] 4.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 [======================================] 1.5KiB / 1.5KiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 [============================>---------] 5.2MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [==>-----------------------------------] 5.3MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [==>-----------------------------------] 5.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 [===============================>------] 5.8MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [==>-----------------------------------] 6.1MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [====>---------------------------------] 7.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 [=================================>----] 6.1MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [===>----------------------------------] 6.8MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [====>---------------------------------] 7.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 [======================================] 6.9MiB / 6.9MiB
+Copying blob 1c9f515fc6ab [====>---------------------------------] 9.0MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=====>--------------------------------] 9.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=====>--------------------------------] 11.8MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [======>-------------------------------] 12.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======>-------------------------------] 13.1MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=======>------------------------------] 13.1MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [========>-----------------------------] 18.0MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [==========>---------------------------] 17.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========>--------------------------] 23.9MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=============>------------------------] 22.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==============>-----------------------] 28.2MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [===============>----------------------] 26.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===============>----------------------] 31.0MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=================>--------------------] 30.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=================>--------------------] 34.5MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [===================>------------------] 33.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=================>--------------------] 35.1MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [====================>-----------------] 34.7MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===================>------------------] 39.0MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=======================>--------------] 39.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [====================>-----------------] 40.7MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=========================>------------] 41.9MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=====================>----------------] 42.6MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [==========================>-----------] 44.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================>---------------] 43.3MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [===========================>----------] 45.8MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================>---------------] 44.5MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=============================>--------] 49.2MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=======================>--------------] 45.7MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [==============================>-------] 51.0MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=======================>--------------] 46.5MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [===============================>------] 52.5MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [========================>-------------] 48.1MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [=================================>----] 55.4MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [=========================>------------] 49.1MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [==================================>---] 57.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========================>----------] 53.1MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [======================================] 61.6MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===========================>----------] 54.2MiB / 72.7MiB
+Copying blob 9f1840c3b3bd [======================================] 62.3MiB / 62.3MiB
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [============================>---------] 56.0MiB / 72.7MiB
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==============================>-------] 58.7MiB / 72.7MiB
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===============================>------] 61.4MiB / 72.7MiB
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [================================>-----] 63.9MiB / 72.7MiB
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [==================================>---] 67.2MiB / 72.7MiB
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [===================================>--] 69.6MiB / 72.7MiB
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================================] 72.2MiB / 72.7MiB
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab [======================================] 72.7MiB / 72.7MiB
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob f1e961fe4c51 done
+Copying blob 1c9f515fc6ab done
+Copying blob 9f1840c3b3bd done
+Copying blob 1d2c4ce43b78 done
+Copying config 60726b33a0 [======================================] 6.9KiB / 6.9KiB
+[1A[2KCopying config 60726b33a0 done
+Writing manifest to image destination
+Storing signatures
+c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd
+]0;root@workstation:~[root@workstation ~]# container [K[K[K[K[K[K[K[K[K[Kpodman inspect mysql-1 --filter [K[K[K[K[K[K[K[K[Kf [K[K-f '{{ .NetworkSettings.IPAdre[K[Kdress }}' 
+
+]0;root@workstation:~[root@workstation ~]# podman inspect mysql-1 -f '{{ .NetworkSettings.IPAddress }}' [C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmysql-1
+
+]0;root@workstation:~[root@workstation ~]# podman inspect mysql-1
+[
+    {
+        "Id": "c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd",
+        "Created": "2021-01-20T11:42:25.04428761-05:00",
+        "Path": "container-entrypoint",
+        "Args": [
+            "run-mysqld"
+        ],
+        "State": {
+            "OciVersion": "1.0.1-dev",
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 1,
+            "Error": "",
+            "StartedAt": "2021-01-20T11:42:25.550040001-05:00",
+            "FinishedAt": "2021-01-20T11:42:25.637676872-05:00",
+            "Healthcheck": {
+                "Status": "",
+                "FailingStreak": 0,
+                "Log": null
+            }
+        },
+        "Image": "60726b33a00a2c3be60e25c3270a34a9b147db86602f05a71988a1c92a70cebc",
+        "ImageName": "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest",
+        "Rootfs": "",
+        "Pod": "",
+        "ResolvConfPath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/resolv.conf",
+        "HostnamePath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/hostname",
+        "HostsPath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/hosts",
+        "StaticDir": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata",
+        "OCIConfigPath": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/config.json",
+        "OCIRuntime": "runc",
+        "LogPath": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/ctr.log",
+        "ConmonPidFile": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/conmon.pid",
+        "Name": "mysql-1",
+        "RestartCount": 0,
+        "Driver": "overlay",
+        "MountLabel": "system_u:object_r:container_file_t:s0:c774,c793",
+        "ProcessLabel": "system_u:system_r:container_t:s0:c774,c793",
+        "AppArmorProfile": "",
+        "EffectiveCaps": null,
+        "BoundingCaps": [
+            "CAP_CHOWN",
+            "CAP_DAC_OVERRIDE",
+            "CAP_FSETID",
+            "CAP_FOWNER",
+            "CAP_MKNOD",
+            "CAP_NET_RAW",
+            "CAP_SETGID",
+            "CAP_SETUID",
+            "CAP_SETFCAP",
+            "CAP_SETPCAP",
+            "CAP_NET_BIND_SERVICE",
+            "CAP_SYS_CHROOT",
+            "CAP_KILL",
+            "CAP_AUDIT_WRITE"
+        ],
+        "ExecIDs": [],
+        "GraphDriver": {
+            "Name": "overlay",
+            "Data": {
+                "LowerDir": "/var/lib/containers/storage/overlay/582f807423b178c75f2c65a8cebe89f826c546f754d1db0735fa0bda992df2a1/diff:/var/lib/containers/storage/overlay/9c95cbce8d373223f7946f11dcee0ddac8ca11b98e7c3b63e2a4be27681fb1ce/diff:/var/lib/containers/storage/overlay/db5648edd5cee7bb1f348369b60e7ffba46bd3a83ad24a8f079d117181eb3774/diff:/var/lib/containers/storage/overlay/2cab4440f9070965c8454792eee4b122bce5939cc6d21e554469f01e71712a89/diff",
+                "UpperDir": "/var/lib/containers/storage/overlay/e24ca78f0471369fa0c98ddb85e0d0af7012ed4bf44ff54303fb143bded998ab/diff",
+                "WorkDir": "/var/lib/containers/storage/overlay/e24ca78f0471369fa0c98ddb85e0d0af7012ed4bf44ff54303fb143bded998ab/work"
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Name": "",
+                "Source": "/var/local/mysql",
+                "Destination": "/var/lib/mysql/data",
+                "Driver": "",
+                "Mode": "",
+                "Options": [
+                    "rbind"
+                ],
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Dependencies": [],
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": [],
+            "SandboxKey": "",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": ""
+        },
+        "ExitCommand": [
+            "/usr/bin/podman",
+            "--root",
+            "/var/lib/containers/storage",
+            "--runroot",
+            "/var/run/containers/storage",
+            "--log-level",
+            "error",
+            "--cgroup-manager",
+            "systemd",
+            "--tmpdir",
+            "/var/run/libpod",
+            "--runtime",
+            "runc",
+            "--storage-driver",
+            "overlay",
+            "--events-backend",
+            "journald",
+            "container",
+            "cleanup",
+            "c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd"
+        ],
+        "Namespace": "",
+        "IsInfra": false,
+        "Config": {
+            "Hostname": "c32e68559efa",
+            "Domainname": "",
+            "User": "27",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/app-root/src/bin:/opt/app-root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "TERM=xterm",
+                "HOSTNAME=c32e68559efa",
+                "container=oci",
+                "STI_SCRIPTS_URL=image:///usr/libexec/s2i",
+                "PROMPT_COMMAND=. /usr/share/container-scripts/mysql/scl_enable",
+                "MYSQL_VERSION=5.7",
+                "MYSQL_PREFIX=/opt/rh/rh-mysql57/root/usr",
+                "ENV=/usr/share/container-scripts/mysql/scl_enable",
+                "CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/mysql",
+                "ENABLED_COLLECTIONS=rh-mysql57",
+                "DESCRIPTION=MySQL is a multi-user, multi-threaded SQL database server. The container image provides a containerized packaging of the MySQL mysqld daemon and client application. The mysqld server daemon accepts connections from clients and provides access to content from MySQL databases on behalf of the clients.",
+                "HOME=/var/lib/mysql",
+                "PLATFORM=el7",
+                "BASH_ENV=/usr/share/container-scripts/mysql/scl_enable",
+                "APP_ROOT=/opt/app-root",
+                "APP_DATA=/opt/app-root/src",
+                "SUMMARY=MySQL 5.7 SQL database server",
+                "STI_SCRIPTS_PATH=/usr/libexec/s2i"
+            ],
+            "Cmd": [
+                "run-mysqld"
+            ],
+            "Image": "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest",
+            "Volumes": null,
+            "WorkingDir": "/opt/app-root/src",
+            "Entrypoint": "container-entrypoint",
+            "OnBuild": null,
+            "Labels": {
+                "architecture": "x86_64",
+                "authoritative-source-url": "registry.access.redhat.com",
+                "build-date": "2019-10-10T12:14:29.640025",
+                "com.redhat.build-host": "cpt-1006.osbs.prod.upshift.rdu2.redhat.com",
+                "com.redhat.component": "rh-mysql57-container",
+                "com.redhat.license_terms": "https://www.redhat.com/en/about/red-hat-end-user-license-agreements#rhel",
+                "description": "MySQL is a multi-user, multi-threaded SQL database server. The container image provides a containerized packaging of the MySQL mysqld daemon and client application. The mysqld server daemon accepts connections from clients and provides access to content from MySQL databases on behalf of the clients.",
+                "distribution-scope": "public",
+                "io.k8s.description": "MySQL is a multi-user, multi-threaded SQL database server. The container image provides a containerized packaging of the MySQL mysqld daemon and client application. The mysqld server daemon accepts connections from clients and provides access to content from MySQL databases on behalf of the clients.",
+                "io.k8s.display-name": "MySQL 5.7",
+                "io.openshift.expose-services": "3306:mysql",
+                "io.openshift.s2i.scripts-url": "image:///usr/libexec/s2i",
+                "io.openshift.tags": "database,mysql,mysql57,rh-mysql57",
+                "io.s2i.scripts-url": "image:///usr/libexec/s2i",
+                "maintainer": "SoftwareCollections.org <sclorg@redhat.com>",
+                "name": "rhscl/mysql-57-rhel7",
+                "release": "49",
+                "summary": "MySQL 5.7 SQL database server",
+                "url": "https://access.redhat.com/containers/#/registry.access.redhat.com/rhscl/mysql-57-rhel7/images/5.7-49",
+                "usage": "docker run -d -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -e MYSQL_DATABASE=db -p 3306:3306 rhscl/mysql-57-rhel7",
+                "vcs-ref": "abeeaf61d5e8abc22dda8ce057951eee3b38b883",
+                "vcs-type": "git",
+                "vendor": "Red Hat, Inc.",
+                "version": "5.7"
+            },
+            "Annotations": {
+                "io.container.manager": "libpod",
+                "io.kubernetes.cri-o.ContainerType": "sandbox",
+                "io.kubernetes.cri-o.Created": "2021-01-20T11:42:25.04428761-05:00",
+                "io.kubernetes.cri-o.TTY": "false",
+                "io.podman.annotations.autoremove": "FALSE",
+                "io.podman.annotations.init": "FALSE",
+                "io.podman.annotations.privileged": "FALSE",
+                "io.podman.annotations.publish-all": "FALSE",
+                "org.opencontainers.image.stopSignal": "15"
+            },
+            "StopSignal": 15
+        },
+        "HostConfig": {
+            "Binds": [
+                "/var/local/mysql:/var/lib/mysql/data:rw,rprivate,rbind"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "k8s-file",
+                "Config": null
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": [],
+            "CapDrop": [],
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": [],
+            "IpcMode": "",
+            "Cgroup": "",
+            "Cgroups": "default",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": [],
+            "Tmpfs": {},
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 65536000,
+            "Runtime": "oci",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DiskQuota": 0,
+            "KernelMemory": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": -1,
+            "OomKillDisable": false,
+            "PidsLimit": 4096,
+            "Ulimits": [
+                {
+                    "Name": "RLIMIT_NOFILE",
+                    "Soft": 1048576,
+                    "Hard": 1048576
+                },
+                {
+                    "Name": "RLIMIT_NPROC",
+                    "Soft": 1048576,
+                    "Hard": 1048576
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0
+        }
+    }
+]
+
+]0;root@workstation:~[root@workstation ~]# q[Kpodman inspect mysql-1 | less
+[?1049h[22;0;0t[?1h=[
+    {
+        "Id": "c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd",
+        "Created": "2021-01-20T11:42:25.04428761-05:00",
+        "Path": "container-entrypoint",
+        "Args": [
+            "run-mysqld"
+        ],
+        "State": {
+            "OciVersion": "1.0.1-dev",
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 1,
+            "Error": "",
+            "StartedAt": "2021-01-20T11:42:25.550040001-05:00",
+            "FinishedAt": "2021-01-20T11:42:25.637676872-05:00",
+            "Healthcheck": {
+                "Status": "",
+                "FailingStreak": 0,
+                "Log": null
+            }
+        },
+        "Image": "60726b33a00a2c3be60e25c3270a34a9b147db86602f05a71988a1c92a70cebc",
+        "ImageName": "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest",
+        "Rootfs": "",
+        "Pod": "",
+        "ResolvConfPath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/resolv.conf",
+        "HostnamePath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/hostname",
+        "HostsPath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/hosts",
+        "StaticDir": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata",
+        "OCIConfigPath": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/config.json",
+        "OCIRuntime": "runc",
+        "LogPath": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/ctr.log",
+        "ConmonPidFile": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/conmon.pid",
+        "Name": "mysql-1",
+        "RestartCount": 0,
+:[K[K?[K[K[7mNo previous regular expression  (press RETURN)[27m[42;1H[K[K        "Driver": "overlay",
+:[K[K[7mNo next tag  (press RETURN)[27m[42;1H[K[K:[K[K[HM[
+[42;1H[K:[K[K:[K[K:[K[K[K:[K[K:[K[K?[KAA[Kdd[Kdd[Krr[Kee[Kss[Kss[K[1;1H[
+[2;1H    {
+[3;1H        "Id": "c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd",
+[4;1H        "Created": "2021-01-20T11:42:25.04428761-05:00",
+[5;1H        "Path": "container-entrypoint",
+[6;1H        "Args": [
+[7;1H            "run-mysqld"
+[8;1H        ],
+[9;1H        "State": {
+[10;1H            "OciVersion": "1.0.1-dev",
+[11;1H            "Status": "exited",
+[12;1H            "Running": false,
+[13;1H            "Paused": false,
+[14;1H            "Restarting": false,
+[15;1H            "OOMKilled": false,
+[16;1H            "Dead": false,
+[17;1H            "Pid": 0,
+[18;1H            "ExitCode": 1,
+[19;1H            "Error": "",
+[20;1H            "StartedAt": "2021-01-20T11:42:25.550040001-05:00",
+[21;1H            "FinishedAt": "2021-01-20T11:42:25.637676872-05:00",
+[22;1H            "Healthcheck": {
+[23;1H                "Status": "",
+[24;1H                "FailingStreak": 0,
+[25;1H                "Log": null
+[26;1H            }
+[27;1H        },
+[28;1H        "Image": "60726b33a00a2c3be60e25c3270a34a9b147db86602f05a71988a1c92a70cebc",
+[29;1H        "ImageName": "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest",
+[30;1H        "Rootfs": "",
+[31;1H        "Pod": "",
+[32;1H        "ResolvConfPath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/resolv.conf",
+[33;1H        "HostnamePath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/hostname",
+[34;1H        "HostsPath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/hosts",
+[35;1H        "StaticDir": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata",
+[36;1H        "OCIConfigPath": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/config.json",
+[37;1H        "OCIRuntime": "runc",
+[38;1H        "LogPath": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/ctr.log",
+[39;1H        "ConmonPidFile": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/conmon.pid",
+[40;1H        "Name": "mysql-1",
+[41;1H        "RestartCount": 0,
+[42;1H[1;1H[
+[2;1H    {
+[3;1H        "Id": "c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd",
+[4;1H        "Created": "2021-01-20T11:42:25.04428761-05:00",
+[5;1H        "Path": "container-entrypoint",
+[6;1H        "Args": [
+[7;1H            "run-mysqld"
+[8;1H        ],
+[9;1H        "State": {
+[10;1H            "OciVersion": "1.0.1-dev",
+[11;1H            "Status": "exited",
+[12;1H            "Running": false,
+[13;1H            "Paused": false,
+[14;1H            "Restarting": false,
+[15;1H            "OOMKilled": false,
+[16;1H            "Dead": false,
+[17;1H            "Pid": 0,
+[18;1H            "ExitCode": 1,
+[19;1H            "Error": "",
+[20;1H            "StartedAt": "2021-01-20T11:42:25.550040001-05:00",
+[21;1H            "FinishedAt": "2021-01-20T11:42:25.637676872-05:00",
+[22;1H            "Healthcheck": {
+[23;1H                "Status": "",
+[24;1H                "FailingStreak": 0,
+[25;1H                "Log": null
+[26;1H            }
+[27;1H        },
+[28;1H        "Image": "60726b33a00a2c3be60e25c3270a34a9b147db86602f05a71988a1c92a70cebc",
+[29;1H        "ImageName": "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest",
+[30;1H        "Rootfs": "",
+[31;1H        "Pod": "",
+[32;1H        "ResolvConfPath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/resolv.conf",
+[33;1H        "HostnamePath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/hostname",
+[34;1H        "HostsPath": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/hosts",
+[35;1H        "StaticDir": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata",
+[36;1H        "OCIConfigPath": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/config.json",
+[37;1H        "OCIRuntime": "runc",
+[38;1H        "LogPath": "/var/lib/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/ctr.log",
+[39;1H        "ConmonPidFile": "/var/run/containers/storage/overlay-containers/c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd/userdata/conmon.pid",
+[40;1H        "Name": "mysql-1",
+[41;1H        "RestartCount": 0,
+[42;1H[K[7mPattern not found  (press RETURN)[27m[42;1H[K[K [KESCESC[KOO[KBB[K        "Driver": "overlay",
+:[K[K [KESCESC[KOO[KBB[K        "MountLabel": "system_u:object_r:container_file_t:s0:c774,c793",
+:[K[K [KESCESC[KOO[KBB[K        "ProcessLabel": "system_u:system_r:container_t:s0:c774,c793",
+:[K[K [KESCESC[KOO[KBB[K        "AppArmorProfile": "",
+:[K[K [KESCESC[KOO[KBB[K        "EffectiveCaps": null,
+:[K[K [KESCESC[KOO[KBB[K        "BoundingCaps": [
+:[K[K [KESCESC[KOO[KBB[K            "CAP_CHOWN",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_DAC_OVERRIDE",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_FSETID",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_FOWNER",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_MKNOD",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_NET_RAW",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_SETGID",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_SETUID",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_SETFCAP",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_SETPCAP",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_NET_BIND_SERVICE",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_SYS_CHROOT",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_KILL",
+:[K[K [KESCESC[KOO[KBB[K            "CAP_AUDIT_WRITE"
+:[K[K        ],
+        "ExecIDs": [],
+        "GraphDriver": {
+            "Name": "overlay",
+            "Data": {
+                "LowerDir": "/var/lib/containers/storage/overlay/582f807423b178c75f2c65a8cebe89f826c546f754d1db0735fa0bda992df2a1/diff:/var/lib/containers/storage/overlay/9c95c bce8d373223f7946f11dcee0ddac8ca11b98e7c3b63e2a4be27681fb1ce/diff:/var/lib/containers/storage/overlay/db5648edd5cee7bb1f348369b60e7ffba46bd3a83ad24a8f079d117181eb3774/diff:/var/ lib/containers/storage/overlay/2cab4440f9070965c8454792eee4b122bce5939cc6d21e554469f01e71712a89/diff",
+                "UpperDir": "/var/lib/containers/storage/overlay/e24ca78f0471369fa0c98ddb85e0d0af7012ed4bf44ff54303fb143bded998ab/diff",
+                "WorkDir": "/var/lib/containers/storage/overlay/e24ca78f0471369fa0c98ddb85e0d0af7012ed4bf44ff54303fb143bded998ab/work"
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Name": "",
+                "Source": "/var/local/mysql",
+                "Destination": "/var/lib/mysql/data",
+                "Driver": "",
+                "Mode": "",
+                "Options": [
+                    "rbind"
+                ],
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Dependencies": [],
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "",
+            "HairpinMode": false,
+            "LinkLocalIPv6[7mAddress[27m": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": [],
+            "SandboxKey": "",
+            "SecondaryIP[7mAddress[27mes": null,
+            "SecondaryIPv6[7mAddress[27mes": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6[7mAddress[27m": "",
+:[K[K [KESCESC[KOO[KBB[K            "GlobalIPv6PrefixLen": 0,
+:[K[K [KESCESC[KOO[KBB[K            "IP[7mAddress[27m": "",
+:[K[K [KESCESC[KOO[KBB[K            "IPPrefixLen": 0,
+:[K[K [KESCESC[KOO[KBB[K            "IPv6Gateway": "",
+:[K[K [KESCESC[KOO[KBB[K            "Mac[7mAddress[27m": ""
+:[K[K[?1l>[?1049l[23;0;0t]0;root@workstation:~[root@workstation ~]# podman ps
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+]0;root@workstation:~[root@workstation ~]# podman psinspect mysql-1 | less[K-f '{{ .NetworkSettings.IPAddress }}' mysql-1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmysql-1 -f '{{ .NetworkSettings.IPAddress }}' [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER:user1 -e MYSQL_PASSWORD:mypa55 -e MYSQL_DATABASE:items -e MYSQL_ROOT_PASSSWORD:r00tpa55 rhscl/mysql-57-rhel7[C[C[C[C[C[C[C[C[1P[1@=[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Citems -e MYSQL_ROOT_PASS[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C=items -e MYSQL_ROOT_PAS[1@S[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASS[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PAS[1@S[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cuser1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASS[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PAS[1@S[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+Error: error creating container storage: the container name "mysql-1" is already in use by "c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd". You have to remove that container to be able to reuse that name.: that name is already in use
+]0;root@workstation:~[root@workstation ~]# podman -[Kps 
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+]0;root@workstation:~[root@workstation ~]# podman ps myssql[K[K[K[Ksql-1
+Error: `podman ps` takes no arguments
+]0;root@workstation:~[root@workstation ~]# podman ps mysql-1[1P mysql-1[1P mysql-1[1Pmysql-1[C mysql-1[1Pmysql-1[1Pysql-1[1Psql-1[1Pql-1[1Pl-1[1P-1[1P1[K[K[K[K[K[K[K[Kpodman inspect [K[K[K[K[K[K[K[K[K rm mysql-1
+c32e68559efaee93af05e4b69ab1f6fc7d536f6bdc239010b9c7a5ba519156bd
+]0;root@workstation:~[root@workstation ~]# pdman[K[K[K[Kodman ps
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+]0;root@workstation:~[root@workstation ~]# podman psrm mysql-1ps[C[C[C[C[C[C[C[C[Krun --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSSWORD=r00tpa55 rhscl/mysql-57-rhel7[Aps[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSSWORD=r00tpa55 rhscl/mysql-57-rhel7
+8875455d45e1a568231abb74ff8ad3cf4d75a641ecc6bbd46447d28a07f95871
+]0;root@workstation:~[root@workstation ~]# podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSSWORD=r00tpa55 rhscl/mysql-57-rhel7[Aps[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm mysql-1ps[C[C[C[C[C[C[C[C[Krun --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSSWORD=r00tpa55 rhscl/mysql-57-rhel7[Aps[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cinspect mysql-1 | less[K-f '{{ .NetworkSettings.IPAddress }}' mysql-1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmysql-1 -f '{{ .NetworkSettings.IPAddress }}' [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P-f '{{ .NetworkSettings.IPAddress }}' mysql-1
+10.88.0.10
+]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -pmypa55 -h 127.[K[K[K0.88.0.10 < home[K[K[K[K/home/student/DO180/labs/manage-review/
+ERROR: Can't initialize batch_readline - may be the input source is a directory or a block device.
+]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -pmypa55 -h 10.88.0.10 < /home/student/DO180/labs/manage-review/db.sql 
+ERROR 1046 (3D000) at line 1: No database selected
+]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -pmypa55 -h 10.88.0.10 < /home/student/DO180/labs/manage-review/db.sql [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@-[1@d[1@i[1@t[1@e[1@m[1@s[1@ 
+mysql: unknown option '-d'
+]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -pmypa55 -h 10.88.0.10 -ditems < /home/student/DO180/labs/manage-review/db.sql [C[1P[1P
+]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -pmypa55 -h 10.88.0.10 items < /home/student/DO180/labs/manage-review/db.sql [1@-[1P[1@-[1@e[1@ [1@"[1@S[1@E[1@L[1@E[1@C[1@T[1@ [1@*[1@F[1@R[1@O[1@M[1@ [1@o[1P[1@I[1@T[1P[1@t[1@e[1@,[1P[1@m[1@"[1P[1P[2@5~[2@5~[2@5~[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P 
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+]0;root@workstation:~[root@workstation ~]# por[Kdman st[Ktop mysql-1
+8875455d45e1a568231abb74ff8ad3cf4d75a641ecc6bbd46447d28a07f95871
+]0;root@workstation:~[root@workstation ~]# podman stop mysql-1mysql -uuser1 -pmypa55 -h 10.88.0.10 items -e "SELECT *FROM Item" [25@< /home/student/DO180/labs/manage-review/db.sql[C[2@-d[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Ppodman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql-1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSSWORD=r00tpa55 rhscl/mysql-57-rhel7[Aps[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm mysql-1ps[C[C[C[C[C[C[C[C[Krun --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSSWORD=r00tpa55 rhscl/mysql-57-rhel7[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASS[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSW[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASS[1@W[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-2 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PAS[1@S[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PA[C[1@S[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_P[1@A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_[1@P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT[1@_[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C3-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROO[1@T[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C3-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_RO[1@O[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C0-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_R[C[1@O[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C6-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_[1@R[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL[1@_[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C3-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQ[1@L[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C3-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYS[1@Q[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C0-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MY[1@S[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C6-e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e M[1@Y[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e [1@M[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d
+]0;root@workstation:~[root@workstation ~]# podman ps
+CONTAINER ID  IMAGE                                                   COMMAND     CREATED         STATUS             PORTS                    NAMES
+580d8d08aa31  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  run-mysqld  29 seconds ago  Up 28 seconds ago  0.0.0.0:13306->3306/tcp  mysql-2
+]0;root@workstation:~[root@workstation ~]# podman ps -a
+CONTAINER ID  IMAGE                                                   COMMAND     CREATED         STATUS                    PORTS                    NAMES
+580d8d08aa31  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  run-mysqld  2 minutes ago   Up 2 minutes ago          0.0.0.0:13306->3306/tcp  mysql-2
+8875455d45e1  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  run-mysqld  14 minutes ago  Exited (0) 3 minutes ago                           mysql-1
+]0;root@workstation:~[root@workstation ~]# podman ps -a > /tmp/my-containers
+]0;root@workstation:~[root@workstation ~]# podman exec mysql-2 /[Kna[K[Kbash
+]0;root@workstation:~[root@workstation ~]# podman exec mysql-2 bash[C[1@ [1@-[1@i[1@t
+[?1034hbash-4.2$ myqsl -uroot
+bash: myqsl: command not found
+bash-4.2$ mysql -uroot
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| items              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use items;
+Database changed
+mysql> SEECT [K[K[KLECT * FROM Itm[Kem;
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+2 rows in set (0.01 sec)
+
+mysql> exit
+Bye
+bash-4.2$ exit
+exit
+]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -h workstatino.[K[K[Kon.lab.example.com \[K-pmp[Kypa55 -p13306 items
+ERROR 2002 (HY000): Can't connect to MySQL server on 'workstation.lab.example.com' (115)
+(B[0;7m(B[m]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -h workstation.lab.example.com -pmypa55 -p13306 items[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@1[1@2[1@7[1@.[1@0[1@.[1@0[1@.[1@1
+ERROR 2002 (HY000): Can't connect to MySQL server on '127.0.0.1' (115)
+(B[0;7m(B[m]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -h 127.0.0.1 -pmypa55 -p13306 items^C
+]0;root@workstation:~[root@workstation ~]# podman ps
+CONTAINER ID  IMAGE                                                   COMMAND     CREATED         STATUS             PORTS                    NAMES
+580d8d08aa31  registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  run-mysqld  28 minutes ago  Up 28 minutes ago  0.0.0.0:13306->3306/tcp  mysql-2
+]0;root@workstation:~[root@workstation ~]# pdman ins[K[K[K[K[K[K[K[Kodman inspect mysql-2  | less
+[?1049h[22;0;0t[?1h=[
+    {
+        "Id": "580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d",
+        "Created": "2021-01-20T12:09:35.446617517-05:00",
+        "Path": "container-entrypoint",
+        "Args": [
+            "run-mysqld"
+        ],
+        "State": {
+            "OciVersion": "1.0.1-dev",
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 6937,
+            "ConmonPid": 6926,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2021-01-20T12:09:36.043975952-05:00",
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Healthcheck": {
+                "Status": "",
+                "FailingStreak": 0,
+                "Log": null
+            }
+        },
+        "Image": "60726b33a00a2c3be60e25c3270a34a9b147db86602f05a71988a1c92a70cebc",
+        "ImageName": "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest",
+        "Rootfs": "",
+        "Pod": "",
+        "ResolvConfPath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/resolv.conf",
+        "HostnamePath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/hostname",
+        "HostsPath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/hosts",
+        "StaticDir": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata",
+        "OCIConfigPath": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/config.json",
+        "OCIRuntime": "runc",
+        "LogPath": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/ctr.log",
+        "ConmonPidFile": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/conmon.pid",
+        "Name": "mysql-2",
+:[K[K/[KNN[Kee[Ktt[Kww[Koo[Krr[Kkk[K[1;1H[
+[2;1H    {
+[3;1H        "Id": "580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d",
+[4;1H        "Created": "2021-01-20T12:09:35.446617517-05:00",
+[5;1H        "Path": "container-entrypoint",
+[6;1H        "Args": [
+[7;1H            "run-mysqld"
+[8;1H        ],
+[9;1H        "State": {
+[10;1H            "OciVersion": "1.0.1-dev",
+[11;1H            "Status": "running",
+[12;1H            "Running": true,
+[13;1H            "Paused": false,
+[14;1H            "Restarting": false,
+[15;1H            "OOMKilled": false,
+[16;1H            "Dead": false,
+[17;1H            "Pid": 6937,
+[18;1H            "ConmonPid": 6926,
+[19;1H            "ExitCode": 0,
+[20;1H            "Error": "",
+[21;1H            "StartedAt": "2021-01-20T12:09:36.043975952-05:00",
+[22;1H            "FinishedAt": "0001-01-01T00:00:00Z",
+[23;1H            "Healthcheck": {
+[24;1H                "Status": "",
+[25;1H                "FailingStreak": 0,
+[26;1H                "Log": null
+[27;1H            }
+[28;1H        },
+[29;1H        "Image": "60726b33a00a2c3be60e25c3270a34a9b147db86602f05a71988a1c92a70cebc",
+[30;1H        "ImageName": "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest",
+[31;1H        "Rootfs": "",
+[32;1H        "Pod": "",
+[33;1H        "ResolvConfPath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/resolv.conf",
+[34;1H        "HostnamePath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/hostname",
+[35;1H        "HostsPath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/hosts",
+[36;1H        "StaticDir": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata",
+[37;1H        "OCIConfigPath": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/config.json",
+[38;1H        "OCIRuntime": "runc",
+[39;1H        "LogPath": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/ctr.log",
+[40;1H        "ConmonPidFile": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/conmon.pid",
+[41;1H        "Name": "mysql-2",
+[42;1H[1;1H[
+[2;1H    {
+[3;1H        "Id": "580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d",
+[4;1H        "Created": "2021-01-20T12:09:35.446617517-05:00",
+[5;1H        "Path": "container-entrypoint",
+[6;1H        "Args": [
+[7;1H            "run-mysqld"
+[8;1H        ],
+[9;1H        "State": {
+[10;1H            "OciVersion": "1.0.1-dev",
+[11;1H            "Status": "running",
+[12;1H            "Running": true,
+[13;1H            "Paused": false,
+[14;1H            "Restarting": false,
+[15;1H            "OOMKilled": false,
+[16;1H            "Dead": false,
+[17;1H            "Pid": 6937,
+[18;1H            "ConmonPid": 6926,
+[19;1H            "ExitCode": 0,
+[20;1H            "Error": "",
+[21;1H            "StartedAt": "2021-01-20T12:09:36.043975952-05:00",
+[22;1H            "FinishedAt": "0001-01-01T00:00:00Z",
+[23;1H            "Healthcheck": {
+[24;1H                "Status": "",
+[25;1H                "FailingStreak": 0,
+[26;1H                "Log": null
+[27;1H            }
+[28;1H        },
+[29;1H        "Image": "60726b33a00a2c3be60e25c3270a34a9b147db86602f05a71988a1c92a70cebc",
+[30;1H        "ImageName": "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest",
+[31;1H        "Rootfs": "",
+[32;1H        "Pod": "",
+[33;1H        "ResolvConfPath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/resolv.conf",
+[34;1H        "HostnamePath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/hostname",
+[35;1H        "HostsPath": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/hosts",
+[36;1H        "StaticDir": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata",
+[37;1H        "OCIConfigPath": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/config.json",
+[38;1H        "OCIRuntime": "runc",
+[39;1H        "LogPath": "/var/lib/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/ctr.log",
+[40;1H        "ConmonPidFile": "/var/run/containers/storage/overlay-containers/580d8d08aa313be6b924e304d92485017d9d07748f90d4d4e1ef02e9256d653d/userdata/conmon.pid",
+[41;1H        "Name": "mysql-2",
+[42;1H...skipping...
+        "[7mNetwork[27mSettings": {
+            "Bridge": "",
+            "SandboxID": "",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": [
+                {
+                    "hostPort": 13306,
+                    "containerPort": 3306,
+                    "protocol": "tcp",
+                    "hostIP": ""
+                }
+            ],
+            "SandboxKey": "/var/run/netns/cni-a20c11e5-4f02-0275-2db5-2d62caeb436f",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "10.88.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "10.88.0.11",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "2e:0a:4b:cd:c8:05"
+        },
+        "ExitCommand": [
+            "/usr/bin/podman",
+            "--root",
+            "/var/lib/containers/storage",
+            "--runroot",
+            "/var/run/containers/storage",
+            "--log-level",
+            "error",
+            "--cgroup-manager",
+            "systemd",
+            "--tmpdir",
+            "/var/run/libpod",
+            "--runtime",
+            "runc",
+            "--storage-driver",
+:[K[K[?1l>[?1049l[23;0;0t]0;root@workstation:~[root@workstation ~]# podman inspect mysql-2  | lessps[Kmysql -uuser1 -h 127.0.0.1 -pmypa55 -p13306 items[1@1[1P[1P[1@0[C[1@8[1@8[1P
+ERROR 1045 (28000): Access denied for user 'user1'@'10.88.0.1' (using password: YES)
+(B[0;7m(B[m]0;root@workstation:~[root@workstation ~]# mysql -uuser1 -h 10.88.0.11 -pmypa55 -p13306 items[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Ppodman inspect mysql-2  | less[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmysql -uuser1 -h 10.88.0.11 -pmypa55 -p13306 items[C[C[C[C[C[1P[1P[1P[1P[1P[1@r[1@o[1@o[1@t[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1@r[1@0[1@0[1@t[1@p[1@a[1@5[1@5
+ERROR 1045 (28000): Access denied for user 'root'@'10.88.0.1' (using password: YES)
+(B[0;7m(B[m]0;root@workstation:~[root@workstation ~]# mysql -uroot -h 10.88.0.11 -pr00tpa55 -p13306 items[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Puser1 -h 10.88.0.11 -pmy[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Ppodman inspect mysql-2  | less[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmysql -uuser1 -h 10.88.0.11 -pmypa55 -p13306 items^C
+]0;root@workstation:~[root@workstation ~]# podman excel [K[K[K[Kec -t [Ki mysql-1[K2 bash
+[?1034hbash-4.2$ mysql -uuser1
+ERROR 1045 (28000): Access denied for user 'user1'@'localhost' (using password: NO)
+bash-4.2$ mysql -uroot
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select[K[K[K[K[K[Kinsert into Itm (description,done) values ('Finished lab',1 [K 1);
+ERROR 1046 (3D000): No database selected
+mysql> insert into Itm (description,done) values ('Finished lab', 1);[8Ginsert into I[1@et[Ptt[1@em[1@iI[1@tI[1@eI[1@mI[1@sI[1@.I
+Query OK, 1 row affected (0.00 sec)
+
+mysql> exit
+Bye
+bash-4.2$ exit
+exit
+]0;root@workstation:~[root@workstation ~]# sudo podman rm mysql-1
+8875455d45e1a568231abb74ff8ad3cf4d75a641ecc6bbd46447d28a07f95871
+]0;root@workstation:~[root@workstation ~]# lab manage-review grade
+
+Grading the student's work for the Lab: Managing Containers
+
+ · Checking if the /var/local/mysql folder exists..............  [1;32mPASS[0;39m
+ · Checking if owner was changed...............................  [1;32mPASS[0;39m
+ · Checking if the container mysql-1 was created...............  [1;32mPASS[0;39m
+ · Checking if the mysql-2 container is running................  [1;32mPASS[0;39m
+ · Checking tables for the 'Finished lab' row..................  [1;32mPASS[0;39m
+]0;root@workstation:~[root@workstation ~]# lab mange-revew finish
+Error: unknown problem specified and not found, mange-revew
+]0;root@workstation:~[root@workstation ~]# lab mange-revew finish[1@a
+Error: unknown problem specified and not found, manage-revew
+]0;root@workstation:~[root@workstation ~]# lab manage-revew finish[1@i
+
+Completing the Lab: Managing Containers
+
+ · Removing the /var/local/mysql folder........................  [1;36mSUCCESS[0;39m
+ · Removing the fcontext for /var/local/mysql..................  [1;36mSUCCESS[0;39m
+ · Stopping mysql-1 container..................................  [1;36mSUCCESS[0;39m
+ · Removing mysql-1 container..................................  [1;36mSUCCESS[0;39m
+ · Stopping mysql-2 container..................................  [1;36mSUCCESS[0;39m
+ · Removing mysql-2 container..................................  [1;36mSUCCESS[0;39m
+ · Removing MySQL container image..............................  [1;36mSUCCESS[0;39m
+ · Removing temporary file.....................................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# exit
+exit
+Script done, file is /home/student/DO180-apps/logs/manage-review.log
+]0;root@workstation:~[root@workstation ~]# script /home/student/DO180-apps/logs/image-operations.log
+Script started, file is /home/student/DO180-apps/logs/image-operations.log
+]0;root@workstation:~[root@workstation ~]# lab image-operations start
+
+Setting up workstation for the GE: Creating a Custom Apache Container Image
+
+ · Checking podman configuration...............................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# sudo podman login quay.io
+Username: MartinRapa
+Password: 
+Login Succeeded!
+]0;root@workstation:~[root@workstation ~]# sudo podman run -d --name official-https[Kd -p 8180:80 quay.io/redhatttrainning[K[K[K[K[K[K[K[K[K[Ktraining/httpd-parent
+Trying to pull quay.io/redhattraining/httpd-parent...
+Getting image source signatures
+Copying blob a3ed95caeb02 .                                        
+Copying blob 6a5240d60dc4 .                                        
+Copying blob a3ed95caeb02 .                                        
+[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 ..                                       
+Copying blob 6a5240d60dc4 ..                                       
+Copying blob a3ed95caeb02 ..                                       
+Copying blob a3ed95caeb02 .                                        
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 .                                        
+Copying blob a3ed95caeb02 .                                        
+Copying blob a3ed95caeb02 .                                        
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 ..                                       
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 ..                                       
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 ...                                      
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 .                                        
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 ....                                     
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac                                          
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a .                                        
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac                                          
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac                                          
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac                                          
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac .                                        
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ..                                       
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ...                                      
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac ....                                     
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac done
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+Writing manifest to image destination
+Storing signatures
+3a0588dd7e49631222ca1933de91f1c001e1f069b413e1415d985a2efb4ba59c
+]0;root@workstation:~[root@workstation ~]# podman exec official-httpd[K[K-official-htttofficial-httiofficial-htt official-htt[C[C[C[C[C[C[C[C[C[C[C[Cd [K[K[Ktpd bash
+bash-4.4# echo "DO180 Page" > /var/www/html/do180.html
+bash-4.4# exit
+exit
+]0;root@workstation:~[root@workstation ~]# curl 127.0.0.1:8180/do180.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# sudo podman diff official-httpd 
+C /root
+A /root/.bash_history
+C /run/httpd
+A /run/httpd/cgisock.1
+A /run/httpd/httpd.pid
+C /tmp
+C /var
+C /var/log
+C /var/log/httpd
+A /var/log/httpd/access_log
+A /var/log/httpd/error_log
+C /var/www
+C /var/www/html
+A /var/www/html/do180.html
+]0;root@workstation:~[root@workstation ~]# podman stop offi|[Kcial-httpd 
+3a0588dd7e49631222ca1933de91f1c001e1f069b413e1415d985a2efb4ba59c
+]0;root@workstation:~[root@workstation ~]# sud[K[K[Kpodman commit -a 'Martin' official-httpd do180-custom-httpd
+Getting image source signatures
+Copying blob 24d85c895b6b [--------------------------------------] 0b / 0b
+Copying blob c613b100be16 [--------------------------------------] 0b / 0b
+Copying blob 574bcc187eda [--------------------------------------] 0b / 0b
+Copying blob 7f9108fde4a1 [--------------------------------------] 0b / 0b
+Copying blob 0b8274880a1d [======================================] 10.5KiB / 10.5KiB
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 574bcc187eda skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 0b8274880a1d done
+Copying config e6233caf13 [======================================] 4.1KiB / 4.1KiB
+[1A[2KCopying config e6233caf13 done
+Writing manifest to image destination
+Storing signatures
+e6233caf1362f22492e98a872e012565645f678db7a86ba089e4130023a898d1
+]0;root@workstation:~[root@workstation ~]# su[K[Kpodman images
+REPOSITORY                            TAG      IMAGE ID       CREATED          SIZE
+localhost/do180-custom-httpd          latest   e6233caf1362   12 seconds ago   236 MB
+quay.io/redhattraining/httpd-parent   latest   4346d3cace25   19 months ago    236 MB
+]0;root@workstation:~[root@workstation ~]# source /usr/local/etc/ocp4.config 
+]0;root@workstation:~[root@workstation ~]# cat &[K/usr/local/etc/ocp4.config 
+RHT_OCP4_MASTER_API=https://api.na45.prod.nextcle.com:6443
+RHT_OCP4_WILDCARD_DOMAIN=apps.na45.prod.nextcle.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.na45.prod.nextcle.com
+RHT_OCP4_DEV_USER=martinrapa
+RHT_OCP4_DEV_PASSWORD=77edd950144948b5a09e
+RHT_OCP4_GITHUB_USER=MartinRapa
+RHT_OCP4_QUAY_USER=martinrapa
+]0;root@workstation:~[root@workstation ~]# du[K[Kpodman tag do180-custom-htptd[K[K[K[Kttpd quay.io/${RHT_OSCP4_QUAY_USER}/do180-custom-httpd:v1.0
+Error: error adding 'quay.io//do180-custom-httpd:v1.0' to image "do180-custom-httpd": invalid reference format
+]0;root@workstation:~[root@workstation ~]# podman tag do180-custom-httpd quay.io/${RHT_OSCP4_QUAY_USER}/do180-custom-httpd:v1.0
+Error: error adding 'quay.io//do180-custom-httpd:v1.0' to image "do180-custom-httpd": invalid reference format
+]0;root@workstation:~[root@workstation ~]# podman tag -?
+Error: unknown shorthand flag: '?' in -?
+]0;root@workstation:~[root@workstation ~]# podman tag --?
+Error: unknown flag: --?
+]0;root@workstation:~[root@workstation ~]# ${RHT_OSCP4_QUAY_USER}
+]0;root@workstation:~[root@workstation ~]# echo ${RHT_OSCP4_QUAY_USER}
+
+]0;root@workstation:~[root@workstation ~]# echo ${RHT_OSCP4_QUAY_USER}[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P${RHT_OSCP4_QUAY_USER}[8Ppodman tag --?[1P?do180-custom-httpd quay.io/${RHT_OSCP4_QUAY_USER}/do180-custom-httpd:v1.0[1PCP4_QUAY_USER}/do180-custom-httpd:v1.0
+]0;root@workstation:~[root@workstation ~]# sudo [K[K[K[K[Kpodman images
+REPOSITORY                              TAG      IMAGE ID       CREATED         SIZE
+quay.io/martinrapa/do180-custom-httpd   v1.0     e6233caf1362   9 minutes ago   236 MB
+localhost/do180-custom-httpd            latest   e6233caf1362   9 minutes ago   236 MB
+quay.io/redhattraining/httpd-parent     latest   4346d3cace25   19 months ago   236 MB
+]0;root@workstation:~[root@workstation ~]# podman push quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+Getting image source signatures
+Copying blob 0b8274880a1d [--------------------------------------] 8b / 10.5KiB
+[1A[2KCopying blob 0b8274880a1d [--------------------------------------] 8b / 10.5KiB
+[1A[2KCopying blob 0b8274880a1d [--------------------------------------] 8b / 10.5KiB
+[1A[2KCopying blob 0b8274880a1d [======================================] 10.5KiB / 10.5KiB
+[1A[2KCopying blob 0b8274880a1d done
+[1A[2KCopying blob 0b8274880a1d done
+[1A[2KCopying blob 0b8274880a1d done
+[1A[2KCopying blob 0b8274880a1d done
+Copying blob 24d85c895b6b [--------------------------------------] 0b / 0b
+Copying blob c613b100be16 [--------------------------------------] 0b / 0b
+Copying blob 7f9108fde4a1 [--------------------------------------] 0b / 0b
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 0b8274880a1d done
+Copying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 574bcc187eda [--------------------------------------] 0b / 0b
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 0b8274880a1d done
+Copying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 574bcc187eda skipped: already exists
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob 0b8274880a1d done
+Copying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 574bcc187eda skipped: already exists
+Copying config e6233caf13 [--------------------------------------] 0b / 4.1KiB
+[1A[2KCopying config e6233caf13 [--------------------------------------] 0b / 4.1KiB
+[1A[2KCopying config e6233caf13 [--------------------------------------] 0b / 4.1KiB
+[1A[2KCopying config e6233caf13 [======================================] 4.1KiB / 4.1KiB
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+[1A[2KCopying config e6233caf13 done
+Writing manifest to image destination
+Copying config e6233caf13 [--------------------------------------] 0b / 4.1KiB
+[1A[2KCopying config e6233caf13 [======================================] 4.1KiB / 4.1KiB
+[1A[2KCopying config e6233caf13 done
+Writing manifest to image destination
+Writing manifest to image destination
+Storing signatures
+]0;root@workstation:~[root@workstation ~]# podan pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+bash: podan: command not found...
+]0;root@workstation:~[root@workstation ~]# podan pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@m
+3339f79ac13d02888cd60b1f8b6ff7aae4d00c085be5bc0390eca8212503a711
+]0;root@workstation:~[root@workstation ~]# podman run -d --name test-hhtpd [K[K[K[K[K[Khttpd -p 8280:9[K80 quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+cc012d609ec131d5915ecfbdd9b8d10e89468e54b600e0252131c38ae17c8cde
+]0;root@workstation:~[root@workstation ~]# curl httpd:[K[K://localhost:8280/do180.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# lab image-operations finish
+
+Completing the GE: Creating a Custom Apache Container Image
+
+ · Stopping official-httpd container...........................  [1;36mSUCCESS[0;39m
+ · Removing official-httpd container...........................  [1;36mSUCCESS[0;39m
+ · Stopping test-httpd container...............................  [1;36mSUCCESS[0;39m
+ · Removing test-httpd container...............................  [1;36mSUCCESS[0;39m
+ · Removing redhattraining/httpd-parent image..................  [1;36mSUCCESS[0;39m
+ · Removing quay.io/martinrapa/do180-custom-httpd image........  [1;36mSUCCESS[0;39m
+ · Removing localhost/do180-custom-httpd image.................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# exit
+exit
+Script done, file is /home/student/DO180-apps/logs/image-operations.log
+]0;root@workstation:~[root@workstation ~]# script /home/student/Do[KP[KO180-apps/logs/image-review.log
+Script started, file is /home/student/DO180-apps/logs/image-review.log
+]0;root@workstation:~[root@workstation ~]# lab image--re[K[K[K[Kre[K[K-review start
+
+Setting up workstation for the Lab: Managing Images
+
+ · Checking podman configuration...............................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# podman pull quay.io/redhattraining/nginx:1.17
+Trying to pull quay.io/redhattraining/nginx:1.17...
+Getting image source signatures
+Copying blob c78335199707 [==>-----------------------------------] 1.6MiB / 23.8MiB
+Copying blob b00ee4473ca6 [======================================] 221b / 221b
+Copying blob d1a81ca518e2 [>-------------------------------------] 414.9KiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [===========>--------------------------] 7.7MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [=======>------------------------------] 5.7MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [=============>------------------------] 8.8MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [========>-----------------------------] 6.7MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [=================>--------------------] 11.2MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [============>-------------------------] 9.2MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [========================>-------------] 15.6MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [==================>-------------------] 13.2MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [==============================>-------] 19.3MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [=======================>--------------] 16.9MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [======================================] 23.8MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [=============================>--------] 21.2MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [======================================] 23.8MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [=============================>--------] 21.7MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 done
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [==================================>---] 25.1MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 done
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [======================================] 27.1MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 done
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 done
+Copying config 9beeba249f [======================================] 6.5KiB / 6.5KiB
+[1A[2KCopying config 9beeba249f done
+Writing manifest to image destination
+Storing signatures
+9beeba249f3ee158d3e495a6ac25c5667ae2de8a43ac2a8bfd2bf687a58c06c9
+]0;root@workstation:~[root@workstation ~]# podnam[K[K[Kman run -d --name official-nging[Kx -p 8080:80 nging[Kx
+Trying to pull registry.access.redhat.com/nginx...
+  unsupported: This repo requires terms acceptance and is only available on registry.redhat.io
+Trying to pull quay.io/nginx...
+  error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+Error: unable to pull nginx: 2 errors occurred:
+	* Error initializing source docker://registry.access.redhat.com/nginx:latest: Error reading manifest latest in registry.access.redhat.com/nginx: unsupported: This repo requires terms acceptance and is only available on registry.redhat.io
+	* Error initializing source docker://quay.io/nginx:latest: Error reading manifest latest in quay.io/nginx: error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+
+
+]0;root@workstation:~[root@workstation ~]# podman run -d --name official-nginx -p 8080:80 nginxlnginxonginxcnginxanginxlnginxhnginxsnginxonginxtnginx/nginx[1Pnginx[1Pnginx[1Pnginx[1Pnginxonginxsnginxtnginx/nginx
+Trying to pull localhost/nginx...
+  Get https://localhost/v2/: dial tcp [::1]:443: connect: connection refused
+Error: unable to pull localhost/nginx: unable to pull image: Error initializing source docker://localhost/nginx:latest: error pinging docker registry localhost: Get https://localhost/v2/: dial tcp [::1]:443: connect: connection refused
+]0;root@workstation:~[root@workstation ~]# pdi[K[Kodman images
+REPOSITORY                     TAG    IMAGE ID       CREATED        SIZE
+quay.io/redhattraining/nginx   1.17   9beeba249f3e   8 months ago   131 MB
+]0;root@workstation:~[root@workstation ~]# podman images[K[K[K[K[K[K[K[K[K[K[K[K[Kpodman run -d --name official-nginx -p 8080:80 localhost/nginx[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K 9beeba249f3e
+603625eb7ff6fee799649fa13f56f6d1df0ab7c51b8ce869e201594d0602d352
+]0;root@workstation:~[root@workstation ~]# podman exec official-nging[Kx [1@-[1@t[1@i[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbash
+root@603625eb7ff6:/# echo "DO180" > /usr/share/nginx/html/index.html
+root@603625eb7ff6:/# exit
+exit
+]0;root@workstation:~[root@workstation ~]# curl http://127.0.0.1:8080 [K/index.html
+DO180
+]0;root@workstation:~[root@workstation ~]# podman sotp[K[K[Ktop official-nginx
+603625eb7ff6fee799649fa13f56f6d1df0ab7c51b8ce869e201594d0602d352
+]0;root@workstation:~[root@workstation ~]# podman ps
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+]0;root@workstation:~[root@workstation ~]# podman ps -a
+CONTAINER ID  IMAGE                              COMMAND               CREATED        STATUS                     PORTS                 NAMES
+603625eb7ff6  quay.io/redhattraining/nginx:1.17  nginx -g daemon o...  2 minutes ago  Exited (0) 10 seconds ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman commit -a "m[K[K0martin[K[K[K[K[K[K[K'martin' official-httpd[K[K[K[K[K[K[K[K[Kial-nging[Kx do180/mynginx:v1.0
+Getting image source signatures
+Copying blob ffc9b21953f4 [--------------------------------------] 0b / 0b
+Copying blob 2f4accd375d9 [--------------------------------------] 0b / 0b
+Copying blob 6c7de695ede3 [--------------------------------------] 0b / 0b
+Copying blob c66457e3883c [======================================] 12.0KiB / 12.0KiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob c66457e3883c done
+Copying config 570d146ff8 [======================================] 5.7KiB / 5.7KiB
+[1A[2KCopying config 570d146ff8 done
+Writing manifest to image destination
+Storing signatures
+570d146ff81e83528ab2db1ddd11dcc40db6581c32dabd278b53c2ba92dcca66
+]0;root@workstation:~[root@workstation ~]# podman commit -a 'martin' official-nginx do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[K[K[K[K[Kimages
+REPOSITORY                     TAG    IMAGE ID       CREATED          SIZE
+localhost/do180/mynginx        v1.0   570d146ff81e   11 seconds ago   131 MB
+quay.io/redhattraining/nginx   1.17   9beeba249f3e   8 months ago     131 MB
+]0;root@workstation:~[root@workstation ~]# podman dmi [K[K[K[K[K rmi localhost/do180/mynginx
+Error: unable to find 'localhost/do180/mynginx' in local storage: no such image
+]0;root@workstation:~[root@workstation ~]# podman rmi localhost/do180/mynginx:v1.0
+Untagged: localhost/do180/mynginx:v1.0
+Deleted: 570d146ff81e83528ab2db1ddd11dcc40db6581c32dabd278b53c2ba92dcca66
+]0;root@workstation:~[root@workstation ~]# podman rmi localhost/do180/mynginx:v1.0[Kimages[Kcommit -a 'martin' official-nginx do180/mynginx:v1.0-SNAPSHOT
+Getting image source signatures
+Copying blob ffc9b21953f4 [--------------------------------------] 0b / 0b
+Copying blob 2f4accd375d9 [--------------------------------------] 0b / 0b
+Copying blob 6c7de695ede3 [--------------------------------------] 0b / 0b
+Copying blob c66457e3883c [======================================] 12.0KiB / 12.0KiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob c66457e3883c done
+Copying config f450a68ed4 [======================================] 5.7KiB / 5.7KiB
+[1A[2KCopying config f450a68ed4 done
+Writing manifest to image destination
+Storing signatures
+f450a68ed4d9e22075ef2e32a08e501d9fd2a8f5258de2659b24ffea37d59ba8
+]0;root@workstation:~[root@workstation ~]# PODMA[K[K[K[K[Kpor[Kdman run commit -a 'martin' official-nginx do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[29Prmi localhost/do180/mynginx:v1.0[Kimages[Kcommit -a 'martin' official-nginx do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[Kstop official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Ppodman exec -ti official-nginx bashrun -d --name official-nginx -p 8080:80 9beeba249f3e[1@-[1@d[1@e[1@v[C[C[C[C[C[C[C[C[C[C[C[C[Cd9beeba249f3eo9beeba249f3e19beeba249f3e89beeba249f3e09beeba249f3e/9beeba249f3em9beeba249f3ey9beeba249f3en9beeba249f3eg9beeba249f3ei9beeba249f3en9beeba249f3ex9beeba249f3e:9beeba249f3ev9beeba249f3e19beeba249f3e.9beeba249f3e09beeba249f3e-9beeba249f3eS9beeba249f3eN9beeba249f3eA9beeba249f3eP9beeba249f3eS9beeba249f3eH9beeba249f3eO9beeba249f3eT9beeba249f3e[1Pbeeba249f3e[1Peeba249f3e[C[1Pba249f3e[1Pba249f3e[1Pa249f3e[1P249f3e[1P49f3e[1P9f3e[1Pf3e[1P3e[1Pe[K
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman run -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10Pcommit -a 'martin' official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[29Prmi localhost/do180/mynginx:v1.0[Kimages[Kcommit -a 'martin' official-nginx do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[Kstop official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Ppodman exec -ti official-nginx bash- bashD bashE bashV bash
+Error: no container with name or ID official-nginx-DEV found: no such container
+]0;root@workstation:~[root@workstation ~]# podman exec -ti official-nginx-DEV bash[1P[1P bash[1P bashd bashe bashv bash
+root@1d0398a3e19e:/# ex cho "DO180 Page" > /usr/share/nginx/html/index.html 
+root@1d0398a3e19e:/# exit
+exit
+]0;root@workstation:~[root@workstation ~]# curl podman exec -ti official-nginx-dev bashDEV[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10Pcommit -a 'martin' official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[29Prmi localhost/do180/mynginx:v1.0[Kimages[Kcommit -a 'martin' official-nginx do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[Kstop official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Ppodman exec -ti official-nginx bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# podman sotp[K[K[K[Kt[Kstop official [K-nginx-dev
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman stop official-nginx-dev[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpodman exec -ti official-nginx-dev bashDEV[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT[K[K[K[K[K[K[K[K[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@c[1@o[1@m[1@m[1@i[1@t[1@ [1@-[1@a[1@ [1@'[1@m[1@a[C[1@r[1@t[1@i[1@n[1@2[1@'[1P[1P[1P[1P[1P[1P[1P[C[1P[1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P do180/mynginx:v1.0[1Pdo180/mynginx:v1.0
+Getting image source signatures
+Copying blob ffc9b21953f4 [--------------------------------------] 0b / 0b
+Copying blob 2f4accd375d9 [--------------------------------------] 0b / 0b
+Copying blob 6c7de695ede3 [--------------------------------------] 0b / 0b
+Copying blob c66457e3883c [--------------------------------------] 0b / 0b
+Copying blob f8a168b1ff23 [======================================] 6.0KiB / 6.0KiB
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob c66457e3883c skipped: already exists
+Copying blob f8a168b1ff23 done
+Copying config 2c8784a15b [======================================] 5.8KiB / 5.8KiB
+[1A[2KCopying config 2c8784a15b done
+Writing manifest to image destination
+Storing signatures
+2c8784a15b3509ba57b35a5e473f5b4e992fb25ad352225c432ccae4388be331
+]0;root@workstation:~[root@workstation ~]# podman rmi do180/nfin[K[K[K[Kmynginx:v1.0-SNAPSHOT
+Error: could not remove image f450a68ed4d9e22075ef2e32a08e501d9fd2a8f5258de2659b24ffea37d59ba8 as it is being used by 1 containers
+]0;root@workstation:~[root@workstation ~]# PODA[K[K[K[Kpodman rmi do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ [1@S[1@T[1@O[1@P[1P[1P[1P[1P[1@S[1@T[1@O[1@P[1P[1P[1P[1P[1@s[1@t[1@o[1@p[1P[1P[1P[1P do180/mynginx:v1.0-SNAPSHOT[1Pdo180/mynginx:v1.0-SNAPSHOT do180/mynginx:v1.0-SNAPSHOT
+Error: no container with name or ID do180/mynginx:v1.0-SNAPSHOT found: no such container
+]0;root@workstation:~[root@workstation ~]# podman sotp official-nginx-dev
+Error: unrecognized command `podman sotp`
+Try 'podman --help' for more information.
+]0;root@workstation:~[root@workstation ~]# podman sotp official-nginx-dev[1P[1@t
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman stop official-nginx-devot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctop do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Prmi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Error: could not remove image f450a68ed4d9e22075ef2e32a08e501d9fd2a8f5258de2659b24ffea37d59ba8 as it is being used by 1 containers
+]0;root@workstation:~[root@workstation ~]# podman pd -a
+Error: unknown shorthand flag: 'a' in -a
+]0;root@workstation:~[root@workstation ~]# podman -[Kps -a
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                     PORTS                 NAMES
+1d0398a3e19e  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  4 minutes ago   Exited (0) 2 minutes ago   0.0.0.0:8080->80/tcp  official-nginx-dev
+603625eb7ff6  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  18 minutes ago  Exited (0) 16 minutes ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman ps -ad[C[C[Crmi do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pstop official-nginx-devrmi do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpd -a[Ks[C[C[C[Ks[Kpodman images
+REPOSITORY                     TAG             IMAGE ID       CREATED         SIZE
+localhost/do180/mynginx        v1.0            2c8784a15b35   2 minutes ago   131 MB
+localhost/do180/mynginx        v1.0-SNAPSHOT   f450a68ed4d9   6 minutes ago   131 MB
+quay.io/redhattraining/nginx   1.17            9beeba249f3e   8 months ago    131 MB
+]0;root@workstation:~[root@workstation ~]# podman m[Krmi 2c8784a15b35
+Untagged: localhost/do180/mynginx:v1.0
+Deleted: 2c8784a15b3509ba57b35a5e473f5b4e992fb25ad352225c432ccae4388be331
+]0;root@workstation:~[root@workstation ~]# podman rmi 2c8784a15b35[10Pimages[K[K[K[K[K[K[K[K[K[K[K[K[Khistory
+    1  exit
+    2  lab container-review grade
+    3  cd /home/student/DO180
+    4  cat container-review.log 
+    5  exit
+    6  podman logs mysql-db
+    7  cat /home/student/DO
+    8  cat /home/student/DO180/manage-lifecycle.log 
+    9  cat /home/student/DO180/container-review.log 
+   10  sudo podman run --name mysql -d -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+   11  sudo podman ps
+   12  sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql
+   13  mysql -uuser1 -h 10.88.0.6 \
+   14  lab manage-lifecycle start
+   15  mysql -uuser -h 10.88.0.6 -pmypa55 items < /home/student/DO180/labs/manage-lifecycle/db.sql 
+   16  mysql -uuser1 -h 10.88.0.6 -pmypa55 items < /home/student/DO180/labs/manage-lifecycle/db.sql 
+   17  podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+   18  sudo podman ps -a 
+   19  podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 -e "select * from items.Projects;"'
+   20  lab manage-lifecycle finish
+   21  exit
+   22  sudo podman run --name mysql-db rhscl/mysql-57-rhel7
+   23  sudo su -
+   24  exit
+   25  podman exec httpd-basic -d /bin/bash
+   26  podman exec httpd-basic /bin/bash
+   27  podman exec -ti httpd-basic /bin/bash
+   28  curl http://localhost:8080
+   29  lab container-review grade
+   30  lab container-review finish
+   31  script /home/student/DO180/container-review.log
+   32  cat /home/student/DO180/container-review.log
+   33  podman ps
+   34  podman images
+   35  podman run httpd-basic
+   36  script /home/student/DO180/manage-lifecycle.log
+   37  cat /home/student/DO180/manage-lifecycle.log 
+   38  ls /home/student/DO180/
+   39  ls -ls /home/student/DO180/
+   40  cat /home/student/DO180/manage-lifecycle.log 
+   41  cd /home/student/DO180
+   42  git commit -c "resultados labs"
+   43  dit add .
+   44  git add .
+   45  ls
+   46  md ~/logs
+   47  mkdir ~/logs
+   48  mv *.log ~/logs/*
+   49  mv *.log ~/logs/
+   50  cd ~/logs/
+   51  ls
+   52  mkdir /home/student/DO180-apps/logs
+   53  ls
+   54  mv *.logs /home/student/DO180-apps/logs/
+   55  mv .\*.logs /home/student/DO180-apps/logs/
+   56  pwd
+   57  mv \root\logs\*.logs /home/student/DO180-apps/logs/
+   58  mv /root/logs/*.logs /home/student/DO180-apps/logs/
+   59  ls
+   60  mv /root/logs/*.log /home/student/DO180-apps/logs/
+   61  cd /home/student/DO180-apps/
+   62  git commit -a -m 'Resultados primeros labs'
+   63  git add -
+   64  git add .
+   65  git commit -a -m 'Resultados primeros labs'
+   66  git push
+   67  git config credential.helper store
+   68  psd
+   69  pwd
+   70  ls -la /home/root
+   71  ls /
+   72  cd /root/
+   73  ls
+   74  ls -la
+   75  cd /home/student/
+   76  ls
+   77  ls -ala
+   78  vi .git-credentials
+   79  cd DO
+   80  cd DO180-apps/
+   81  git push
+   82  git push https://MartinRapa@github.com/MartinRapa/DO180-apps.git
+   83  git push https://MartinRapa@github.com/MartinRapa/DO180-apps
+   84  lab manage-networking start
+   85  porman run --name mysqldb-port -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 \
+   86  podman run --name mysqldb-port -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+   87  sudo podman ps
+   88  mysql -uuser1 -h 127.0.0.1 -pmpypa55 -P13306 items < /home/student/DO180/labs/manage-networking/db.sql 
+   89  mysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items < /home/student/DO180/labs/manage-networking/db.sql 
+   90  podman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM Items"
+   91  podman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM items"
+   92  cat /home/student/DO180/labs/manage-networking/db.sql 
+   93  podman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM Item"
+   94  mysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items -e "SELECT * FROM Item"
+   95  sudo podman exec -it mysqldb-port /bin/bash
+   96  lab manage-networking finish
+   97  exit
+   98  lab manage-review start
+   99  mkdir /var/local/mysql
+  100  semanage fcontext -a -t container_file '/var/local/mysql(/.*)?'
+  101  man mkdir
+  102  semanage fcontext -a -t container_file_t '/var/local/mysql(/.*)?'
+  103  restorecon -Rv /var/dbfiles
+  104  restorecon -Rv /var/local/mysql/
+  105  restorecon -Rv /var/local/mysql
+  106  ls -ldZ /var/local/mysql/
+  107  ls -ldZ /var/local/mysql
+  108  cat /etc/passwd
+  109  cat /etc/passwd | grep mysql
+  110  chown -Rv 27:27 /var/local/mysql
+  111  podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER:user1 -e MYSQL_PASSWORD:mypa55 -e MYSQL_DATABASE:items -e MYSQL_ROOT_PASSWORD:r00tpa55 rhscl/mysql-57-rhel7
+  112  podman inspect mysql-1 -f '{{ .NetworkSettings.IPAddress }}' 
+  113  podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql-1
+  114  podman inspect mysql-1
+  115  podman inspect mysql-1 | less
+  116  podman ps
+  117  podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+  118  podman ps 
+  119  podman ps mysql-1
+  120  podman rm mysql-1
+  121  podman ps
+  122  podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+  123  podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql-1
+  124  mysql -uuser1 -pmypa55 -h 10.88.0.10 < /home/student/DO180/labs/manage-review/
+  125  mysql -uuser1 -pmypa55 -h 10.88.0.10 < /home/student/DO180/labs/manage-review/db.sql 
+  126  mysql -uuser1 -pmypa55 -h 10.88.0.10 -ditems < /home/student/DO180/labs/manage-review/db.sql 
+  127  mysql -uuser1 -pmypa55 -h 10.88.0.10 items < /home/student/DO180/labs/manage-review/db.sql 
+  128  mysql -uuser1 -pmypa55 -h 10.88.0.10 items -e "SELECT *FROM Item" 
+  129  podman stop mysql-1
+  130  podman run --name mysql-2 -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+  131  podman ps
+  132  podman ps -a
+  133  podman ps -a > /tmp/my-containers
+  134  podman exec mysql-2 bash
+  135  podman exec -it mysql-2 bash
+  136  mysql -uuser1 -h workstation.lab.example.com -pmypa55 -p13306 items
+  137  mysql -uuser1 -h 127.0.0.1 -pmypa55 -p13306 items
+  138  podman ps
+  139  podman inspect mysql-2  | less
+  140  mysql -uuser1 -h 10.88.0.11 -pmypa55 -p13306 items
+  141  mysql -uroot -h 10.88.0.11 -pr00tpa55 -p13306 items
+  142  podman exec -ti mysql-2 bash
+  143  sudo podman rm mysql-1
+  144  lab manage-review grade
+  145  lab mange-revew finish
+  146  lab manage-revew finish
+  147  lab manage-review finish
+  148  exit
+  149  lab image-operations start
+  150  sudo podman login quay.io
+  151  sudo podman run -d --name official-httpd -p 8180:80 quay.io/redhattraining/httpd-parent
+  152  podman exec -ti official-httpd bash
+  153  curl 127.0.0.1:8180/do180.html
+  154  sudo podman diff official-httpd 
+  155  podman stop official-httpd 
+  156  podman commit -a 'Martin' official-httpd do180-custom-httpd
+  157  podman images
+  158  source /usr/local/etc/ocp4.config 
+  159  cat /usr/local/etc/ocp4.config 
+  160  podman tag do180-custom-httpd quay.io/${RHT_OSCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  161  podman tag -?
+  162  podman tag --?
+  163  ${RHT_OSCP4_QUAY_USER}
+  164  echo ${RHT_OSCP4_QUAY_USER}
+  165  podman tag do180-custom-httpd quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  166  podman images
+  167  podman push quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  168  podan pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  169  podman pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  170  podman run -d --name test-httpd -p 8280:80 quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  171  curl http://localhost:8280/do180.html
+  172  lab image-operations finish
+  173  exit
+  174  lab image-review start
+  175  podman pull quay.io/redhattraining/nginx:1.17
+  176  podman run -d --name official-nginx -p 8080:80 nginx
+  177  podman run -d --name official-nginx -p 8080:80 localhost/nginx
+  178* 
+  179  podman run -d --name official-nginx -p 8080:80 9beeba249f3e
+  180  podman exec -ti official-nginx bash
+  181  curl http://127.0.0.1:8080/index.html
+  182  podman stop official-nginx
+  183  podman ps
+  184  podman ps -a
+  185  podman commit -a 'martin' official-nginx do180/mynginx:v1.0
+  186  podman images
+  187  podman rmi localhost/do180/mynginx
+  188  podman rmi localhost/do180/mynginx:v1.0
+  189  podman commit -a 'martin' official-nginx do180/mynginx:v1.0-SNAPSHOT
+  190  podman run -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT
+  191  podman exec -ti official-nginx-DEV bash
+  192  podman exec -ti official-nginx-dev bash
+  193  curl http://127.0.0.1:8080/index.html
+  194  podman stop official-nginx-dev
+  195  podman commit -a 'martin2' official-nginx-dev do180/mynginx:v1.0
+  196  podman rmi do180/mynginx:v1.0-SNAPSHOT
+  197  podman stop do180/mynginx:v1.0-SNAPSHOT
+  198  podman sotp official-nginx-dev
+  199  podman stop official-nginx-dev
+  200  podman rmi do180/mynginx:v1.0-SNAPSHOT
+  201  podman pd -a
+  202  podman ps -a
+  203  podman images
+  204  podman rmi 2c8784a15b35
+  205  history
+]0;root@workstation:~[root@workstation ~]# podman run -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT
+Error: error creating container storage: the container name "official-nginx-dev" is already in use by "1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061". You have to remove that container to be able to reuse that name.: that name is already in use
+]0;root@workstation:~[root@workstation ~]# poda[Kman ps
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+]0;root@workstation:~[root@workstation ~]# podman ps -a
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                     PORTS                 NAMES
+1d0398a3e19e  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  6 minutes ago   Exited (0) 4 minutes ago   0.0.0.0:8080->80/tcp  official-nginx-dev
+603625eb7ff6  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  20 minutes ago  Exited (0) 18 minutes ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman run offica[Kial-nginx-dev
+Trying to pull registry.access.redhat.com/official-nginx-dev...
+  name unknown: Repo not found
+Trying to pull quay.io/official-nginx-dev...
+  error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+Error: unable to pull official-nginx-dev: 2 errors occurred:
+	* Error initializing source docker://registry.access.redhat.com/official-nginx-dev:latest: Error reading manifest latest in registry.access.redhat.com/official-nginx-dev: name unknown: Repo not found
+	* Error initializing source docker://quay.io/official-nginx-dev:latest: Error reading manifest latest in quay.io/official-nginx-dev: error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+
+
+]0;root@workstation:~[root@workstation ~]# podman start official-nginx-dev
+official-nginx-dev
+]0;root@workstation:~[root@workstation ~]# podman start official-nginx-dev[2Prun[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                     PORTS                 NAMES
+1d0398a3e19e  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  7 minutes ago   Up 8 seconds ago           0.0.0.0:8080->80/tcp  official-nginx-dev
+603625eb7ff6  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  21 minutes ago  Exited (0) 19 minutes ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman exec -ti official-nginx-dev bash
+root@1d0398a3e19e:/# exitcho "DO180 Page" > /usr/share/nginx/html/index.html 
+root@1d0398a3e19e:/# exit
+exit
+]0;root@workstation:~[root@workstation ~]# curlpodman exec -ti official-nginx-dev bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[Kstart official-nginx-dev[2Prun[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[Krun -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chistory[Kpodman rmi 2c8784a15b35[10Pimages[1Pps -ad[C[C[Crmi do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pstop official-nginx-devot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctop do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Prmi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -a 'martin2' official-nginx-dev do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[34Pstop official-nginx-dev[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpodman exec -ti official-nginx-dev bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcurl http://127.0.0.1:8080/index.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# podman sotp [K[K[K[Ktop official-nginx-dev
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman commit -a 'martin2' do180/mynginx:v1.0
+Error: you must provide a container name or ID and a target image name
+]0;root@workstation:~[root@workstation ~]# podman commit -a 'martin2' do180/mynginx:v1.0ldo180/mynginx:v1.0odo180/mynginx:v1.0cdo180/mynginx:v1.0ado180/mynginx:v1.0ldo180/mynginx:v1.0hdo180/mynginx:v1.0odo180/mynginx:v1.0sdo180/mynginx:v1.0tdo180/mynginx:v1.0/do180/mynginx:v1.0
+Error: you must provide a container name or ID and a target image name
+]0;root@workstation:~[root@workstation ~]# podman commit -a 'martin2' localhost/do180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0odo180/mynginx:v1.0fdo180/mynginx:v1.0fdo180/mynginx:v1.0ido180/mynginx:v1.0cdo180/mynginx:v1.0ido180/mynginx:v1.0ado180/mynginx:v1.0ldo180/mynginx:v1.0-do180/mynginx:v1.0ndo180/mynginx:v1.0gdo180/mynginx:v1.0ndo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0gdo180/mynginx:v1.0ido180/mynginx:v1.0ndo180/mynginx:v1.0xdo180/mynginx:v1.0-do180/mynginx:v1.0[Cdo180/mynginx:v1.0edo180/mynginx:v1.0vdo180/mynginx:v1.0 do180/mynginx:v1.0
+Getting image source signatures
+Copying blob ffc9b21953f4 [--------------------------------------] 0b / 0b
+Copying blob 2f4accd375d9 [--------------------------------------] 0b / 0b
+Copying blob 6c7de695ede3 [--------------------------------------] 0b / 0b
+Copying blob c66457e3883c [--------------------------------------] 0b / 0b
+Copying blob 0b2469ee818e [======================================] 6.0KiB / 6.0KiB
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob c66457e3883c skipped: already exists
+Copying blob 0b2469ee818e done
+Copying config cfe481408b [======================================] 5.8KiB / 5.8KiB
+[1A[2KCopying config cfe481408b done
+Writing manifest to image destination
+Storing signatures
+cfe481408b4c675c0c5896e88628df8e5489fdd02223f895e63c0c482eb88090
+]0;root@workstation:~[root@workstation ~]# podman immages
+Error: unrecognized command `podman immages`
+Try 'podman --help' for more information.
+]0;root@workstation:~[root@workstation ~]# podman images
+REPOSITORY                     TAG             IMAGE ID       CREATED          SIZE
+localhost/do180/mynginx        v1.0            cfe481408b4c   9 seconds ago    131 MB
+localhost/do180/mynginx        v1.0-SNAPSHOT   f450a68ed4d9   11 minutes ago   131 MB
+quay.io/redhattraining/nginx   1.17            9beeba249f3e   8 months ago     131 MB
+]0;root@workstation:~[root@workstation ~]# podman rmi localhost/do180/mynginx:v1.0-SNAPSHOT 
+Error: could not remove image f450a68ed4d9e22075ef2e32a08e501d9fd2a8f5258de2659b24ffea37d59ba8 as it is being used by 1 containers
+]0;root@workstation:~[root@workstation ~]# pd[Kodmand [K[K ps -a
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                     PORTS                 NAMES
+1d0398a3e19e  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  10 minutes ago  Exited (0) 2 minutes ago   0.0.0.0:8080->80/tcp  official-nginx-dev
+603625eb7ff6  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  24 minutes ago  Exited (0) 22 minutes ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman rm official-nginx-dev 
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman rmi [18@ official-nginx-dev[Cps -a[Krmi localhost/do180/mynginx:v1.0-SNAPSHOT 
+Untagged: localhost/do180/mynginx:v1.0-SNAPSHOT
+]0;root@workstation:~[root@workstation ~]# podman run -d --name my-nfing[Kx [K[K[K[K[Kginx -[Kdo[K[K-p 8080[K[K[K2080[K[K[K80:80 localhost/do180/mynginx:v1.0
+5812a827d136e503f67f6609e304763815a8e796d2067049531d8d7a0d3be758
+]0;root@workstation:~[root@workstation ~]# curl http://h[K127.0.0.1:8280/index.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# lab-[K image-review grade
+
+Grading the student's work for the Lab: Managing Images
+
+ · Nginx container image is pulled.............................  [1;32mPASS[0;39m
+ · Container official-nginx is created.........................  [1;32mPASS[0;39m
+ · Container official-nginx is stopped.........................  [1;32mPASS[0;39m
+ · Tag do180/mynginx:v1.0-SNAPSHOT is removed..................  [1;32mPASS[0;39m
+ · Tag do180/mynginx:v1.0 is created...........................  [1;32mPASS[0;39m
+ · Container my-nginx is created and running...................  [1;32mPASS[0;39m
+ · index.html is available with the custom content.............  [1;32mPASS[0;39m
+]0;root@workstation:~[root@workstation ~]# lab image-review finish
+
+Completing the Lab: Managing Images
+
+ · Stopping official-nginx-dev container.......................  [1;36mSUCCESS[0;39m
+ · Removing official-nginx-dev container.......................  [1;36mSUCCESS[0;39m
+ · Stopping official-nginx container...........................  [1;36mSUCCESS[0;39m
+ · Removing official-nginx container...........................  [1;36mSUCCESS[0;39m
+ · Removing do180/mynginx:v1.0 image...........................  [1;36mSUCCESS[0;39m
+ · Removing quay.io/redhattraining/nginx:1.17 image............  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# exit
+exit
+Script done, file is /home/student/DO180-apps/logs/image-review.log
+]0;root@workstation:~[root@workstation ~]# cat /home/su[Ktudent/DP

@@ -1,0 +1,478 @@
+Script started on 2021-01-20 13:20:47-05:00
+]0;root@workstation:~[root@workstation ~]# lab image--re[K[K[K[Kre[K[K-review start
+
+Setting up workstation for the Lab: Managing Images
+
+ · Checking podman configuration...............................  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# podman pull quay.io/redhattraining/nginx:1.17
+Trying to pull quay.io/redhattraining/nginx:1.17...
+Getting image source signatures
+Copying blob c78335199707 [==>-----------------------------------] 1.6MiB / 23.8MiB
+Copying blob b00ee4473ca6 [======================================] 221b / 221b
+Copying blob d1a81ca518e2 [>-------------------------------------] 414.9KiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [===========>--------------------------] 7.7MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [=======>------------------------------] 5.7MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [=============>------------------------] 8.8MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [========>-----------------------------] 6.7MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [=================>--------------------] 11.2MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [============>-------------------------] 9.2MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [========================>-------------] 15.6MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [==================>-------------------] 13.2MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [==============================>-------] 19.3MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [=======================>--------------] 16.9MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [======================================] 23.8MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [=============================>--------] 21.2MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 [======================================] 23.8MiB / 23.8MiB
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [=============================>--------] 21.7MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 done
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [==================================>---] 25.1MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 done
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 [======================================] 27.1MiB / 27.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob c78335199707 done
+Copying blob b00ee4473ca6 done
+Copying blob d1a81ca518e2 done
+Copying config 9beeba249f [======================================] 6.5KiB / 6.5KiB
+[1A[2KCopying config 9beeba249f done
+Writing manifest to image destination
+Storing signatures
+9beeba249f3ee158d3e495a6ac25c5667ae2de8a43ac2a8bfd2bf687a58c06c9
+]0;root@workstation:~[root@workstation ~]# podnam[K[K[Kman run -d --name official-nging[Kx -p 8080:80 nging[Kx
+Trying to pull registry.access.redhat.com/nginx...
+  unsupported: This repo requires terms acceptance and is only available on registry.redhat.io
+Trying to pull quay.io/nginx...
+  error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+Error: unable to pull nginx: 2 errors occurred:
+	* Error initializing source docker://registry.access.redhat.com/nginx:latest: Error reading manifest latest in registry.access.redhat.com/nginx: unsupported: This repo requires terms acceptance and is only available on registry.redhat.io
+	* Error initializing source docker://quay.io/nginx:latest: Error reading manifest latest in quay.io/nginx: error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+
+
+]0;root@workstation:~[root@workstation ~]# podman run -d --name official-nginx -p 8080:80 nginxlnginxonginxcnginxanginxlnginxhnginxsnginxonginxtnginx/nginx[1Pnginx[1Pnginx[1Pnginx[1Pnginxonginxsnginxtnginx/nginx
+Trying to pull localhost/nginx...
+  Get https://localhost/v2/: dial tcp [::1]:443: connect: connection refused
+Error: unable to pull localhost/nginx: unable to pull image: Error initializing source docker://localhost/nginx:latest: error pinging docker registry localhost: Get https://localhost/v2/: dial tcp [::1]:443: connect: connection refused
+]0;root@workstation:~[root@workstation ~]# pdi[K[Kodman images
+REPOSITORY                     TAG    IMAGE ID       CREATED        SIZE
+quay.io/redhattraining/nginx   1.17   9beeba249f3e   8 months ago   131 MB
+]0;root@workstation:~[root@workstation ~]# podman images[K[K[K[K[K[K[K[K[K[K[K[K[Kpodman run -d --name official-nginx -p 8080:80 localhost/nginx[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K 9beeba249f3e
+603625eb7ff6fee799649fa13f56f6d1df0ab7c51b8ce869e201594d0602d352
+]0;root@workstation:~[root@workstation ~]# podman exec official-nging[Kx [1@-[1@t[1@i[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbash
+root@603625eb7ff6:/# echo "DO180" > /usr/share/nginx/html/index.html
+root@603625eb7ff6:/# exit
+exit
+]0;root@workstation:~[root@workstation ~]# curl http://127.0.0.1:8080 [K/index.html
+DO180
+]0;root@workstation:~[root@workstation ~]# podman sotp[K[K[Ktop official-nginx
+603625eb7ff6fee799649fa13f56f6d1df0ab7c51b8ce869e201594d0602d352
+]0;root@workstation:~[root@workstation ~]# podman ps
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+]0;root@workstation:~[root@workstation ~]# podman ps -a
+CONTAINER ID  IMAGE                              COMMAND               CREATED        STATUS                     PORTS                 NAMES
+603625eb7ff6  quay.io/redhattraining/nginx:1.17  nginx -g daemon o...  2 minutes ago  Exited (0) 10 seconds ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman commit -a "m[K[K0martin[K[K[K[K[K[K[K'martin' official-httpd[K[K[K[K[K[K[K[K[Kial-nging[Kx do180/mynginx:v1.0
+Getting image source signatures
+Copying blob ffc9b21953f4 [--------------------------------------] 0b / 0b
+Copying blob 2f4accd375d9 [--------------------------------------] 0b / 0b
+Copying blob 6c7de695ede3 [--------------------------------------] 0b / 0b
+Copying blob c66457e3883c [======================================] 12.0KiB / 12.0KiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob c66457e3883c done
+Copying config 570d146ff8 [======================================] 5.7KiB / 5.7KiB
+[1A[2KCopying config 570d146ff8 done
+Writing manifest to image destination
+Storing signatures
+570d146ff81e83528ab2db1ddd11dcc40db6581c32dabd278b53c2ba92dcca66
+]0;root@workstation:~[root@workstation ~]# podman commit -a 'martin' official-nginx do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[K[K[K[K[Kimages
+REPOSITORY                     TAG    IMAGE ID       CREATED          SIZE
+localhost/do180/mynginx        v1.0   570d146ff81e   11 seconds ago   131 MB
+quay.io/redhattraining/nginx   1.17   9beeba249f3e   8 months ago     131 MB
+]0;root@workstation:~[root@workstation ~]# podman dmi [K[K[K[K[K rmi localhost/do180/mynginx
+Error: unable to find 'localhost/do180/mynginx' in local storage: no such image
+]0;root@workstation:~[root@workstation ~]# podman rmi localhost/do180/mynginx:v1.0
+Untagged: localhost/do180/mynginx:v1.0
+Deleted: 570d146ff81e83528ab2db1ddd11dcc40db6581c32dabd278b53c2ba92dcca66
+]0;root@workstation:~[root@workstation ~]# podman rmi localhost/do180/mynginx:v1.0[Kimages[Kcommit -a 'martin' official-nginx do180/mynginx:v1.0-SNAPSHOT
+Getting image source signatures
+Copying blob ffc9b21953f4 [--------------------------------------] 0b / 0b
+Copying blob 2f4accd375d9 [--------------------------------------] 0b / 0b
+Copying blob 6c7de695ede3 [--------------------------------------] 0b / 0b
+Copying blob c66457e3883c [======================================] 12.0KiB / 12.0KiB
+[1A[2K[1A[2K[1A[2K[1A[2KCopying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob c66457e3883c done
+Copying config f450a68ed4 [======================================] 5.7KiB / 5.7KiB
+[1A[2KCopying config f450a68ed4 done
+Writing manifest to image destination
+Storing signatures
+f450a68ed4d9e22075ef2e32a08e501d9fd2a8f5258de2659b24ffea37d59ba8
+]0;root@workstation:~[root@workstation ~]# PODMA[K[K[K[K[Kpor[Kdman run commit -a 'martin' official-nginx do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[29Prmi localhost/do180/mynginx:v1.0[Kimages[Kcommit -a 'martin' official-nginx do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[Kstop official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Ppodman exec -ti official-nginx bashrun -d --name official-nginx -p 8080:80 9beeba249f3e[1@-[1@d[1@e[1@v[C[C[C[C[C[C[C[C[C[C[C[C[Cd9beeba249f3eo9beeba249f3e19beeba249f3e89beeba249f3e09beeba249f3e/9beeba249f3em9beeba249f3ey9beeba249f3en9beeba249f3eg9beeba249f3ei9beeba249f3en9beeba249f3ex9beeba249f3e:9beeba249f3ev9beeba249f3e19beeba249f3e.9beeba249f3e09beeba249f3e-9beeba249f3eS9beeba249f3eN9beeba249f3eA9beeba249f3eP9beeba249f3eS9beeba249f3eH9beeba249f3eO9beeba249f3eT9beeba249f3e[1Pbeeba249f3e[1Peeba249f3e[C[1Pba249f3e[1Pba249f3e[1Pa249f3e[1P249f3e[1P49f3e[1P9f3e[1Pf3e[1P3e[1Pe[K
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman run -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10Pcommit -a 'martin' official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[29Prmi localhost/do180/mynginx:v1.0[Kimages[Kcommit -a 'martin' official-nginx do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[Kstop official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Ppodman exec -ti official-nginx bash- bashD bashE bashV bash
+Error: no container with name or ID official-nginx-DEV found: no such container
+]0;root@workstation:~[root@workstation ~]# podman exec -ti official-nginx-DEV bash[1P[1P bash[1P bashd bashe bashv bash
+root@1d0398a3e19e:/# ex cho "DO180 Page" > /usr/share/nginx/html/index.html 
+root@1d0398a3e19e:/# exit
+exit
+]0;root@workstation:~[root@workstation ~]# curl podman exec -ti official-nginx-dev bashDEV[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10Pcommit -a 'martin' official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[29Prmi localhost/do180/mynginx:v1.0[Kimages[Kcommit -a 'martin' official-nginx do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[Kstop official-nginx[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Ppodman exec -ti official-nginx bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# podman sotp[K[K[K[Kt[Kstop official [K-nginx-dev
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman stop official-nginx-dev[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpodman exec -ti official-nginx-dev bashDEV[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT[K[K[K[K[K[K[K[K[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@c[1@o[1@m[1@m[1@i[1@t[1@ [1@-[1@a[1@ [1@'[1@m[1@a[C[1@r[1@t[1@i[1@n[1@2[1@'[1P[1P[1P[1P[1P[1P[1P[C[1P[1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P do180/mynginx:v1.0[1Pdo180/mynginx:v1.0
+Getting image source signatures
+Copying blob ffc9b21953f4 [--------------------------------------] 0b / 0b
+Copying blob 2f4accd375d9 [--------------------------------------] 0b / 0b
+Copying blob 6c7de695ede3 [--------------------------------------] 0b / 0b
+Copying blob c66457e3883c [--------------------------------------] 0b / 0b
+Copying blob f8a168b1ff23 [======================================] 6.0KiB / 6.0KiB
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob c66457e3883c skipped: already exists
+Copying blob f8a168b1ff23 done
+Copying config 2c8784a15b [======================================] 5.8KiB / 5.8KiB
+[1A[2KCopying config 2c8784a15b done
+Writing manifest to image destination
+Storing signatures
+2c8784a15b3509ba57b35a5e473f5b4e992fb25ad352225c432ccae4388be331
+]0;root@workstation:~[root@workstation ~]# podman rmi do180/nfin[K[K[K[Kmynginx:v1.0-SNAPSHOT
+Error: could not remove image f450a68ed4d9e22075ef2e32a08e501d9fd2a8f5258de2659b24ffea37d59ba8 as it is being used by 1 containers
+]0;root@workstation:~[root@workstation ~]# PODA[K[K[K[Kpodman rmi do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ [1@S[1@T[1@O[1@P[1P[1P[1P[1P[1@S[1@T[1@O[1@P[1P[1P[1P[1P[1@s[1@t[1@o[1@p[1P[1P[1P[1P do180/mynginx:v1.0-SNAPSHOT[1Pdo180/mynginx:v1.0-SNAPSHOT do180/mynginx:v1.0-SNAPSHOT
+Error: no container with name or ID do180/mynginx:v1.0-SNAPSHOT found: no such container
+]0;root@workstation:~[root@workstation ~]# podman sotp official-nginx-dev
+Error: unrecognized command `podman sotp`
+Try 'podman --help' for more information.
+]0;root@workstation:~[root@workstation ~]# podman sotp official-nginx-dev[1P[1@t
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman stop official-nginx-devot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctop do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Prmi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Error: could not remove image f450a68ed4d9e22075ef2e32a08e501d9fd2a8f5258de2659b24ffea37d59ba8 as it is being used by 1 containers
+]0;root@workstation:~[root@workstation ~]# podman pd -a
+Error: unknown shorthand flag: 'a' in -a
+]0;root@workstation:~[root@workstation ~]# podman -[Kps -a
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                     PORTS                 NAMES
+1d0398a3e19e  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  4 minutes ago   Exited (0) 2 minutes ago   0.0.0.0:8080->80/tcp  official-nginx-dev
+603625eb7ff6  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  18 minutes ago  Exited (0) 16 minutes ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman ps -ad[C[C[Crmi do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pstop official-nginx-devrmi do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpd -a[Ks[C[C[C[Ks[Kpodman images
+REPOSITORY                     TAG             IMAGE ID       CREATED         SIZE
+localhost/do180/mynginx        v1.0            2c8784a15b35   2 minutes ago   131 MB
+localhost/do180/mynginx        v1.0-SNAPSHOT   f450a68ed4d9   6 minutes ago   131 MB
+quay.io/redhattraining/nginx   1.17            9beeba249f3e   8 months ago    131 MB
+]0;root@workstation:~[root@workstation ~]# podman m[Krmi 2c8784a15b35
+Untagged: localhost/do180/mynginx:v1.0
+Deleted: 2c8784a15b3509ba57b35a5e473f5b4e992fb25ad352225c432ccae4388be331
+]0;root@workstation:~[root@workstation ~]# podman rmi 2c8784a15b35[10Pimages[K[K[K[K[K[K[K[K[K[K[K[K[Khistory
+    1  exit
+    2  lab container-review grade
+    3  cd /home/student/DO180
+    4  cat container-review.log 
+    5  exit
+    6  podman logs mysql-db
+    7  cat /home/student/DO
+    8  cat /home/student/DO180/manage-lifecycle.log 
+    9  cat /home/student/DO180/container-review.log 
+   10  sudo podman run --name mysql -d -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+   11  sudo podman ps
+   12  sudo podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql
+   13  mysql -uuser1 -h 10.88.0.6 \
+   14  lab manage-lifecycle start
+   15  mysql -uuser -h 10.88.0.6 -pmypa55 items < /home/student/DO180/labs/manage-lifecycle/db.sql 
+   16  mysql -uuser1 -h 10.88.0.6 -pmypa55 items < /home/student/DO180/labs/manage-lifecycle/db.sql 
+   17  podman run --name mysql-2 -it rhscl/mysql-57-rhel7 /bin/bash
+   18  sudo podman ps -a 
+   19  podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 -e "select * from items.Projects;"'
+   20  lab manage-lifecycle finish
+   21  exit
+   22  sudo podman run --name mysql-db rhscl/mysql-57-rhel7
+   23  sudo su -
+   24  exit
+   25  podman exec httpd-basic -d /bin/bash
+   26  podman exec httpd-basic /bin/bash
+   27  podman exec -ti httpd-basic /bin/bash
+   28  curl http://localhost:8080
+   29  lab container-review grade
+   30  lab container-review finish
+   31  script /home/student/DO180/container-review.log
+   32  cat /home/student/DO180/container-review.log
+   33  podman ps
+   34  podman images
+   35  podman run httpd-basic
+   36  script /home/student/DO180/manage-lifecycle.log
+   37  cat /home/student/DO180/manage-lifecycle.log 
+   38  ls /home/student/DO180/
+   39  ls -ls /home/student/DO180/
+   40  cat /home/student/DO180/manage-lifecycle.log 
+   41  cd /home/student/DO180
+   42  git commit -c "resultados labs"
+   43  dit add .
+   44  git add .
+   45  ls
+   46  md ~/logs
+   47  mkdir ~/logs
+   48  mv *.log ~/logs/*
+   49  mv *.log ~/logs/
+   50  cd ~/logs/
+   51  ls
+   52  mkdir /home/student/DO180-apps/logs
+   53  ls
+   54  mv *.logs /home/student/DO180-apps/logs/
+   55  mv .\*.logs /home/student/DO180-apps/logs/
+   56  pwd
+   57  mv \root\logs\*.logs /home/student/DO180-apps/logs/
+   58  mv /root/logs/*.logs /home/student/DO180-apps/logs/
+   59  ls
+   60  mv /root/logs/*.log /home/student/DO180-apps/logs/
+   61  cd /home/student/DO180-apps/
+   62  git commit -a -m 'Resultados primeros labs'
+   63  git add -
+   64  git add .
+   65  git commit -a -m 'Resultados primeros labs'
+   66  git push
+   67  git config credential.helper store
+   68  psd
+   69  pwd
+   70  ls -la /home/root
+   71  ls /
+   72  cd /root/
+   73  ls
+   74  ls -la
+   75  cd /home/student/
+   76  ls
+   77  ls -ala
+   78  vi .git-credentials
+   79  cd DO
+   80  cd DO180-apps/
+   81  git push
+   82  git push https://MartinRapa@github.com/MartinRapa/DO180-apps.git
+   83  git push https://MartinRapa@github.com/MartinRapa/DO180-apps
+   84  lab manage-networking start
+   85  porman run --name mysqldb-port -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 \
+   86  podman run --name mysqldb-port -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+   87  sudo podman ps
+   88  mysql -uuser1 -h 127.0.0.1 -pmpypa55 -P13306 items < /home/student/DO180/labs/manage-networking/db.sql 
+   89  mysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items < /home/student/DO180/labs/manage-networking/db.sql 
+   90  podman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM Items"
+   91  podman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM items"
+   92  cat /home/student/DO180/labs/manage-networking/db.sql 
+   93  podman exec -it mysqldb-port /opt/rh/rh-mysql57/root/usr/bin/mysql -uroot items -e "SELECT * FROM Item"
+   94  mysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items -e "SELECT * FROM Item"
+   95  sudo podman exec -it mysqldb-port /bin/bash
+   96  lab manage-networking finish
+   97  exit
+   98  lab manage-review start
+   99  mkdir /var/local/mysql
+  100  semanage fcontext -a -t container_file '/var/local/mysql(/.*)?'
+  101  man mkdir
+  102  semanage fcontext -a -t container_file_t '/var/local/mysql(/.*)?'
+  103  restorecon -Rv /var/dbfiles
+  104  restorecon -Rv /var/local/mysql/
+  105  restorecon -Rv /var/local/mysql
+  106  ls -ldZ /var/local/mysql/
+  107  ls -ldZ /var/local/mysql
+  108  cat /etc/passwd
+  109  cat /etc/passwd | grep mysql
+  110  chown -Rv 27:27 /var/local/mysql
+  111  podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER:user1 -e MYSQL_PASSWORD:mypa55 -e MYSQL_DATABASE:items -e MYSQL_ROOT_PASSWORD:r00tpa55 rhscl/mysql-57-rhel7
+  112  podman inspect mysql-1 -f '{{ .NetworkSettings.IPAddress }}' 
+  113  podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql-1
+  114  podman inspect mysql-1
+  115  podman inspect mysql-1 | less
+  116  podman ps
+  117  podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+  118  podman ps 
+  119  podman ps mysql-1
+  120  podman rm mysql-1
+  121  podman ps
+  122  podman run --name mysql-1 -d -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+  123  podman inspect -f '{{ .NetworkSettings.IPAddress }}' mysql-1
+  124  mysql -uuser1 -pmypa55 -h 10.88.0.10 < /home/student/DO180/labs/manage-review/
+  125  mysql -uuser1 -pmypa55 -h 10.88.0.10 < /home/student/DO180/labs/manage-review/db.sql 
+  126  mysql -uuser1 -pmypa55 -h 10.88.0.10 -ditems < /home/student/DO180/labs/manage-review/db.sql 
+  127  mysql -uuser1 -pmypa55 -h 10.88.0.10 items < /home/student/DO180/labs/manage-review/db.sql 
+  128  mysql -uuser1 -pmypa55 -h 10.88.0.10 items -e "SELECT *FROM Item" 
+  129  podman stop mysql-1
+  130  podman run --name mysql-2 -d -v /var/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 rhscl/mysql-57-rhel7
+  131  podman ps
+  132  podman ps -a
+  133  podman ps -a > /tmp/my-containers
+  134  podman exec mysql-2 bash
+  135  podman exec -it mysql-2 bash
+  136  mysql -uuser1 -h workstation.lab.example.com -pmypa55 -p13306 items
+  137  mysql -uuser1 -h 127.0.0.1 -pmypa55 -p13306 items
+  138  podman ps
+  139  podman inspect mysql-2  | less
+  140  mysql -uuser1 -h 10.88.0.11 -pmypa55 -p13306 items
+  141  mysql -uroot -h 10.88.0.11 -pr00tpa55 -p13306 items
+  142  podman exec -ti mysql-2 bash
+  143  sudo podman rm mysql-1
+  144  lab manage-review grade
+  145  lab mange-revew finish
+  146  lab manage-revew finish
+  147  lab manage-review finish
+  148  exit
+  149  lab image-operations start
+  150  sudo podman login quay.io
+  151  sudo podman run -d --name official-httpd -p 8180:80 quay.io/redhattraining/httpd-parent
+  152  podman exec -ti official-httpd bash
+  153  curl 127.0.0.1:8180/do180.html
+  154  sudo podman diff official-httpd 
+  155  podman stop official-httpd 
+  156  podman commit -a 'Martin' official-httpd do180-custom-httpd
+  157  podman images
+  158  source /usr/local/etc/ocp4.config 
+  159  cat /usr/local/etc/ocp4.config 
+  160  podman tag do180-custom-httpd quay.io/${RHT_OSCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  161  podman tag -?
+  162  podman tag --?
+  163  ${RHT_OSCP4_QUAY_USER}
+  164  echo ${RHT_OSCP4_QUAY_USER}
+  165  podman tag do180-custom-httpd quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  166  podman images
+  167  podman push quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  168  podan pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  169  podman pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  170  podman run -d --name test-httpd -p 8280:80 quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+  171  curl http://localhost:8280/do180.html
+  172  lab image-operations finish
+  173  exit
+  174  lab image-review start
+  175  podman pull quay.io/redhattraining/nginx:1.17
+  176  podman run -d --name official-nginx -p 8080:80 nginx
+  177  podman run -d --name official-nginx -p 8080:80 localhost/nginx
+  178* 
+  179  podman run -d --name official-nginx -p 8080:80 9beeba249f3e
+  180  podman exec -ti official-nginx bash
+  181  curl http://127.0.0.1:8080/index.html
+  182  podman stop official-nginx
+  183  podman ps
+  184  podman ps -a
+  185  podman commit -a 'martin' official-nginx do180/mynginx:v1.0
+  186  podman images
+  187  podman rmi localhost/do180/mynginx
+  188  podman rmi localhost/do180/mynginx:v1.0
+  189  podman commit -a 'martin' official-nginx do180/mynginx:v1.0-SNAPSHOT
+  190  podman run -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT
+  191  podman exec -ti official-nginx-DEV bash
+  192  podman exec -ti official-nginx-dev bash
+  193  curl http://127.0.0.1:8080/index.html
+  194  podman stop official-nginx-dev
+  195  podman commit -a 'martin2' official-nginx-dev do180/mynginx:v1.0
+  196  podman rmi do180/mynginx:v1.0-SNAPSHOT
+  197  podman stop do180/mynginx:v1.0-SNAPSHOT
+  198  podman sotp official-nginx-dev
+  199  podman stop official-nginx-dev
+  200  podman rmi do180/mynginx:v1.0-SNAPSHOT
+  201  podman pd -a
+  202  podman ps -a
+  203  podman images
+  204  podman rmi 2c8784a15b35
+  205  history
+]0;root@workstation:~[root@workstation ~]# podman run -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT
+Error: error creating container storage: the container name "official-nginx-dev" is already in use by "1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061". You have to remove that container to be able to reuse that name.: that name is already in use
+]0;root@workstation:~[root@workstation ~]# poda[Kman ps
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+]0;root@workstation:~[root@workstation ~]# podman ps -a
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                     PORTS                 NAMES
+1d0398a3e19e  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  6 minutes ago   Exited (0) 4 minutes ago   0.0.0.0:8080->80/tcp  official-nginx-dev
+603625eb7ff6  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  20 minutes ago  Exited (0) 18 minutes ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman run offica[Kial-nginx-dev
+Trying to pull registry.access.redhat.com/official-nginx-dev...
+  name unknown: Repo not found
+Trying to pull quay.io/official-nginx-dev...
+  error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+Error: unable to pull official-nginx-dev: 2 errors occurred:
+	* Error initializing source docker://registry.access.redhat.com/official-nginx-dev:latest: Error reading manifest latest in registry.access.redhat.com/official-nginx-dev: name unknown: Repo not found
+	* Error initializing source docker://quay.io/official-nginx-dev:latest: Error reading manifest latest in quay.io/official-nginx-dev: error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n"
+
+
+]0;root@workstation:~[root@workstation ~]# podman start official-nginx-dev
+official-nginx-dev
+]0;root@workstation:~[root@workstation ~]# podman start official-nginx-dev[2Prun[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                     PORTS                 NAMES
+1d0398a3e19e  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  7 minutes ago   Up 8 seconds ago           0.0.0.0:8080->80/tcp  official-nginx-dev
+603625eb7ff6  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  21 minutes ago  Exited (0) 19 minutes ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman exec -ti official-nginx-dev bash
+root@1d0398a3e19e:/# exitcho "DO180 Page" > /usr/share/nginx/html/index.html 
+root@1d0398a3e19e:/# exit
+exit
+]0;root@workstation:~[root@workstation ~]# curlpodman exec -ti official-nginx-dev bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[Kstart official-nginx-dev[2Prun[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cps -a[K[Krun -d --name official-nginx-dev -p 8080:80 do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chistory[Kpodman rmi 2c8784a15b35[10Pimages[1Pps -ad[C[C[Crmi do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pstop official-nginx-devot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctop do180/mynginx:v1.0-SNAPSHOT[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Prmi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -a 'martin2' official-nginx-dev do180/mynginx:v1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[34Pstop official-nginx-dev[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl http://127.0.0.1:8080/index.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpodman exec -ti official-nginx-dev bash[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pcurl http://127.0.0.1:8080/index.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# podman sotp [K[K[K[Ktop official-nginx-dev
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman commit -a 'martin2' do180/mynginx:v1.0
+Error: you must provide a container name or ID and a target image name
+]0;root@workstation:~[root@workstation ~]# podman commit -a 'martin2' do180/mynginx:v1.0ldo180/mynginx:v1.0odo180/mynginx:v1.0cdo180/mynginx:v1.0ado180/mynginx:v1.0ldo180/mynginx:v1.0hdo180/mynginx:v1.0odo180/mynginx:v1.0sdo180/mynginx:v1.0tdo180/mynginx:v1.0/do180/mynginx:v1.0
+Error: you must provide a container name or ID and a target image name
+]0;root@workstation:~[root@workstation ~]# podman commit -a 'martin2' localhost/do180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0odo180/mynginx:v1.0fdo180/mynginx:v1.0fdo180/mynginx:v1.0ido180/mynginx:v1.0cdo180/mynginx:v1.0ido180/mynginx:v1.0ado180/mynginx:v1.0ldo180/mynginx:v1.0-do180/mynginx:v1.0ndo180/mynginx:v1.0gdo180/mynginx:v1.0ndo180/mynginx:v1.0[1Pdo180/mynginx:v1.0[1Pdo180/mynginx:v1.0gdo180/mynginx:v1.0ido180/mynginx:v1.0ndo180/mynginx:v1.0xdo180/mynginx:v1.0-do180/mynginx:v1.0[Cdo180/mynginx:v1.0edo180/mynginx:v1.0vdo180/mynginx:v1.0 do180/mynginx:v1.0
+Getting image source signatures
+Copying blob ffc9b21953f4 [--------------------------------------] 0b / 0b
+Copying blob 2f4accd375d9 [--------------------------------------] 0b / 0b
+Copying blob 6c7de695ede3 [--------------------------------------] 0b / 0b
+Copying blob c66457e3883c [--------------------------------------] 0b / 0b
+Copying blob 0b2469ee818e [======================================] 6.0KiB / 6.0KiB
+[1A[2K[1A[2K[1A[2K[1A[2K[1A[2KCopying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob c66457e3883c skipped: already exists
+Copying blob 0b2469ee818e done
+Copying config cfe481408b [======================================] 5.8KiB / 5.8KiB
+[1A[2KCopying config cfe481408b done
+Writing manifest to image destination
+Storing signatures
+cfe481408b4c675c0c5896e88628df8e5489fdd02223f895e63c0c482eb88090
+]0;root@workstation:~[root@workstation ~]# podman immages
+Error: unrecognized command `podman immages`
+Try 'podman --help' for more information.
+]0;root@workstation:~[root@workstation ~]# podman images
+REPOSITORY                     TAG             IMAGE ID       CREATED          SIZE
+localhost/do180/mynginx        v1.0            cfe481408b4c   9 seconds ago    131 MB
+localhost/do180/mynginx        v1.0-SNAPSHOT   f450a68ed4d9   11 minutes ago   131 MB
+quay.io/redhattraining/nginx   1.17            9beeba249f3e   8 months ago     131 MB
+]0;root@workstation:~[root@workstation ~]# podman rmi localhost/do180/mynginx:v1.0-SNAPSHOT 
+Error: could not remove image f450a68ed4d9e22075ef2e32a08e501d9fd2a8f5258de2659b24ffea37d59ba8 as it is being used by 1 containers
+]0;root@workstation:~[root@workstation ~]# pd[Kodmand [K[K ps -a
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                     PORTS                 NAMES
+1d0398a3e19e  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  10 minutes ago  Exited (0) 2 minutes ago   0.0.0.0:8080->80/tcp  official-nginx-dev
+603625eb7ff6  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  24 minutes ago  Exited (0) 22 minutes ago  0.0.0.0:8080->80/tcp  official-nginx
+]0;root@workstation:~[root@workstation ~]# podman rm official-nginx-dev 
+1d0398a3e19eb9ff74d20cf3595f08eaff61e8fb8bbb35471cd44b5db1b06061
+]0;root@workstation:~[root@workstation ~]# podman rmi [18@ official-nginx-dev[Cps -a[Krmi localhost/do180/mynginx:v1.0-SNAPSHOT 
+Untagged: localhost/do180/mynginx:v1.0-SNAPSHOT
+]0;root@workstation:~[root@workstation ~]# podman run -d --name my-nfing[Kx [K[K[K[K[Kginx -[Kdo[K[K-p 8080[K[K[K2080[K[K[K80:80 localhost/do180/mynginx:v1.0
+5812a827d136e503f67f6609e304763815a8e796d2067049531d8d7a0d3be758
+]0;root@workstation:~[root@workstation ~]# curl http://h[K127.0.0.1:8280/index.html
+DO180 Page
+]0;root@workstation:~[root@workstation ~]# lab-[K image-review grade
+
+Grading the student's work for the Lab: Managing Images
+
+ · Nginx container image is pulled.............................  [1;32mPASS[0;39m
+ · Container official-nginx is created.........................  [1;32mPASS[0;39m
+ · Container official-nginx is stopped.........................  [1;32mPASS[0;39m
+ · Tag do180/mynginx:v1.0-SNAPSHOT is removed..................  [1;32mPASS[0;39m
+ · Tag do180/mynginx:v1.0 is created...........................  [1;32mPASS[0;39m
+ · Container my-nginx is created and running...................  [1;32mPASS[0;39m
+ · index.html is available with the custom content.............  [1;32mPASS[0;39m
+]0;root@workstation:~[root@workstation ~]# lab image-review finish
+
+Completing the Lab: Managing Images
+
+ · Stopping official-nginx-dev container.......................  [1;36mSUCCESS[0;39m
+ · Removing official-nginx-dev container.......................  [1;36mSUCCESS[0;39m
+ · Stopping official-nginx container...........................  [1;36mSUCCESS[0;39m
+ · Removing official-nginx container...........................  [1;36mSUCCESS[0;39m
+ · Removing do180/mynginx:v1.0 image...........................  [1;36mSUCCESS[0;39m
+ · Removing quay.io/redhattraining/nginx:1.17 image............  [1;36mSUCCESS[0;39m
+]0;root@workstation:~[root@workstation ~]# exit
+exit
+
+Script done on 2021-01-20 16:20:32-05:00
