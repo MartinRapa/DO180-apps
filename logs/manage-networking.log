@@ -2213,4 +2213,72 @@ Completing the Lab: Managing Images
 ]0;root@workstation:~[root@workstation ~]# exit
 exit
 Script done, file is /home/student/DO180-apps/logs/image-review.log
-]0;root@workstation:~[root@workstation ~]# cat /home/su[Ktudent/DP
+]0;root@workstation:~[root@workstation ~]# cat /home/su[Ktudent/DP[K[K[K[1@l[1@s[1@l[1P[1@ [1@-[1@l[1@a[1@ [1P[1P[1P /home/student[C[C[C[C[C[C[C[C[C[C[C[C[C[C/DOO[K180-apps/logs/
+total 376
+drwxr-xr-x.  2 root    root       168 Jan 20 13:20 [0m[38;5;33m.[0m
+drwxrwxr-x. 10 student student    228 Jan 19 12:36 [38;5;33m..[0m
+-rw-r--r--.  1 root    root       842 Jan 19 11:03 container-review.log
+-rw-r--r--.  1 root    root     22493 Jan 20 13:06 image-operations.log
+-rw-r--r--.  1 root    root     40703 Jan 20 16:20 image-review.log
+-rw-r--r--.  1 root    root     40560 Jan 19 12:30 manage-lifecycle.log
+-rw-r--r--.  1 root    root    159744 Jan 20 16:20 manage-networking.log
+-rw-r--r--.  1 root    root     77577 Jan 20 12:46 manage-review.log
+]0;root@workstation:~[root@workstation ~]# ls -la  /home/student/DO180-apps/logs/
+total 376
+drwxr-xr-x.  2 root    root       168 Jan 20 13:20 [0m[38;5;33m.[0m
+drwxrwxr-x. 10 student student    228 Jan 19 12:36 [38;5;33m..[0m
+-rw-r--r--.  1 root    root       842 Jan 19 11:03 container-review.log
+-rw-r--r--.  1 root    root     22493 Jan 20 13:06 image-operations.log
+-rw-r--r--.  1 root    root     40703 Jan 20 16:20 image-review.log
+-rw-r--r--.  1 root    root     40560 Jan 19 12:30 manage-lifecycle.log
+-rw-r--r--.  1 root    root    159744 Jan 20 16:20 manage-networking.log
+-rw-r--r--.  1 root    root     77577 Jan 20 12:46 manage-review.log
+]0;root@workstation:~[root@workstation ~]# cd /home/student/DO180-apps/
+]0;root@workstation:/home/student/DO180-apps[root@workstation DO180-apps]# git push .
+Everything up-to-date
+]0;root@workstation:/home/student/DO180-apps[root@workstation DO180-apps]# git commit -c "Labs de images-*"
+fatal: could not lookup commit Labs de images-*
+]0;root@workstation:/home/student/DO180-apps[root@workstation DO180-apps]# git commit -c "Labs de images-*"[1P[1@,[1P[1@m
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+	[31mlogs/image-operations.log[m
+	[31mlogs/image-review.log[m
+	[31mlogs/manage-networking.log[m
+	[31mlogs/manage-review.log[m
+
+nothing added to commit but untracked files present
+]0;root@workstation:/home/student/DO180-apps[root@workstation DO180-apps]# history | grei[Kp git
+   42  [01;31m[Kgit[m[K commit -c "resultados labs"
+   44  [01;31m[Kgit[m[K add .
+   62  [01;31m[Kgit[m[K commit -a -m 'Resultados primeros labs'
+   63  [01;31m[Kgit[m[K add -
+   64  [01;31m[Kgit[m[K add .
+   65  [01;31m[Kgit[m[K commit -a -m 'Resultados primeros labs'
+   66  [01;31m[Kgit[m[K push
+   67  [01;31m[Kgit[m[K config credential.helper store
+   78  vi .[01;31m[Kgit[m[K-credentials
+   81  [01;31m[Kgit[m[K push
+   82  [01;31m[Kgit[m[K push https://MartinRapa@[01;31m[Kgit[m[Khub.com/MartinRapa/DO180-apps.[01;31m[Kgit[m[K
+   83  [01;31m[Kgit[m[K push https://MartinRapa@[01;31m[Kgit[m[Khub.com/MartinRapa/DO180-apps
+   96  [01;31m[Kgit[m[K push .
+   97  [01;31m[Kgit[m[K commit -c "Labs de images-*"
+   98  [01;31m[Kgit[m[K commit -m "Labs de images-*"
+   99  history | grep [01;31m[Kgit[m[K
+]0;root@workstation:/home/student/DO180-apps[root@workstation DO180-apps]# git add -
+fatal: pathspec '-' did not match any files
+]0;root@workstation:/home/student/DO180-apps[root@workstation DO180-apps]# git add .
+]0;root@workstation:/home/student/DO180-apps[root@workstation DO180-apps]# git add .-history | grep gitgit commit -m "Labs de images-*"
+[master f9f7045] Labs de images-*
+ Committer: root <root@workstation.lab.example.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you 

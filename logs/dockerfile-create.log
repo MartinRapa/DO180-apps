@@ -1,0 +1,311 @@
+Script started on 2021-01-21 10:49:25-05:00
+]0;root@workstation:~[root@workstation ~]# lab docer-[K[Kck[K[K[Kkerfile-create satart[K[K[K[K[Ktart 
+
+Setting up workstation for the Guided Exercise: Building a basic Apache Container Image
+
+ · Checking podman configuration...............................  [1;36mSUCCESS[0;39m
+ · Downloading starter project.................................  [1;36mSUCCESS[0;39m
+ · Downloading solution project................................  [1;36mSUCCESS[0;39m
+
+Setup successful. Please proceed with the exercise.
+
+]0;root@workstation:~[root@workstation ~]# vim /home/student/DO180/labs/dockerfile-create/DockerFile
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;42r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[42;1H"/home/student/DO180/labs/dockerfile-create/DockerFile" [New File][2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;1H[94m~                                                                                                                                                                               [3;1H~                                                                                                                                                                               [4;1H~                                                                                                                                                                               [5;1H~                                                                                                                                                                               [6;1H~                                                                                                                                                                               [7;1H~                                                                                                                                                                               [8;1H~                                                                                                                                                                               [9;1H~                                                                                                                                                                               [10;1H~                                                                                                                                                                               [11;1H~                                                                                                                                                                               [12;1H~                                                                                                                                                                               [13;1H~                                                                                                                                                                               [14;1H~                                                                                                                                                                               [15;1H~                                                                                                                                                                               [16;1H~                                                                                                                                                                               [17;1H~                                                                                                                                                                               [18;1H~                                                                                                                                                                               [19;1H~                                                                                                                                                                               [20;1H~                                                                                                                                                                               [21;1H~                                                                                                                                                                               [22;1H~                                                                                                                                                                               [23;1H~                                                                                                                                                                               [24;1H~                                                                                                                                                                               [25;1H~                                                                                                                                                                               [26;1H~                                                                                                                                                                               [27;1H~                                                                                                                                                                               [28;1H~                                                                                                                                                                               [29;1H~                                                                                                                                                                               [30;1H~                                                                                                                                                                               [31;1H~                                                                                                                                                                               [32;1H~                                                                                                                                                                               [33;1H~                                                                                                                                                                               [34;1H~                                                                                                                                                                               [35;1H~                                                                                                                                                                               [36;1H~                                                                                                                                                                               [37;1H~                                                                                                                                                                               [38;1H~                                                                                                                                                                               [39;1H~                                                                                                                                                                               [40;1H~                                                                                                                                                                               [41;1H~                                                                                                                                                                               [m[42;159H0,0-1[9CAll[1;1H[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[27m[23m[29m[m[H[2J[?25l[2;1H[94m~                                                                                                                                                                               [3;1H~                                                                                                                                                                               [4;1H~                                                                                                                                                                               [5;1H~                                                                                                                                                                               [6;1H~                                                                                                                                                                               [7;1H~                                                                                                                                                                               [8;1H~                                                                                                                                                                               [9;1H~                                                                                                                                                                               [10;1H~                                                                                                                                                                               [11;1H~                                                                                                                                                                               [12;1H~                                                                                                                                                                               [13;1H~                                                                                                                                                                               [14;1H~                                                                                                                                                                               [15;1H~                                                                                                                                                                               [16;1H~                                                                                                                                                                               [17;1H~                                                                                                                                                                               [18;1H~                                                                                                                                                                               [19;1H~                                                                                                                                                                               [20;1H~                                                                                                                                                                               [21;1H~                                                                                                                                                                               [22;1H~                                                                                                                                                                               [23;1H~                                                                                                                                                                               [24;1H~                                                                                                                                                                               [25;1H~                                                                                                                                                                               [26;1H~                                                                                                                                                                               [27;1H~                                                                                                                                                                               [28;1H~                                                                                                                                                                               [29;1H~                                                                                                                                                                               [30;1H~                                                                                                                                                                               [31;1H~                                                                                                                                                                               [32;1H~                                                                                                                                                                               [33;1H~                                                                                                                                                                               [34;1H~                                                                                                                                                                               [35;1H~                                                                                                                                                                               [36;1H~                                                                                                                                                                               [37;1H~                                                                                                                                                                               [38;1H~                                                                                                                                                                               [39;1H~                                                                                                                                                                               [40;1H~                                                                                                                                                                               [41;1H~                                                                                                                                                                               [m[42;159H0,0-1[9CAll"/home/student/DO180/labs/dockerfile-create/DockerFile" [New File][1;1H[?25h[?25l[42;149HF[1;1H[?25h[?25l[42;150HR[1;1H[42;149H  [1;1H[?25h[?25l[42;149HO[1;1H[42;149H [1;1H[42;1H[1m-- INSERT --[m[42;13H[K[42;159H1,1[11CTop[1;41r[1;1H[L[1;42r[42;159H[K[42;159H1,1[11CAll[1;1H[?25h[?25lM[42;161H2[1;2H[?25h[?25l[42;161H3[1;3H[?25h[?25l[42;161H2[1;2H[?25h[?25l[1;1H[K[42;161H1[1;1H[?25h[?25lF[42;161H2[1;2H[?25h[?25lR[42;161H3[1;3H[?25h[?25lO[42;161H4[1;4H[?25h[?25lM[42;161H5[1;5H[?25h[?25l[42;161H6[1;6H[?25h[?25lu[42;161H7[1;7H[?25h[?25lb[42;161H8[1;8H[?25h[?25li[42;161H9[1;9H[?25h[?25lt[42;161H10[1;10H[?25h[?25l[1;9H[K[42;161H9 [1;9H[?25h[?25l7[42;161H10[1;10H[?25h[?25l/[42;162H1[1;11H[?25h[?25lu[42;162H2[1;12H[?25h[?25lb[42;162H3[1;13H[?25h[?25li[42;162H4[1;14H[?25h[?25l:[42;162H5[1;15H[?25h[?25l7[42;162H6[1;16H[?25h[?25l.[42;162H7[1;17H[?25h[?25l7[42;162H8[1;18H[?25h[?25l[2;41r[2;1H[L[1;42r[42;159H[K[42;159H2,1[11CAll[2;1H[?25h[?25l[3;41r[3;1H[L[1;42r[42;159H[K[42;159H3,1[11CAll[3;1H[?25h[?25lm[42;161H2[3;2H[?25h[?25la[42;161H3[3;3H[?25h[?25l[3;2H[K[42;161H2[3;2H[?25h[?25l[3;1H[K[42;161H1[3;1H[?25h[?25lM[42;161H2[3;2H[?25h[?25lA[42;161H3[3;3H[?25h[?25lI[42;161H4[3;4H[?25h[?25lN[42;161H5[3;5H[?25h[?25lT[42;161H6[3;6H[?25h[?25lA[42;161H7[3;7H[?25h[?25lI[42;161H8[3;8H[?25h[?25lN[42;161H9[3;9H[?25h[?25lE[42;161H10[3;10H[?25h[?25lR[42;162H1[3;11H[?25h[?25l[42;162H2[3;12H[?25h[?25lM[42;162H3[3;13H[?25h[?25la[42;162H4[3;14H[?25h[?25lr[42;162H5[3;15H[?25h[?25lt[42;162H6[3;16H[?25h[?25li[42;162H7[3;17H[?25h[?25ln[42;162H8[3;18H[?25h[?25l[42;162H9[3;19H[?25h[?25lR[42;161H20[3;20H[?25h[?25la[42;162H1[3;21H[?25h[?25lp[42;162H2[3;22H[?25h[?25la[42;162H3[3;23H[?25h[?25ll[42;162H4[3;24H[?25h[?25ll[42;162H5[3;25H[?25h[?25li[42;162H6[3;26H[?25h[?25li[42;162H7[3;27H[?25h[?25l[3;26H[K[42;162H6[3;26H[?25h[?25ln[42;162H7[3;27H[?25h[?25li[42;162H8[3;28H[?25h[?25l[42;162H9[3;29H[?25h[?25l<[42;161H30[3;30H[?25h[?25lm[42;162H1[3;31H[?25h[?25la[42;162H2[3;32H[?25h[?25lr[42;162H3[3;33H[?25h[?25lt[42;162H4[3;34H[?25h[?25li[42;162H5[3;35H[?25h[?25ln[42;162H6[3;36H[?25h[?25l.[42;162H7[3;37H[?25h[?25lr[42;162H8[3;38H[?25h[?25la[42;162H9[3;39H[?25h[?25lp[42;161H40[3;40H[?25h[?25la[42;162H1[3;41H[?25h[?25ll[42;162H2[3;42H[?25h[?25ll[42;162H3[3;43H[?25h[?25li[42;162H4[3;44H[?25h[?25ln[42;162H5[3;45H[?25h[?25li[42;162H6[3;46H[?25h[?25l@[42;162H7[3;47H[?25h[?25lm[42;162H8[3;48H[?25h[?25lg[42;162H9[3;49H[?25h[?25la[42;161H50[3;50H[?25h[?25li[42;162H1[3;51H[?25h[?25ll[42;162H2[3;52H[?25h[?25l.[42;162H3[3;53H[?25h[?25lc[42;162H4[3;54H[?25h[?25lom[42;162H6[3;56H[?25h[?25l[3;55H[K[42;162H5[3;55H[?25h[?25l[3;54H[K[42;162H4[3;54H[?25h[?25l[3;53H[K[42;162H3[3;53H[?25h[?25l[3;52H[K[42;162H2[3;52H[?25h[?25l[3;51H[K[42;162H1[3;51H[?25h[?25l[3;50H[K[42;162H0[3;50H[?25h[?25l[3;49H[K[42;161H49[3;49H[?25h[?25l[3;48H[K[42;162H8[3;48H[?25h[?25l[3;47H[K[42;162H7[3;47H[?25h[?25lg[42;162H8[3;48H[?25h[?25lm[42;162H9[3;49H[?25h[?25la[42;161H50[3;50H[?25h[?25li[42;162H1[3;51H[?25h[?25ll[42;162H2[3;52H[?25h[?25lc[42;162H3[3;53H[?25h[?25l[3;52H[K[42;162H2[3;52H[?25h[?25l.[42;162H3[3;53H[?25h[?25lc[42;162H4[3;54H[?25h[?25lo[42;162H5[3;55H[?25h[?25lm[42;162H6[3;56H[?25h[?25l>[42;162H7[3;57H[?25h[?25l[4;41r[4;1H[L[1;42r[42;159H[K[42;159H4,1[11CAll[4;1H[?25h[?25l[5;41r[5;1H[L[1;42r[42;159H[K[42;159H5,1[11CAll[5;1H[?25h[?25lL[42;161H2[5;2H[?25h[?25lA[42;161H3[5;3H[?25h[?25lB[42;161H4[5;4H[?25h[?25lE[42;161H5[5;5H[?25h[?25lL[42;161H6[5;6H[?25h[?25l[42;161H7[5;7H[?25h[?25ld[42;161H8[5;8H[?25h[?25le[42;161H9[5;9H[?25h[?25ls[42;161H10[5;10H[?25h[?25lc[42;162H1[5;11H[?25h[?25lr[42;162H2[5;12H[?25h[?25li[42;162H3[5;13H[?25h[?25lp[42;162H4[5;14H[?25h[?25lt[42;162H5[5;15H[?25h[?25li[42;162H6[5;16H[?25h[?25lo[42;162H7[5;17H[?25h[?25ln[42;162H8[5;18H[?25h[?25l=[42;162H9[5;19H[?25h[?25l"[42;161H20[5;20H[?25h[?25lA[42;162H1[5;21H[?25h[?25l[42;162H2[5;22H[?25h[?25lc[42;162H3[5;23H[?25h[?25lu[42;162H4[5;24H[?25h[?25ls[42;162H5[5;25H[?25h[?25lt[42;162H6[5;26H[?25h[?25lo[42;162H7[5;27H[?25h[?25lm[42;162H8[5;28H[?25h[?25l[42;162H9[5;29H[?25h[?25lA[42;161H30[5;30H[?25h[?25lp[42;162H1[5;31H[?25h[?25la[42;162H2[5;32H[?25h[?25lc[42;162H3[5;33H[?25h[?25lh[42;162H4[5;34H[?25h[?25le[42;162H5[5;35H[?25h[?25l[42;162H6[5;36H[?25h[?25lc[42;162H7[5;37H[?25h[?25lo[42;162H8[5;38H[?25h[?25ln[42;162H9[5;39H[?25h[?25lt[42;161H40[5;40H[?25h[?25la[42;162H1[5;41H[?25h[?25li[42;162H2[5;42H[?25h[?25ln[42;162H3[5;43H[?25h[?25le[42;162H4[5;44H[?25h[?25lr[42;162H5[5;45H[?25h[?25l[42;162H6[5;46H[?25h[?25lb[42;162H7[5;47H[?25h[?25la[42;162H8[5;48H[?25h[?25ls[42;162H9[5;49H[?25h[?25le[42;161H50[5;50H[?25h[?25ld[42;162H1[5;51H[?25h[?25l[42;162H2[5;52H[?25h[?25lo[42;162H3[5;53H[?25h[?25ln[42;162H4[5;54H[?25h[?25l[42;162H5[5;55H[?25h[?25lU[42;162H6[5;56H[?25h[?25lB[42;162H7[5;57H[?25h[?25lI[42;162H8[5;58H[?25h[?25l[42;162H9[5;59H[?25h[?25l7[42;161H60[5;60H[?25h[?25l"[42;162H1[5;61H[?25h[?25l[6;41r[6;1H[L[1;42r[42;159H[K[42;159H6,1[11CAll[6;1H[?25h[?25l[7;41r[7;1H[L[1;42r[42;159H[K[42;159H7,1[11CAll[7;1H[?25h[?25lR[42;161H2[7;2H[?25h[?25lU[42;161H3[7;3H[?25h[?25lN[42;161H4[7;4H[?25h[?25l[42;161H5[7;5H[?25h[?25ly[42;161H6[7;6H[?25h[?25lu[42;161H7[7;7H[?25h[?25lm[42;161H8[7;8H[?25h[?25l[42;161H9[7;9H[?25h[?25li[42;161H10[7;10H[?25h[?25ln[42;162H1[7;11H[?25h[?25ls[42;162H2[7;12H[?25h[?25lt[42;162H3[7;13H[?25h[?25la[42;162H4[7;14H[?25h[?25ll[42;162H5[7;15H[?25h[?25ll[42;162H6[7;16H[?25h[?25l[42;162H7[7;17H[?25h[?25l-[42;162H8[7;18H[?25h[?25ly[42;162H9[7;19H[?25h[?25l[42;161H20[7;20H[?25h[?25lh[42;162H1[7;21H[?25h[?25lt[42;162H2[7;22H[?25h[?25lt[42;162H3[7;23H[?25h[?25lp[42;162H4[7;24H[?25h[?25ld[42;162H5[7;25H[?25h[?25l[42;162H6[7;26H[?25h[?25l&[42;162H7[7;27H[?25h[?25l&[42;162H8[7;28H[?25h[?25l[42;162H9[7;29H[?25h[?25l\[42;161H30[7;30H[?25h[?25l[8;41r[8;1H[L[1;42r[42;159H[K[42;159H8,1[11CAll[8;1H[?25h[?25l[42;161H2-9[8;9H[?25h[?25ly[42;161H3-10[8;10H[?25h[?25lu[42;161H4-11[8;11H[?25h[?25lm[42;161H5-12[8;12H[?25h[?25l[42;161H6-13[8;13H[?25h[?25lc[42;161H7-14[8;14H[?25h[?25ll[42;161H8-15[8;15H[?25h[?25le[42;161H9-16[8;16H[?25h[?25la[42;161H10-17[8;17H[?25h[?25ln[42;162H1-18[8;18H[?25h[?25l[42;162H2-19[8;19H[?25h[?25la[42;162H3-20[8;20H[?25h[?25ll[42;162H4-21[8;21H[?25h[?25ll[42;162H5-22[8;22H[?25h[?25l[9;41r[9;1H[L[1;42r[42;159H[K[42;159H9,1[11CAll[9;1H[?25h[?25l[10;41r[10;1H[L[1;42r[42;159H[K[42;159H10,1[10CAll[10;1H[?25h[?25lR[42;162H2[10;2H[?25h[?25lU[42;162H3[10;3H[?25h[?25lN[42;162H4[10;4H[?25h[?25l[42;162H5[10;5H[?25h[?25le[42;162H6[10;6H[?25h[?25lc[42;162H7[10;7H[?25h[?25lh[42;162H8[10;8H[?25h[?25lo[42;162H9[10;9H[?25h[?25l[42;162H10[10;10H[?25h[?25l"[42;163H1[10;11H[?25h[?25lh[42;163H2[10;12H[?25h[?25l[10;11H[K[42;163H1[10;11H[?25h[?25lH[42;163H2[10;12H[?25h[?25le[42;163H3[10;13H[?25h[?25ll[42;163H4[10;14H[?25h[?25ll[42;163H5[10;15H[?25h[?25lo[42;163H6[10;16H[?25h[?25l[42;163H7[10;17H[?25h[?25lf[42;163H8[10;18H[?25h[?25lr[42;163H9[10;19H[?25h[?25lo[42;162H20[10;20H[?25h[?25lm[42;163H1[10;21H[?25h[?25l[42;163H2[10;22H[?25h[?25lD[42;163H3[10;23H[?25h[?25lo[42;163H4[10;24H[?25h[?25lc[42;163H5[10;25H[?25h[?25lk[42;163H6[10;26H[?25h[?25le[42;163H7[10;27H[?25h[?25lr[42;163H8[10;28H[?25h[?25lF[42;163H9[10;29H[?25h[?25li[42;162H30[10;30H[?25h[?25ll[42;163H1[10;31H[?25h[?25le[42;163H2[10;32H[?25h[?25l[10;31H[K[42;163H1[10;31H[?25h[?25l[10;30H[K[42;163H0[10;30H[?25h[?25l[10;29H[K[42;162H29[10;29H[?25h[?25l[10;28H[K[42;163H8[10;28H[?25h[?25l[10;27H[K[42;163H7[10;27H[?25h[?25le[42;163H8[10;28H[?25h[?25l[10;27H[K[42;163H7[10;27H[?25h[?25lr[42;163H8[10;28H[?25h[?25lf[42;163H9[10;29H[?25h[?25li[42;162H30[10;30H[?25h[?25ll[42;163H1[10;31H[?25h[?25le[42;163H2[10;32H[?25h[?25l"[42;163H3[10;33H[?25h[?25l[42;163H4[10;34H[?25h[?25l>[42;163H5[10;35H[?25h[?25l[42;163H6[10;36H[?25h[?25l/[42;163H7[10;37H[?25h[?25lv[42;163H8[10;38H[?25h[?25la[42;163H9[10;39H[?25h[?25lr[42;162H40[10;40H[?25h[?25l[42;163H1[10;41H[?25h[?25l[42;163H0[10;40H[?25h[?25l/[42;163H1[10;41H[?25h[?25lw[42;163H2[10;42H[?25h[?25lw[42;163H3[10;43H[?25h[?25lw[42;163H4[10;44H[?25h[?25l/[42;163H5[10;45H[?25h[?25lh[42;163H6[10;46H[?25h[?25lt[42;163H7[10;47H[?25h[?25lm[42;163H8[10;48H[?25h[?25ll[42;163H9[10;49H[?25h[?25l/[42;162H50[10;50H[?25h[?25li[42;163H1[10;51H[?25h[?25ld[42;163H2[10;52H[?25h[?25l[10;51H[K[42;163H1[10;51H[?25h[?25ln[42;163H2[10;52H[?25h[?25ld[42;163H3[10;53H[?25h[?25le[42;163H4[10;54H[?25h[?25lx[42;163H5[10;55H[?25h[?25l.[42;163H6[10;56H[?25h[?25lh[42;163H7[10;57H[?25h[?25lt[42;163H8[10;58H[?25h[?25ll[42;163H9[10;59H[?25h[?25l[10;58H[K[42;163H8[10;58H[?25h[?25lm[42;163H9[10;59H[?25h[?25ll[42;162H60[10;60H[?25h[?25l[11;41r[11;1H[L[1;42r[42;159H[K[42;159H11,1[10CAll[11;1H[?25h[?25l[12;41r[12;1H[L[1;42r[42;159H[K[42;159H12,1[10CAll[12;1H[?25h[?25lE[42;162H2[12;2H[?25h[?25lX[42;162H3[12;3H[?25h[?25lP[42;162H4[12;4H[?25h[?25lO[42;162H5[12;5H[?25h[?25lS[42;162H6[12;6H[?25h[?25lE[42;162H7[12;7H[?25h[?25l[42;162H8[12;8H[?25h[?25l8[42;162H9[12;9H[?25h[?25l0[42;162H10[12;10H[?25h[?25l[13;41r[13;1H[L[1;42r[42;159H[K[42;159H13,1[10CAll[13;1H[?25h[?25l[14;41r[14;1H[L[1;42r[42;159H[K[42;159H14,1[10CAll[14;1H[?25h[?25lc[42;162H2[14;2H[?25h[?25lm[42;162H3[14;3H[?25h[?25ld[42;162H4[14;4H[?25h[?25l[14;3H[K[42;162H3[14;3H[?25h[?25l[14;2H[K[42;162H2[14;2H[?25h[?25l[14;1H[K[42;162H1[14;1H[?25h[?25l[13;41r[41;1H
+[1;42r[41;1H[94m~                                                                                                                                                                               [m[42;159H[K[42;159H13,1[10CAll[13;1H[?25h[?25lC[42;162H2[13;2H[?25h[?25lM[42;162H3[13;3H[?25h[?25lD[42;162H4[13;4H[?25h[?25l[42;162H1[13;1H[?25h[?25l[14;41r[14;1H[L[1;42r[13;1H[K[14;1HCMD[42;159H[K[42;159H14,1[10CAll[14;1H[?25h[?25l[42;162H4[14;4H[?25h[?25l[42;162H5[14;5H[?25h[?25l[[42;162H6[14;6H[?25h[?25l"[42;162H7[14;7H[?25h[?25lh[42;162H8[14;8H[?25h[?25lt[42;162H9[14;9H[?25h[?25lt[42;162H10[14;10H[?25h[?25lp[42;163H1[14;11H[?25h[?25ld[42;163H2[14;12H[?25h[?25l"[42;163H3[14;13H[?25h[?25l,[42;163H4[14;14H[?25h[?25l[42;163H5[14;15H[?25h[?25l-[42;163H6[14;16H[?25h[?25l"[42;163H7[14;17H[?25h[?25l-[42;163H8[14;18H[?25h[?25lD[42;163H9[14;19H[?25h[?25l[42;163H8[14;18H[?25h[?25l[42;163H7[14;17H[?25h[?25l[42;163H6[14;16H[?25h[?25l"-D[14;18H[K[42;163H5[14;15H[?25h[?25l[42;163H8[14;18H[?25h[?25l"[42;163H9[14;19H[?25h[?25l,[42;162H20[14;20H[?25h[?25l[42;163H1[14;21H[?25h[?25l"[42;163H2[14;22H[?25h[?25lF[42;163H3[14;23H[?25h[?25lO[42;163H4[14;24H[?25h[?25lR[42;163H5[14;25H[?25h[?25lE[42;163H6[14;26H[?25h[?25lG[42;163H7[14;27H[?25h[?25lR[42;163H8[14;28H[?25h[?25lO[42;163H9[14;29H[?25h[?25lU[42;162H30[14;30H[?25h[?25lN[42;163H1[14;31H[?25h[?25lD[42;163H2[14;32H[?25h[?25l"[42;163H3[14;33H[?25h[?25lCMD [46m[[27C][m[42;163H4[14;34H[?25h[42;1H[K[14;33H[?25l[42;149H^[[14;33H[42;149H  [14;34H[42;159H14,33[9CAll[14;33H[?25h[?25l[42;149H:[14;33H[42;149H[K[42;1H:[?2004h[?25hW[?25l[?25hQ[?25l[?25h[?25l[42;3H[K[42;3H[?25h[?25l[42;2H[K[42;2H[?25hw[?25l[?25hq[?25l[?25h[?25l[?2004l"/home/student/DO180/labs/dockerfile-create/DockerFile" [New] 15L, 292C written
+[?2004l[?1l>[?25h[?1049l[23;0;0t]0;root@workstation:~[root@workstation ~]# cd /home/student/DO180/labs/dockerfile-create/
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# su[K[Kpodman build --layers=false -t do180/apache -[K.
+Error: error reading info about "/home/student/DO180/labs/dockerfile-create/home/student/DO180/labs/dockerfile-create/Dockerfile": stat /home/student/DO180/labs/dockerfile-create/home/student/DO180/labs/dockerfile-create/Dockerfile: no such file or directory
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# podman build --layers=false -t do180/apache .[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kls -al[K[Kla
+total 8
+drwxrwxr-x. 2 student student  45 Jan 21 10:55 [0m[38;5;33m.[0m
+drwxr-xr-x. 7 student student 125 Jan 21 10:50 [38;5;33m..[0m
+-rw-r--r--. 1 root    root    292 Jan 21 10:55 DockerFile
+-rw-rw-r--. 1 student student 135 Dec  8 11:09 training.repo
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# mv DockerFile Dockerfile
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# mv DockerFile Dockerfilels -la[Kpodman build --layers=false -t do180/apache .
+STEP 1: FROM ubi7/ubi:7.7
+Getting image source signatures
+Copying blob fcd63ccfdd0c [--------------------------------------] 672.0KiB / 72.7MiB
+[1A[2KCopying blob fcd63ccfdd0c [>-------------------------------------] 2.3MiB / 72.7MiB
+Copying blob 09dbbf8834d2 [======================================] 1.6KiB / 1.6KiB
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=>------------------------------------] 4.2MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==>-----------------------------------] 5.6MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==>-----------------------------------] 6.6MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===>----------------------------------] 8.1MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [====>---------------------------------] 9.7MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=====>--------------------------------] 11.1MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=====>--------------------------------] 11.9MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [======>-------------------------------] 13.5MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=======>------------------------------] 14.9MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [========>-----------------------------] 16.5MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [========>-----------------------------] 18.1MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=========>----------------------------] 19.8MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==========>---------------------------] 21.1MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===========>--------------------------] 22.4MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [============>-------------------------] 23.9MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [============>-------------------------] 25.6MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=============>------------------------] 27.3MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==============>-----------------------] 29.0MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===============>----------------------] 30.6MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [================>---------------------] 32.1MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [================>---------------------] 33.3MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=================>--------------------] 34.6MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==================>-------------------] 36.0MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===================>------------------] 37.6MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===================>------------------] 38.8MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [====================>-----------------] 40.1MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=====================>----------------] 41.3MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=====================>----------------] 42.9MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [======================>---------------] 43.9MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=======================>--------------] 45.0MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=======================>--------------] 46.7MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [========================>-------------] 48.2MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=========================>------------] 49.3MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==========================>-----------] 50.9MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==========================>-----------] 52.0MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===========================>----------] 52.8MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===========================>----------] 53.9MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [============================>---------] 55.4MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=============================>--------] 56.7MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=============================>--------] 57.9MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=============================>--------] 58.2MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==============================>-------] 58.8MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==============================>-------] 59.8MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===============================>------] 61.2MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [================================>-----] 62.5MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [================================>-----] 63.3MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=================================>----] 64.8MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [=================================>----] 65.7MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [==================================>---] 67.1MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===================================>--] 68.3MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [===================================>--] 69.5MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [====================================>-] 71.4MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c [======================================] 72.7MiB / 72.7MiB
+Copying blob 09dbbf8834d2 done
+[1A[2K[1A[2KCopying blob fcd63ccfdd0c done
+Copying blob 09dbbf8834d2 done
+Copying config 0355cd652b [======================================] 4.3KiB / 4.3KiB
+[1A[2KCopying config 0355cd652b done
+Writing manifest to image destination
+Storing signatures
+STEP 2: MAINTAINER Martin Rapallini <martin.rapallini@gmail.com>
+STEP 3: LABEL description="A custom Apache container based on UBI 7"
+STEP 4: RUN yum install -y httpd && 	yum clean all
+Loaded plugins: ovl, product-id, search-disabled-repos, subscription-manager
+This system is not receiving updates. You can use subscription-manager on the host to register and assign subscriptions.
+ubi-7                                                    | 3.8 kB     00:00     
+ubi-7-rhah                                               | 3.7 kB     00:00     
+ubi-7-server-devtools-rpms                               | 3.8 kB     00:00     
+ubi-7-server-extras-rpms                                 | 3.7 kB     00:00     
+ubi-7-server-optional-rpms                               | 3.8 kB     00:00     
+ubi-server-rhscl-7-rpms                                  | 3.8 kB     00:00     
+(1/18): ubi-7/x86_64/group                                 |  124 B   00:00     
+(3/18): ubi-7/x86_64/prima 0% [                 ]  0.0 B/s |  124 B   --:-- ETA (2/18): ubi-7/x86_64/updateinfo                            |   92 B   00:00     
+(3/18): ubi-7/x86_64/primary_db                            | 795 kB   00:00     
+(4/18): ubi-7-rhah/x86_64/updateinfo                       |   92 B   00:00     
+(5/18): ubi-7-rhah/x86_64/primary_db                       | 2.5 kB   00:00     
+(7/18): ubi-7-server-devto 66% [==========-     ] 1.2 MB/s | 798 kB   00:00 ETA (6/18): ubi-7-rhah/x86_64/group                            |  124 B   00:00     
+(8/18): ubi-7-server-devto 66% [==========-     ] 1.1 MB/s | 798 kB   00:00 ETA (7/18): ubi-7-server-devtools-rpms/x86_64/updateinfo       |   92 B   00:00     
+(8/18): ubi-7-server-devtools-rpms/x86_64/primary_db       | 8.6 kB   00:00     
+(9/18): ubi-7-server-devtools-rpms/x86_64/group            |  124 B   00:00     
+(10/18): ubi-7-server-extras-rpms/x86_64/updateinfo        |   92 B   00:00     
+(13/18): ubi-7-server-opti 66% [==========-     ] 1.0 MB/s | 807 kB   00:00 ETA (11/18): ubi-7-server-extras-rpms/x86_64/group             |  124 B   00:00     
+(12/18): ubi-7-server-extras-rpms/x86_64/primary_db        | 6.8 kB   00:00     
+(13/18): ubi-7-server-optional-rpms/x86_64/group           |  124 B   00:00     
+(16/18): ubi-server-rhscl- 67% [==========-     ] 960 kB/s | 814 kB   00:00 ETA (14/18): ubi-7-server-optional-rpms/x86_64/primary_db      |  14 kB   00:00     
+(15/18): ubi-7-server-optional-rpms/x86_64/updateinfo      |   92 B   00:00     
+(16/18): ubi-server-rhscl-7-rpms/x86_64/updateinfo         |   92 B   00:00     
+(17/18): ubi-server-rhscl-7-rpms/x86_64/primary_db         | 379 kB   00:00     
+(18/18): ubi-server-rhscl- 99% [===============-] 976 kB/s | 1.2 MB   00:00 ETA (18/18): ubi-server-rhscl-7-rpms/x86_64/group              |  124 B   00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package httpd.x86_64 0:2.4.6-97.el7_9 will be installed
+--> Processing Dependency: httpd-tools = 2.4.6-97.el7_9 for package: httpd-2.4.6-97.el7_9.x86_64
+--> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-97.el7_9.x86_64
+--> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-97.el7_9.x86_64
+--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-97.el7_9.x86_64
+--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-97.el7_9.x86_64
+--> Running transaction check
+---> Package apr.x86_64 0:1.4.8-7.el7 will be installed
+---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+---> Package httpd-tools.x86_64 0:2.4.6-97.el7_9 will be installed
+---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+---> Package redhat-logos.noarch 0:70.7.0-1.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch           Version                Repository     Size
+================================================================================
+Installing:
+ httpd                x86_64         2.4.6-97.el7_9         ubi-7         1.2 M
+Installing for dependencies:
+ apr                  x86_64         1.4.8-7.el7            ubi-7         104 k
+ apr-util             x86_64         1.5.2-6.el7            ubi-7          92 k
+ httpd-tools          x86_64         2.4.6-97.el7_9         ubi-7          93 k
+ mailcap              noarch         2.1.41-2.el7           ubi-7          31 k
+ redhat-logos         noarch         70.7.0-1.el7           ubi-7          13 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 15 M
+Installed size: 18 M
+Downloading packages:
+(2/6): apr-util-1.5.2-6.el 0% [                 ]  0.0 B/s |    0 B   --:-- ETA warning: /var/cache/yum/x86_64/7Server/ubi-7/packages/apr-1.4.8-7.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID fd431d51: NOKEY
+Public key for apr-1.4.8-7.el7.x86_64.rpm is not installed
+(1/6): apr-1.4.8-7.el7.x86_64.rpm                          | 104 kB   00:00     
+(2/6): apr-util-1.5.2-6.el7.x86_64.rpm                     |  92 kB   00:00     
+(3/6): httpd-2.4.6-97.el7_9.x86_64.rpm                     | 1.2 MB   00:00     
+(4/6): httpd-tools-2.4.6-97.el7_9.x86_64.rpm               |  93 kB   00:00     
+(5/6): mailcap-2.1.41-2.el7.noarch.rpm                     |  31 kB   00:00     
+(6/6): redhat-logos-70.7.0-1.el7.noarch.rpm                |  13 MB   00:00     
+--------------------------------------------------------------------------------
+Total                                               18 MB/s |  15 MB  00:00     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+Importing GPG key 0xFD431D51:
+ Userid     : "Red Hat, Inc. (release key 2) <security@redhat.com>"
+ Fingerprint: 567e 347a d004 4ade 55ba 8a5f 199e 2f91 fd43 1d51
+ Package    : redhat-release-server-7.7-10.el7.x86_64 (@anaconda/7.7)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+Importing GPG key 0x2FA658E0:
+ Userid     : "Red Hat, Inc. (auxiliary key) <security@redhat.com>"
+ Fingerprint: 43a6 e49c 4a38 f4be 9abf 2a53 4568 9c88 2fa6 58e0
+ Package    : redhat-release-server-7.7-10.el7.x86_64 (@anaconda/7.7)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : apr-1.4.8-7.el7.x86_64 [                                   ] 1/6  Installing : apr-1.4.8-7.el7.x86_64 [#########                          ] 1/6  Installing : apr-1.4.8-7.el7.x86_64 [###################                ] 1/6  Installing : apr-1.4.8-7.el7.x86_64 [##############################     ] 1/6  Installing : apr-1.4.8-7.el7.x86_64 [###############################    ] 1/6  Installing : apr-1.4.8-7.el7.x86_64 [################################## ] 1/6  Installing : apr-1.4.8-7.el7.x86_64                                       1/6 
+  Installing : apr-util-1.5.2-6.el7.x86_64 [                              ] 2/6  Installing : apr-util-1.5.2-6.el7.x86_64 [#########                     ] 2/6  Installing : apr-util-1.5.2-6.el7.x86_64 [###################           ] 2/6  Installing : apr-util-1.5.2-6.el7.x86_64 [#########################     ] 2/6  Installing : apr-util-1.5.2-6.el7.x86_64 [##########################    ] 2/6  Installing : apr-util-1.5.2-6.el7.x86_64 [############################# ] 2/6  Installing : apr-util-1.5.2-6.el7.x86_64                                  2/6 
+  Installing : httpd-tools-2.4.6-97.el7_9.x [                             ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [########                     ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [############                 ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [###############              ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [##################           ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [####################         ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [######################       ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [##########################   ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [###########################  ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x [############################ ] 3/6  Installing : httpd-tools-2.4.6-97.el7_9.x86_64                            3/6 
+  Installing : redhat-logos-70.7.0-1.el7.no [                             ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#                            ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [##                           ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [###                          ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [####                         ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#####                        ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [######                       ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#######                      ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [########                     ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#########                    ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [##########                   ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [###########                  ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [############                 ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#############                ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [##############               ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [###############              ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [################             ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#################            ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [##################           ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [###################          ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [####################         ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#####################        ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [######################       ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#######################      ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [########################     ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [#########################    ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [##########################   ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [###########################  ] 4/6  Installing : redhat-logos-70.7.0-1.el7.no [############################ ] 4/6  Installing : redhat-logos-70.7.0-1.el7.noarch                             4/6 
+  Installing : mailcap-2.1.41-2.el7.noarch [                              ] 5/6  Installing : mailcap-2.1.41-2.el7.noarch [########################      ] 5/6  Installing : mailcap-2.1.41-2.el7.noarch [###########################   ] 5/6  Installing : mailcap-2.1.41-2.el7.noarch                                  5/6 
+  Installing : httpd-2.4.6-97.el7_9.x86_64 [                              ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#                             ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [##                            ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [###                           ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [####                          ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#####                         ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [######                        ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#######                       ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [########                      ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#########                     ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [##########                    ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [###########                   ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [############                  ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#############                 ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [##############                ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [###############               ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [################              ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#################             ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [##################            ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [###################           ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [####################          ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#####################         ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [######################        ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#######################       ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [########################      ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [#########################     ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [##########################    ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [###########################   ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [############################  ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64 [############################# ] 6/6  Installing : httpd-2.4.6-97.el7_9.x86_64                                  6/6 
+  Verifying  : httpd-tools-2.4.6-97.el7_9.x86_64                            1/6 
+  Verifying  : mailcap-2.1.41-2.el7.noarch                                  2/6 
+  Verifying  : apr-1.4.8-7.el7.x86_64                                       3/6 
+  Verifying  : apr-util-1.5.2-6.el7.x86_64                                  4/6 
+  Verifying  : httpd-2.4.6-97.el7_9.x86_64                                  5/6 
+  Verifying  : redhat-logos-70.7.0-1.el7.noarch                             6/6 
+
+Installed:
+  httpd.x86_64 0:2.4.6-97.el7_9                                                 
+
+Dependency Installed:
+  apr.x86_64 0:1.4.8-7.el7                  apr-util.x86_64 0:1.5.2-6.el7      
+  httpd-tools.x86_64 0:2.4.6-97.el7_9       mailcap.noarch 0:2.1.41-2.el7      
+  redhat-logos.noarch 0:70.7.0-1.el7       
+
+Complete!
+Loaded plugins: ovl, product-id, search-disabled-repos, subscription-manager
+This system is not receiving updates. You can use subscription-manager on the host to register and assign subscriptions.
+Cleaning repos: ubi-7 ubi-7-rhah ubi-7-server-devtools-rpms
+              : ubi-7-server-extras-rpms ubi-7-server-optional-rpms
+              : ubi-server-rhscl-7-rpms
+STEP 5: RUN echo "Hello from Dockerfile" > /var/www/html/index.html
+STEP 6: EXPOSE 80
+STEP 7: CMD ["httpd", "-D", "FOREGROUND"]
+STEP 8: COMMIT do180/apache
+Getting image source signatures
+Copying blob 5601485f0109 [--------------------------------------] 0b / 0b
+Copying blob ac7577b8c383 [--------------------------------------] 0b / 0b
+Copying blob be54982c5c62 [==============>-----------------------] 7.5MiB / 19.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob 5601485f0109 skipped: already exists
+Copying blob ac7577b8c383 skipped: already exists
+Copying blob be54982c5c62 [==============================>-------] 15.7MiB / 19.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob 5601485f0109 skipped: already exists
+Copying blob ac7577b8c383 skipped: already exists
+Copying blob be54982c5c62 [====================================>-] 18.7MiB / 19.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob 5601485f0109 skipped: already exists
+Copying blob ac7577b8c383 skipped: already exists
+Copying blob be54982c5c62 [======================================] 19.1MiB / 19.1MiB
+[1A[2K[1A[2K[1A[2KCopying blob 5601485f0109 skipped: already exists
+Copying blob ac7577b8c383 skipped: already exists
+Copying blob be54982c5c62 done
+Copying config 3c32b49108 [======================================] 2.8KiB / 2.8KiB
+[1A[2KCopying config 3c32b49108 done
+Writing manifest to image destination
+Storing signatures
+3c32b49108b7307961be976520b83b605eaedb40934fb6a0eb3b01e13f887187
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# podan image[K[K[K[K[K[K[K[Kman images
+REPOSITORY                            TAG      IMAGE ID       CREATED         SIZE
+localhost/do180/apache                latest   3c32b49108b7   6 minutes ago   247 MB
+registry.access.redhat.com/ubi7/ubi   7.7      0355cd652bd1   10 months ago   215 MB
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# sudo podman run --name ab[K[K[Klab[K[K[K lab-apache \[K[K-d -p 10080:0[K80 do180/apache
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 10.88.0.18. Set the 'ServerName' directive globally to suppress this message
+
+^C]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# sudo podman run --name lab-apache-d -p 10080:80 do180/apache[C[1@ 
+fb6f6e5134e1158489798d46db4c7f231c5cb2191e5a8af7f61570471edca62d
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# poda[Kman ps
+CONTAINER ID  IMAGE                          COMMAND               CREATED        STATUS            PORTS                  NAMES
+fb6f6e5134e1  localhost/do180/apache:latest  httpd -D FOREGROU...  2 minutes ago  Up 2 minutes ago  0.0.0.0:10080->80/tcp  lab-apache
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# curl 127.0.0.1:10080
+Hello from Dockerfile
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# lab dockerfile-create finish
+
+Completing the Guided Exercise: Building a basic Apache Container Image
+
+ · Stopping lab-apache container that is running...............  [1;36mSUCCESS[0;39m
+ · Removing lab-apache container that is in the cache..........  [1;36mSUCCESS[0;39m
+ · Removing do180/apache custom container image................  [1;36mSUCCESS[0;39m
+ · Removing UBI7 container image...............................  [1;36mSUCCESS[0;39m
+]0;root@workstation:/home/student/DO180/labs/dockerfile-create[root@workstation dockerfile-create]# finish[K[K[K[K[K[Kexti[K[Kit
+exit
+
+Script done on 2021-01-21 11:13:23-05:00

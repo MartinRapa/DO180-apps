@@ -1,0 +1,501 @@
+Script started on 2021-01-22 12:09:50-05:00
+]0;root@workstation:~[root@workstation ~]# lab openshift-resources start
+
+Setting up workstation for the Guided Exercise: Deploying a Database Server on OpenShift
+
+ Verifying the OpenShift cluster is running:
+ · Log in on OpenShift.........................................  [1;31mFAIL[0;39m
+
+Cannot login to OpenShift using your URL and developer credentials.
+]0;root@workstation:~[root@workstation ~]# echo ${rh[K[KRHT_OCP4_DEV_USER}
+
+]0;root@workstation:~[root@workstation ~]# CAT [K[K[K[Klab-configure
+
+This script configures the connection parameters to access the OpenShift cluster for your lab scripts
+
+ · Enter the API Endpoint: https://api.na45.prod.nextcle.com:6443
+ · Enter the Username: martinrapa
+ · Enter the Password: 77edd950144948b5a09e
+ · Enter the GitHub Account Name: MartinRapa
+ · Enter the Quay.io Account Name: martinrapa
+
+You entered:
+ · API Endpoint:			https://api.na45.prod.nextcle.com:6443
+ · Username:				martinrapa
+ · Password:				77edd950144948b5a09e
+ · GitHub Account Name:			MartinRapa
+ · Quay.io Account Name:		martinrapa
+
+Generated config:
+ · API Endpoint:			https://api.na45.prod.nextcle.com:6443
+ · Wildcard Domain:			apps.na45.prod.nextcle.com
+ · Nexus Server Host:			nexus-common.apps.na45.prod.nextcle.com
+ · Username:				martinrapa
+ · Password:				77edd950144948b5a09e
+ · GitHub Account Name:			MartinRapa
+ · Quay.io Account Name:		martinrapa
+
+Verifying your API Endpoint...
+
+Verifying your Nexus host...
+
+Verifying your OpenShift developer user credentials...
+
+Verifying your GitHub account name...
+
+Verifying your Quay.io account name...
+
+Verifying your cluster configuration...
+
+Saving your lab configuration file...
+
+[32m[1mAll fine, lab config saved. You can now proceed with your exercises.[0m
+
+If you need to modify the configuration, rerun this script or directly modify the values in [1m/usr/local/etc/ocp4.config[0m.
+
+]0;root@workstation:~[root@workstation ~]# lab-configureecho ${RHT_OCP4_DEV_USER}[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clab openshift-resources start
+
+Setting up workstation for the Guided Exercise: Deploying a Database Server on OpenShift
+
+ Verifying the OpenShift cluster is running:
+ · Log in on OpenShift.........................................  [1;31mFAIL[0;39m
+
+Cannot login to OpenShift using your URL and developer credentials.
+]0;root@workstation:~[root@workstation ~]# oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PS[KASSWORD] ${rh[K[KRHC[KT [K_OCP4_MASTER_API}
+> 
+> 
+> ^C
+]0;root@workstation:~[root@workstation ~]# oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; ; [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[KPING WW[K[K[K[K[K[K[Kping www.redhat.com
+PING e3396.dscx.akamaiedge.net (23.2.168.84) 56(84) bytes of data.
+64 bytes from 23.2.168.84 (23.2.168.84): icmp_seq=1 ttl=51 time=3.09 ms
+64 bytes from 23.2.168.84 (23.2.168.84): icmp_seq=2 ttl=51 time=3.32 ms
+^C
+--- e3396.dscx.akamaiedge.net ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 2ms
+rtt min/avg/max/mdev = 3.091/3.205/3.320/0.127 ms
+]0;root@workstation:~[root@workstation ~]# ping www.redhat.comoc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; ; [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[58Plab openshift-resources start
+
+Setting up workstation for the Guided Exercise: Deploying a Database Server on OpenShift
+
+ Verifying the OpenShift cluster is running:
+ · Log in on OpenShift.........................................  [1;31mFAIL[0;39m
+
+Cannot login to OpenShift using your URL and developer credentials.
+]0;root@workstation:~[root@workstation ~]# lab-configure 
+
+This script configures the connection parameters to access the OpenShift cluster for your lab scripts
+
+ · Enter the API Endpoint: https://api.na45.prod.nextcle.com:6443/
+ · Enter the Username: martinrapa
+ · Enter the Password: 77edd950144948b5a09e
+ · Enter the GitHub Account Name: MartinRapa
+ · Enter the Quay.io Account Name: martinrapa
+
+You entered:
+ · API Endpoint:			https://api.na45.prod.nextcle.com:6443/
+ · Username:				martinrapa
+ · Password:				77edd950144948b5a09e
+ · GitHub Account Name:			MartinRapa
+ · Quay.io Account Name:		martinrapa
+
+Generated config:
+ · API Endpoint:			https://api.na45.prod.nextcle.com:6443/
+ · Wildcard Domain:			apps.na45.prod.nextcle.com
+ · Nexus Server Host:			nexus-common.apps.na45.prod.nextcle.com
+ · Username:				martinrapa
+ · Password:				77edd950144948b5a09e
+ · GitHub Account Name:			MartinRapa
+ · Quay.io Account Name:		martinrapa
+
+Verifying your API Endpoint...
+
+Verifying your Nexus host...
+
+Verifying your OpenShift developer user credentials...
+
+Verifying your GitHub account name...
+
+Verifying your Quay.io account name...
+
+Verifying your cluster configuration...
+
+Saving your lab configuration file...
+
+[32m[1mAll fine, lab config saved. You can now proceed with your exercises.[0m
+
+If you need to modify the configuration, rerun this script or directly modify the values in [1m/usr/local/etc/ocp4.config[0m.
+
+]0;root@workstation:~[root@workstation ~]# lab-configure  openshift-resources start
+
+Setting up workstation for the Guided Exercise: Deploying a Database Server on OpenShift
+
+ Verifying the OpenShift cluster is running:
+ · Log in on OpenShift.........................................  [1;31mFAIL[0;39m
+
+Cannot login to OpenShift using your URL and developer credentials.
+]0;root@workstation:~[root@workstation ~]# 
+]0;root@workstation:~[root@workstation ~]# 
+]0;root@workstation:~[root@workstation ~]# vim /usr/local/etc/ocp4.config ~
+2 files to edit
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;42r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[42;1H"/usr/local/etc/ocp4.config" 7L, 308C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1HRHT_OCP4_MASTER_API=https://api.na45.prod.nextcle.com:6443/
+RHT_OCP4_WILDCARD_DOMAIN=apps.na45.prod.nextcle.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.na45.prod.nextcle.com
+RHT_OCP4_DEV_USER=martinrapa
+RHT_OCP4_DEV_PASSWORD=77edd950144948b5a09e
+RHT_OCP4_GITHUB_USER=MartinRapa
+RHT_OCP4_QUAY_USER=martinrapa
+[94m~                                                                                                                                                                               [9;1H~                                                                                                                                                                               [10;1H~                                                                                                                                                                               [11;1H~                                                                                                                                                                               [12;1H~                                                                                                                                                                               [13;1H~                                                                                                                                                                               [14;1H~                                                                                                                                                                               [15;1H~                                                                                                                                                                               [16;1H~                                                                                                                                                                               [17;1H~                                                                                                                                                                               [18;1H~                                                                                                                                                                               [19;1H~                                                                                                                                                                               [20;1H~                                                                                                                                                                               [21;1H~                                                                                                                                                                               [22;1H~                                                                                                                                                                               [23;1H~                                                                                                                                                                               [24;1H~                                                                                                                                                                               [25;1H~                                                                                                                                                                               [26;1H~                                                                                                                                                                               [27;1H~                                                                                                                                                                               [28;1H~                                                                                                                                                                               [29;1H~                                                                                                                                                                               [30;1H~                                                                                                                                                                               [31;1H~                                                                                                                                                                               [32;1H~                                                                                                                                                                               [33;1H~                                                                                                                                                                               [34;1H~                                                                                                                                                                               [35;1H~                                                                                                                                                                               [36;1H~                                                                                                                                                                               [37;1H~                                                                                                                                                                               [38;1H~                                                                                                                                                                               [39;1H~                                                                                                                                                                               [40;1H~                                                                                                                                                                               [41;1H~                                                                                                                                                                               [m[42;159H1,1[11CAll[1;1H[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[27m[23m[29m[m[H[2J[?25l[1;1HRHT_OCP4_MASTER_API=https://api.na45.prod.nextcle.com:6443/
+RHT_OCP4_WILDCARD_DOMAIN=apps.na45.prod.nextcle.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.na45.prod.nextcle.com
+RHT_OCP4_DEV_USER=martinrapa
+RHT_OCP4_DEV_PASSWORD=77edd950144948b5a09e
+RHT_OCP4_GITHUB_USER=MartinRapa
+RHT_OCP4_QUAY_USER=martinrapa
+[94m~                                                                                                                                                                               [9;1H~                                                                                                                                                                               [10;1H~                                                                                                                                                                               [11;1H~                                                                                                                                                                               [12;1H~                                                                                                                                                                               [13;1H~                                                                                                                                                                               [14;1H~                                                                                                                                                                               [15;1H~                                                                                                                                                                               [16;1H~                                                                                                                                                                               [17;1H~                                                                                                                                                                               [18;1H~                                                                                                                                                                               [19;1H~                                                                                                                                                                               [20;1H~                                                                                                                                                                               [21;1H~                                                                                                                                                                               [22;1H~                                                                                                                                                                               [23;1H~                                                                                                                                                                               [24;1H~                                                                                                                                                                               [25;1H~                                                                                                                                                                               [26;1H~                                                                                                                                                                               [27;1H~                                                                                                                                                                               [28;1H~                                                                                                                                                                               [29;1H~                                                                                                                                                                               [30;1H~                                                                                                                                                                               [31;1H~                                                                                                                                                                               [32;1H~                                                                                                                                                                               [33;1H~                                                                                                                                                                               [34;1H~                                                                                                                                                                               [35;1H~                                                                                                                                                                               [36;1H~                                                                                                                                                                               [37;1H~                                                                                                                                                                               [38;1H~                                                                                                                                                                               [39;1H~                                                                                                                                                                               [40;1H~                                                                                                                                                                               [41;1H~                                                                                                                                                                               [m[42;159H1,1[11CAll"/usr/local/etc/ocp4.config" 7L, 308C[1;1H[?25h[27m[23m[29m[m[H[2J[?25l[1;1HRHT_OCP4_MASTER_API=https://api.na45.prod.nextcle.com:6443/
+RHT_OCP4_WILDCARD_DOMAIN=apps.na45.prod.nextcle.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.na45.prod.nextcle.com
+RHT_OCP4_DEV_USER=martinrapa
+RHT_OCP4_DEV_PASSWORD=77edd950144948b5a09e
+RHT_OCP4_GITHUB_USER=MartinRapa
+RHT_OCP4_QUAY_USER=martinrapa
+[94m~                                                                                                                                               [9;1H~                                                                                                                                               [10;1H~                                                                                                                                               [11;1H~                                                                                                                                               [12;1H~                                                                                                                                               [13;1H~                                                                                                                                               [14;1H~                                                                                                                                               [15;1H~                                                                                                                                               [16;1H~                                                                                                                                               [17;1H~                                                                                                                                               [18;1H~                                                                                                                                               [19;1H~                                                                                                                                               [20;1H~                                                                                                                                               [21;1H~                                                                                                                                               [22;1H~                                                                                                                                               [23;1H~                                                                                                                                               [24;1H~                                                                                                                                               [25;1H~                                                                                                                                               [26;1H~                                                                                                                                               [27;1H~                                                                                                                                               [28;1H~                                                                                                                                               [29;1H~                                                                                                                                               [30;1H~                                                                                                                                               [31;1H~                                                                                                                                               [32;1H~                                                                                                                                               [33;1H~                                                                                                                                               [34;1H~                                                                                                                                               [m[35;127H1,1[11CAll[1;1H[?25h[27m[23m[29m[m[H[2J[?25l[1;1HRHT_OCP4_MASTER_API=https://api.na45.prod.nextcle.com:6443/
+RHT_OCP4_WILDCARD_DOMAIN=apps.na45.prod.nextcle.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.na45.prod.nextcle.com
+RHT_OCP4_DEV_USER=martinrapa
+RHT_OCP4_DEV_PASSWORD=77edd950144948b5a09e
+RHT_OCP4_GITHUB_USER=MartinRapa
+RHT_OCP4_QUAY_USER=martinrapa
+[94m~                                                                                                                         [9;1H~                                                                                                                         [10;1H~                                                                                                                         [11;1H~                                                                                                                         [12;1H~                                                                                                                         [13;1H~                                                                                                                         [14;1H~                                                                                                                         [15;1H~                                                                                                                         [16;1H~                                                                                                                         [17;1H~                                                                                                                         [18;1H~                                                                                                                         [19;1H~                                                                                                                         [20;1H~                                                                                                                         [21;1H~                                                                                                                         [22;1H~                                                                                                                         [23;1H~                                                                                                                         [24;1H~                                                                                                                         [25;1H~                                                                                                                         [26;1H~                                                                                                                         [27;1H~                                                                                                                         [28;1H~                                                                                                                         [29;1H~                                                                                                                         [m[30;105H1,1[11CAll[1;1H[?25h[?25l[30;95H^[[1;1H[30;95H  [1;1H[30;95H^[[1;1H[30;95H  [1;1H[?25h[?25l[30;95H:[1;1H[30;95H[K[30;1H:[?2004h[?25hw[?25l[?25hq[?25l[?25h[?25l"/usr/local/etc/ocp4.config" 7L, 308C written
+[97m[41mE173: 1 more file to edit[?2004h[m
+[38;5;121mPress ENTER or type command to continue[?25h[?25l[1;1H[m[30;95H:[1;1H[30;1H[K[30;1H:[?2004h[?25hq[?25l[?25h![?25l[?25h[?25l[?2004l[30;1H[K[30;1H[?2004l[?1l>[?25h[?1049l[23;0;0t]0;root@workstation:~[root@workstation ~]# [H[2J[root@workstation ~]# vim /usr/local/etc/ocp4.config ~[K[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P /usr/local/etc/ocp4.config[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P /usr/local/etc/ocp4.config[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P /usr/local/etc/ocp4.config[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc /usr/local/etc/ocp4.config[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca /usr/local/etc/ocp4.config[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct /usr/local/etc/ocp4.config[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C /usr/local/etc/ocp4.config
+RHT_OCP4_MASTER_API=https://api.na45.prod.nextcle.com:6443/
+RHT_OCP4_WILDCARD_DOMAIN=apps.na45.prod.nextcle.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.na45.prod.nextcle.com
+RHT_OCP4_DEV_USER=martinrapa
+RHT_OCP4_DEV_PASSWORD=77edd950144948b5a09e
+RHT_OCP4_GITHUB_USER=MartinRapa
+RHT_OCP4_QUAY_USER=martinrapa
+]0;root@workstation:~[root@workstation ~]# oc login -u martinar[K[Krapr[K[Kpa -p 77edd950144948b5a09e https://api.na45.prod.nextcle.com:6443/
+Login successful.
+
+You don't have any projects. You can try to create a new project, by running
+
+    oc new-project <projectname>
+
+]0;root@workstation:~[root@workstation ~]# 
+]0;root@workstation:~[root@workstation ~]# 
+]0;root@workstation:~[root@workstation ~]# 
+]0;root@workstation:~[root@workstation ~]# SU - [K[K[K[K[KSU - STUD[K[K[K[K[K[K[K[K[KSU[K[Ksu - student
+Last login: Fri Jan 22 12:08:29 EST 2021 on tty2
+]0;student@workstation:~[student@workstation ~]$ 
+]0;student@workstation:~[student@workstation ~]$ 
+]0;student@workstation:~[student@workstation ~]$ 
+]0;student@workstation:~[student@workstation ~]$ LAB OP[K[K[K[K[K[Kopen[K[K[K[Klab openshift-resources start 
+
+Setting up workstation for the Guided Exercise: Deploying a Database Server on OpenShift
+
+ Verifying the OpenShift cluster is running:
+ · Log in on OpenShift.........................................  [1;36mSUCCESS[0;39m
+ · Check master node na45-mh9qn-master-0 is ready..............  [1;36mSUCCESS[0;39m
+ · Check master node na45-mh9qn-master-1 is ready..............  [1;36mSUCCESS[0;39m
+ · Check master node na45-mh9qn-master-2 is ready..............  [1;36mSUCCESS[0;39m
+ · Check the internal registry is up and running...............  [1;36mSUCCESS[0;39m
+ · Ensuring the 'martinrapa-mysql-openshift' project is absent.  [1;36mSUCCESS[0;39m
+]0;student@workstation:~[student@workstation ~]$ 
+]0;student@workstation:~[student@workstation ~]$ 
+]0;student@workstation:~[student@workstation ~]$ source /usr/local/etc/ocp4.config 
+]0;student@workstation:~[student@workstation ~]$ cat //s[K[Kusr/local/etc/ocp4.config 
+RHT_OCP4_MASTER_API=https://api.na45.prod.nextcle.com:6443/
+RHT_OCP4_WILDCARD_DOMAIN=apps.na45.prod.nextcle.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.na45.prod.nextcle.com
+RHT_OCP4_DEV_USER=martinrapa
+RHT_OCP4_DEV_PASSWORD=77edd950144948b5a09e
+RHT_OCP4_GITHUB_USER=MartinRapa
+RHT_OCP4_QUAY_USER=martinrapa
+]0;student@workstation:~[student@workstation ~]$ oc login -i[Ku $[K[K[K[K[K[K[K[K[K[K[K[K[Koc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}
+> oc new-project $[[KRHT_OCP4_DEV_USER} -[K[K-mysql-opernshift[K[K[K[K[K[K[Knshift
+-bash: ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}
+oc new-project $RHT_OCP4_DEV_USER}-mysql-openshift: bad substitution
+]0;student@workstation:~[student@workstation ~]$ oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-projecct $RHT_OCP4_DEV_USER}-mysql-openshift[A[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Coc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-projecct $RHT_OCP4_DEV_USER}-mysql-openshift[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KPI}
+> oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mmysql-openshift[A[C[Ccat /usr/local/etc/ocp4.config [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Coc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mmysql-openshift[A[C[Cc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-my[1Psql-openshift[A[C[C login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mys[1Pql-openshift[A[C[Clogin -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysq[1Pl-openshift[A[C[Cogin -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql[1P-openshift[A[C[Cgin -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-[1Popenshift[A[C[Cin -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-o[1Ppenshift[A[C[Cn -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-op[1Penshift[A[C[C -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-ope[1Pnshift[A[C[C-u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-open[1Pshift[A[C[Cu ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-opens[1Phift[A ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-opensh[1Pift[A${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-openshi[1Pft[A{RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-openshif[1Pt[ARHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-openshift[K[A[CHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-project $RHT_OCP4_DEV_USER}-mysql-openshift [K[A[C[C[1P
+[K[A[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C{RHT_OCP4_DEV_USER}-mysql-openshift[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+> oc new-app --ass[K-deplot[Kyment-config --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:latest \
+> --name=mysql-openshift -e MYSQL_USER?[K)[K=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb \
+> -e MYY[KQ[KSQL_ROOT_PASSWORD=r00tpa55
+> 
+> ^C
+]0;student@workstation:~[student@workstation ~]$ ^C
+]0;student@workstation:~[student@workstation ~]$ oc login -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD] ${RHT_OCP4_MASTER_API}; oc new-projecct ${RHT_OCP4_DEV_USER}-mysql-openshift; oc new-app --as-deployment-config --docker-image=registry.access.redhat.com/rhscl//mysql-57-rhel7:latest --name=mysql-openshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb -e MYSQQL_ROOT_PASSWORD=r00tpa55; [A[A[C[C[C[CRHT_OCP4_DEV_USER}-mysql-openshift[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KI}[1P ${RHT_OCP4_MASTER_API}} ${RHT_OCP4_MASTER_API}
+Login successful.
+
+You don't have any projects. You can try to create a new project, by running
+
+    oc new-project <projectname>
+
+]0;student@workstation:~[student@workstation ~]$ oc new-app --as-deployment-config --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:llatest \
+> > --name=mysql-openshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb \
+> > -e MYSQL_ROOT_PASSWORD=r00tpa55[C[Coc new-app --as-deployment-config --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:latest > --name=mysql-oppenshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb \[A[C[C[C[C[C[37Plogin -u ${RHT_OCP4_DEV_USER} -p ${RHT_OCP4_DEV_PASSWORD} ${RHT_OCP4_MASTER_API}
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C] ${RHT_OCP4_MASTER_API}; oc new-project ${RHT_OCP4_DEV_USER}--mysql-openshift; oc new-app --as-deployment-config --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:latest ---name=mysql-openshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb -e MYSQL_ROOT_PASSWORD=r00tpa555; [A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CRHT_OCP4_DEV_USER}-mysql-openshift[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K^C
+]0;student@workstation:~[student@workstation ~]$ oc new-app --as-deployment-config --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:llatest --name=mysql-openshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb -e MYSQL_ROOT_PASSWORD==r00tpa55
+error: can't lookup images: imagestreamimports.image.openshift.io is forbidden: User "martinrapa" cannot create resource "imagestreamimports" in API group "image.openshift.io" in the namespace "default"
+error: unable to locate any local docker images with name "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest"
+
+The 'oc new-app' command will match arguments to the following types:
+
+  1. Images tagged into image streams in the current project or the 'openshift' project
+     - if you don't specify a tag, we'll add ':latest'
+  2. Images in the Docker Hub, on remote registries, or on the local Docker engine
+  3. Templates in the current project or the 'openshift' project
+  4. Git repository URLs or local paths that point to Git repositories
+
+--allow-missing-images can be used to point to an image that does not exist yet.
+
+See 'oc new-app -h' for examples.
+]0;student@workstation:~[student@workstation ~]$ oc new-app --as-deployment-config --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:llatest --name=mysql-openshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb -e MYSQL_ROOT_PASSWORD==r00tpa55
+error: can't lookup images: imagestreamimports.image.openshift.io is forbidden: User "martinrapa" cannot create resource "imagestreamimports" in API group "image.openshift.io" in the namespace "default"
+error: unable to locate any local docker images with name "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest"
+
+The 'oc new-app' command will match arguments to the following types:
+
+  1. Images tagged into image streams in the current project or the 'openshift' project
+     - if you don't specify a tag, we'll add ':latest'
+  2. Images in the Docker Hub, on remote registries, or on the local Docker engine
+  3. Templates in the current project or the 'openshift' project
+  4. Git repository URLs or local paths that point to Git repositories
+
+--allow-missing-images can be used to point to an image that does not exist yet.
+
+See 'oc new-app -h' for examples.
+]0;student@workstation:~[student@workstation ~]$ oc new-app --as-deployment-config --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:llatest --name=mysql-openshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb -e MYSQL_ROOT_PASSWORD==r00tpa55[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Coc project 
+No project has been set. Pass a project name to make that the default.
+]0;student@workstation:~[student@workstation ~]$ oc get projects
+No resources found
+]0;student@workstation:~[student@workstation ~]$ oc new-project martinrapa-mysql-openshift 
+Now using project "martinrapa-mysql-openshift" on server "https://api.na45.prod.nextcle.com:6443".
+
+You can add applications to this project with the 'new-app' command. For example, try:
+
+    oc new-app ruby~https://github.com/sclorg/ruby-ex.git
+
+to build a new example application in Ruby. Or use kubectl to deploy a simple Kubernetes application:
+
+    kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/hello-node
+
+]0;student@workstation:~[student@workstation ~]$ oc project 
+Using project "martinrapa-mysql-openshift" on server "https://api.na45.prod.nextcle.com:6443".
+]0;student@workstation:~[student@workstation ~]$ oc project [31@new-project martinrapa-mysql-openshif[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cget projects[K[4Pproject new-app --as-deployment-config --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:llatest --name=mysql-openshift -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=testdb -e MYSQL_ROOT_PASSWORD==r00tpa55
+--> Found container image 60726b3 (15 months old) from registry.access.redhat.com for "registry.access.redhat.com/rhscl/mysql-57-rhel7:latest"
+
+    MySQL 5.7 
+    --------- 
+    MySQL is a multi-user, multi-threaded SQL database server. The container image provides a containerized packaging of the MySQL mysqld daemon and client application. The mysqld server daemon accepts connections from clients and provides access to content from MySQL databases on behalf of the clients.
+
+    Tags: database, mysql, mysql57, rh-mysql57
+
+    * An image stream tag will be created as "mysql-openshift:latest" that will track this image
+    * This image will be deployed in deployment config "mysql-openshift"
+    * Port 3306/tcp will be load balanced by service "mysql-openshift"
+      * Other containers can access this service through the hostname "mysql-openshift"
+
+--> Creating resources ...
+    imagestream.image.openshift.io "mysql-openshift" created
+    deploymentconfig.apps.openshift.io "mysql-openshift" created
+    service "mysql-openshift" created
+--> Success
+    Application is not exposed. You can expose services to the outside world by executing one or more of the commands below:
+     'oc expose svc/mysql-openshift' 
+    Run 'oc status' to view your app.
+]0;student@workstation:~[student@workstation ~]$ oc status
+In project martinrapa-mysql-openshift on server https://api.na45.prod.nextcle.com:6443
+
+svc/mysql-openshift - 172.30.190.147:3306
+  dc/mysql-openshift deploys istag/mysql-openshift:latest 
+    deployment #1 deployed 32 seconds ago - 1 pod
+
+
+2 infos identified, use 'oc status --suggest' to see details.
+]0;student@workstation:~[student@workstation ~]$ oc get pods
+NAME                       READY   STATUS      RESTARTS   AGE
+mysql-openshift-1-b5gqp    1/1     Running     0          68s
+mysql-openshift-1-deploy   0/1     Completed   0          71s
+]0;student@workstation:~[student@workstation ~]$ OC GE[K[K[K[K[Koc get pods
+NAME                       READY   STATUS      RESTARTS   AGE
+mysql-openshift-1-b5gqp    1/1     Running     0          15m
+mysql-openshift-1-deploy   0/1     Completed   0          15m
+]0;student@workstation:~[student@workstation ~]$ oc describe pod mysql-openshift-1-b5gqp 
+Name:         mysql-openshift-1-b5gqp
+Namespace:    martinrapa-mysql-openshift
+Priority:     0
+Node:         na45-mh9qn-worker-b5swx/10.0.0.36
+Start Time:   Fri, 22 Jan 2021 12:33:48 -0500
+Labels:       deployment=mysql-openshift-1
+              deploymentconfig=mysql-openshift
+Annotations:  k8s.v1.cni.cncf.io/network-status:
+                [{
+                    "name": "openshift-sdn",
+                    "interface": "eth0",
+                    "ips": [
+                        "10.129.4.138"
+                    ],
+                    "default": true,
+                    "dns": {}
+                }]
+              k8s.v1.cni.cncf.io/networks-status:
+                [{
+                    "name": "openshift-sdn",
+                    "interface": "eth0",
+                    "ips": [
+                        "10.129.4.138"
+                    ],
+                    "default": true,
+                    "dns": {}
+                }]
+              kubernetes.io/limit-ranger:
+                LimitRanger plugin set: cpu, memory request for container mysql-openshift; cpu, memory limit for container mysql-openshift
+              openshift.io/deployment-config.latest-version: 1
+              openshift.io/deployment-config.name: mysql-openshift
+              openshift.io/deployment.name: mysql-openshift-1
+              openshift.io/generated-by: OpenShiftNewApp
+              openshift.io/scc: restricted
+Status:       Running
+IP:           10.129.4.138
+IPs:
+  IP:           10.129.4.138
+Controlled By:  ReplicationController/mysql-openshift-1
+Containers:
+  mysql-openshift:
+    Container ID:   cri-o://3e45c1c9aac4295e49a653e2bdba264053e1d5abcdd2428fdb2a565ab978921a
+    Image:          registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+    Image ID:       image-registry.openshift-image-registry.svc:5000/openshift/mysql@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+    Port:           3306/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Fri, 22 Jan 2021 12:33:51 -0500
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     1500m
+      memory:  2Gi
+    Requests:
+      cpu:     5m
+      memory:  50Mi
+    Environment:
+      MYSQL_DATABASE:       testdb
+      MYSQL_PASSWORD:       mypa55
+      MYSQL_ROOT_PASSWORD:  r00tpa55
+      MYSQL_USER:           user1
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-fbm5f (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-fbm5f:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-fbm5f
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/memory-pressure:NoSchedule
+                 node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason          Age        From                              Message
+  ----    ------          ----       ----                              -------
+  Normal  Scheduled       <unknown>  default-scheduler                 Successfully assigned martinrapa-mysql-openshift/mysql-openshift-1-b5gqp to na45-mh9qn-worker-b5swx
+  Normal  AddedInterface  16m        multus                            Add eth0 [10.129.4.138/23]
+  Normal  Pulling         16m        kubelet, na45-mh9qn-worker-b5swx  Pulling image "registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe"
+  Normal  Pulled          16m        kubelet, na45-mh9qn-worker-b5swx  Successfully pulled image "registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe"
+  Normal  Created         16m        kubelet, na45-mh9qn-worker-b5swx  Created container mysql-openshift
+  Normal  Started         16m        kubelet, na45-mh9qn-worker-b5swx  Started container mysql-openshift
+]0;student@workstation:~[student@workstation ~]$ oc get svc
+NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+mysql-openshift   ClusterIP   172.30.190.147   <none>        3306/TCP   17m
+]0;student@workstation:~[student@workstation ~]$ oc describe servicemy[K[K[Ke mysql-openshift 
+Name:              mysql-openshift
+Namespace:         martinrapa-mysql-openshift
+Labels:            app=mysql-openshift
+                   app.kubernetes.io/component=mysql-openshift
+                   app.kubernetes.io/instance=mysql-openshift
+Annotations:       openshift.io/generated-by: OpenShiftNewApp
+Selector:          deploymentconfig=mysql-openshift
+Type:              ClusterIP
+IP:                172.30.190.147
+Port:              3306-tcp  3306/TCP
+TargetPort:        3306/TCP
+Endpoints:         10.129.4.138:3306
+Session Affinity:  None
+Events:            <none>
+]0;student@workstation:~[student@workstation ~]$ oc describe dc mysql-openshift 
+Name:		mysql-openshift
+Namespace:	martinrapa-mysql-openshift
+Created:	18 minutes ago
+Labels:		app=mysql-openshift
+		app.kubernetes.io/component=mysql-openshift
+		app.kubernetes.io/instance=mysql-openshift
+Annotations:	openshift.io/generated-by=OpenShiftNewApp
+Latest Version:	1
+Selector:	deploymentconfig=mysql-openshift
+Replicas:	1
+Triggers:	Config, Image(mysql-openshift@latest, auto=true)
+Strategy:	Rolling
+Template:
+Pod Template:
+  Labels:	deploymentconfig=mysql-openshift
+  Annotations:	openshift.io/generated-by: OpenShiftNewApp
+  Containers:
+   mysql-openshift:
+    Image:	registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:9a781abe7581cc141e14a7e404ec34125b3e89c008b14f4e7b41e094fd3049fe
+    Port:	3306/TCP
+    Host Port:	0/TCP
+    Environment:
+      MYSQL_DATABASE:		testdb
+      MYSQL_PASSWORD:		mypa55
+      MYSQL_ROOT_PASSWORD:	r00tpa55
+      MYSQL_USER:		user1
+    Mounts:			<none>
+  Volumes:			<none>
+
+Deployment #1 (latest):
+	Name:		mysql-openshift-1
+	Created:	18 minutes ago
+	Status:		Complete
+	Replicas:	1 current / 1 desired
+	Selector:	deployment=mysql-openshift-1,deploymentconfig=mysql-openshift
+	Labels:		app.kubernetes.io/component=mysql-openshift,app.kubernetes.io/instance=mysql-openshift,app=mysql-openshift,openshift.io/deployment-config.name=mysql-openshift
+	Pods Status:	1 Running / 0 Waiting / 0 Succeeded / 0 Failed
+
+Events:
+  Type		Reason			Age	From				Message
+  ----		------			----	----				-------
+  Normal	DeploymentCreated	18m	deploymentconfig-controller	Created new replication controller "mysql-openshift-1" for version 1
+]0;student@workstation:~[student@workstation ~]$ oc expose service mysql-openshift 
+route.route.openshift.io/mysql-openshift exposed
+]0;student@workstation:~[student@workstation ~]$ get[K[K[Koc get  ro[K[K[Kroutes.route.openshift.io [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+NAME              HOST/PORT                                                               PATH   SERVICES          PORT       TERMINATION   WILDCARD
+mysql-openshift   mysql-openshift-martinrapa-mysql-openshift.apps.na45.prod.nextcle.com          mysql-openshift   3306-tcp                 None
+]0;student@workstation:~[student@workstation ~]$ oc port-forward mysql-openshift-1-b5gqp 3306:3306
+Forwarding from 127.0.0.1:3306 -> 3306
+Forwarding from [::1]:3306 -> 3306
+
+Handling connection for 3306
+^C]0;student@workstation:~[student@workstation ~]$ exit
+logout
+]0;root@workstation:~[root@workstation ~]# exit
+exit
+
+Script done on 2021-01-22 12:55:47-05:00
